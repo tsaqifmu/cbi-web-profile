@@ -73,7 +73,7 @@ const Footer = () => {
                 Indonesia 57465
               </p>
             </div>
-            <div>
+            <div className="flex flex-col">
               <h2 className="font-semibold">Kontak</h2>
               <Link href="https://wa.me/6285183284691" className="underline">
                 0851 8328 4691
