@@ -1,6 +1,11 @@
 import Image from "next/image";
 
-import Footer from "@/components/layout/footer";
+import BannerContactSection from "@/components/home/BannerContactSection";
+import HeroSection from "@/components/home/HeroSection";
+import LatestNewsSection from "@/components/home/LatestNewsSection";
+import OurImpactSection from "@/components/home/OurImpactSection";
+import ProductServiceSection from "@/components/home/ProductServiceSection";
+import WhySection from "@/components/home/WhySection";
 
 export default function Home() {
   return (
@@ -32,7 +37,15 @@ export default function Home() {
           className="h-[30rem] object-cover object-center brightness-50 lg:h-screen"
         />
       </section>
-      <section className="h-screen bg-black"></section>
+
+      <section className="h-screen bg-white"></section>
+
+      <HeroSection />
+      <WhySection />
+      <ProductServiceSection />
+      <OurImpactSection />
+      <LatestNewsSection />
+      <BannerContactSection />
     </>
   );
 }
