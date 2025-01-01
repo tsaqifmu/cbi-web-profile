@@ -48,6 +48,8 @@ const Footer = () => {
 
       {/* Image */}
       <Image
+        draggable={false}
+        style={{ userSelect: "none", WebkitUserSelect: "none" }}
         src="/logo-only.png"
         alt="logo"
         width={996}
