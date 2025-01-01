@@ -75,8 +75,12 @@ const Footer = () => {
             </div>
             <div>
               <h2 className="font-semibold">Kontak</h2>
-              <p className="underline">0851 8328 4691</p>
-              <p className="underline">centrabioindo@gmail.com</p>
+              <Link href="https://wa.me/6285183284691" className="underline">
+                0851 8328 4691
+              </Link>
+              <Link href="mailto:centrabioindo@gmail.com" className="underline">
+                centrabioindo@gmail.com
+              </Link>
             </div>
 
             <div className="flex gap-4">
@@ -134,18 +138,18 @@ const Footer = () => {
         {/* Bottom */}
         <div className="mb-8 mt-16 md:mt-24">
           <hr />
-          <div className="mt-6 flex flex-col-reverse justify-between text-xs md:flex-row md:text-base">
+          <div className="mt-6 flex flex-col-reverse justify-between text-sm md:flex-row md:text-base">
             <p className="mt-4 md:mt-0">
               © 2024 PT Centra Biotech Indonesia. All rights reserved.
             </p>
             <div className="flex items-center justify-between md:gap-8">
-              <Link href="" className="underline">
+              <Link href="/" className="underline">
                 Privacy Policy
               </Link>
-              <Link href="" className="underline">
+              <Link href="/" className="underline">
                 Terms of Service
               </Link>
-              <Link href="" className="underline">
+              <Link href="/" className="underline">
                 Cookies Settings
               </Link>
             </div>
