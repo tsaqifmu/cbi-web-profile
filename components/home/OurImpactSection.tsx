@@ -76,7 +76,7 @@ const OurImpactSection = () => {
             />
 
             {/* Gradient overlay */}
-            <div className="absolute inset-0 z-10 bg-gradient-to-t from-transparent to-[#98AF1D] to-40% md:bg-gradient-to-r" />
+            <div className="absolute inset-0 z-10 bg-gradient-to-t from-transparent to-[#98AF1D] to-40% md:bg-gradient-to-l" />
 
             {/* Konten */}
             <div className="absolute z-20 flex h-full w-full flex-col pt-8 md:flex-row md:pt-0">
