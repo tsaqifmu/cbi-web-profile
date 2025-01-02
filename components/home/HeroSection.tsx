@@ -1,6 +1,8 @@
 // components/HeroSection.jsx
 "use client";
 
+import { ArrowRight } from "lucide-react";
+
 const HeroSection = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
@@ -29,23 +31,30 @@ const HeroSection = () => {
       </div>
 
       {/* Content Container */}
-      <div className="absolute bottom-0 z-10 flex w-full flex-col items-end gap-4 p-16 pb-24 text-white md:flex-row md:justify-between">
+      <div className="absolute bottom-0 z-10 flex w-full flex-col items-end gap-4 px-8 pb-24 text-white md:flex-row md:justify-between md:px-16">
         {/* Left Content (Welcome Text) */}
-        <div>
-          <h1 className="max-w-xl text-5xl font-bold leading-tight md:text-6xl">
-            Solusi Bioteknologi Terintegrasi untuk Masa Depan
+        <div className="w-full">
+          <h1 className="text-4xl md:text-6xl">
+            <span className="font-bold">Solusi</span>
+            <span className="block md:mt-2">
+              <span className="font-bold">Bioteknologi </span>
+              Terintegrasi
+            </span>
+            <span className="block md:mt-2">
+              untuk <span className="font-bold">Masa Depan</span>
+            </span>
           </h1>
         </div>
 
         {/* Right Content (Description and Button) */}
-        <div>
-          <p className="mb-8 ml-auto max-w-xl text-lg md:text-xl">
+        <div className="flex flex-col gap-6">
+          <p className="ml-auto mt-4 max-w-2xl text-lg md:mt-0 md:text-lg">
             Temukan bagaimana solusi bioteknologi kami dapat mengatasi
             permasalahan global di industri pertanian, peternakan, dan
             perikanan.
           </p>
-          <button className="rounded-lg bg-green-500 px-8 py-3 font-semibold text-white transition-colors duration-300 hover:bg-green-600">
-            Info selengkapnya
+          <button className="flex w-fit items-center gap-4 rounded-lg bg-[#009933] px-8 py-3 font-semibold text-white transition-colors duration-300 hover:bg-green-700">
+            <span>Info Selengkapnya</span> <ArrowRight className="h-4 w-4" />
           </button>
         </div>
       </div>
