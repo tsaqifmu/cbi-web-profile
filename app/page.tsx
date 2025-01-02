@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import BannerContactSection from "@/components/home/BannerContactSection";
 import HeroSection from "@/components/home/HeroSection";
 import LatestNewsSection from "@/components/home/LatestNewsSection";
