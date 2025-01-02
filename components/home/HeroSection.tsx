@@ -1,7 +1,7 @@
 // components/HeroSection.jsx
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import LinkGreen from "./LinkGreen";
 
 const HeroSection = () => {
   return (
@@ -31,7 +31,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content Container */}
-      <div className="absolute bottom-0 z-10 flex w-full flex-col items-end gap-4 px-8 pb-24 text-white md:flex-row md:justify-between md:px-16">
+      <div className="absolute bottom-0 left-1/2 z-10 mx-auto flex w-full max-w-7xl -translate-x-1/2 flex-col items-end gap-4 px-8 pb-24 text-white md:flex-row md:justify-between md:px-16 xl:px-0">
         {/* Left Content (Welcome Text) */}
         <div className="w-full">
           <h1 className="text-4xl md:text-6xl">
@@ -53,9 +53,7 @@ const HeroSection = () => {
             permasalahan global di industri pertanian, peternakan, dan
             perikanan.
           </p>
-          <button className="flex w-fit items-center gap-4 rounded-lg bg-[#009933] px-8 py-3 font-semibold text-white transition-colors duration-300 hover:bg-green-700">
-            <span>Info Selengkapnya</span> <ArrowRight className="h-4 w-4" />
-          </button>
+          <LinkGreen href="/">Info Selengkapnya</LinkGreen>
         </div>
       </div>
     </section>
