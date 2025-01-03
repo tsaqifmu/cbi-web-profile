@@ -1,11 +1,22 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import HomeTitle from "./HomeTitle";
+import HomeTitle from './HomeTitle';
 
 const OurImpactSection = () => {
   return (
-    <section className="bg-[#EEE]">
-      <div className="mx-auto min-h-[40rem] max-w-7xl px-6 py-16 md:px-0 md:py-24">
+    <section className="relative overflow-hidden bg-[#EEE]">
+      <div className="absolute left-0 top-0 h-[64rem] w-[64rem] -translate-x-[17rem] -translate-y-[26rem]">
+        <Image
+          draggable={false}
+          src="/logo-only.png"
+          alt="logo cbi"
+          width={600}
+          height={600}
+          className="h-full w-full object-cover opacity-40 brightness-0 invert"
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto min-h-[40rem] max-w-7xl px-6 py-16 md:px-0 md:py-24">
         {/* Title */}
         <div className="flex flex-col justify-between gap-6 md:flex-row">
           <div className="flex-1">

@@ -1,10 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
-import Facebook from "@/public/Facebook.svg";
-import Instagram from "@/public/Instagram.svg";
-import LinkedIn from "@/public/LinkedIn.svg";
-import Youtube from "@/public/Youtube.svg";
+import Facebook from '@/public/Facebook.svg';
+import Instagram from '@/public/Instagram.svg';
+import LinkedIn from '@/public/LinkedIn.svg';
+import Youtube from '@/public/Youtube.svg';
 
 const Footer = () => {
   return (
@@ -54,7 +54,7 @@ const Footer = () => {
         alt="logo"
         width={996}
         height={944}
-        className="absolute bottom-0 right-0 z-10 w-[120rem] translate-x-[30rem] translate-y-1/2 opacity-10 mix-blend-color-dodge"
+        className="absolute bottom-0 right-0 z-10 w-[120rem] translate-x-1/2 translate-y-1/2 opacity-10 mix-blend-color-dodge md:translate-x-[30rem]"
       />
 
       {/* Content */}
