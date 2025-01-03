@@ -7,7 +7,7 @@ import WhySection from "@/components/home/WhySection";
 
 export default function Home() {
   return (
-    <>
+    <div className="font-jakartaSans">
       {/* <section className="flexCenter">
         <div
           className={`absolute top-1/2 z-10 flex w-full -translate-y-1/3 gap-1 space-y-1 text-white lg:gap-4 lg:space-y-0 xl:max-w-[1312px]`}
@@ -44,6 +44,6 @@ export default function Home() {
       <OurImpactSection />
       <LatestNewsSection />
       <BannerContactSection />
-    </>
+    </div>
   );
 }

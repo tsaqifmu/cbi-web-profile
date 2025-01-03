@@ -1,14 +1,14 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
-import Facebook from '@/public/Facebook.svg';
-import Instagram from '@/public/Instagram.svg';
-import LinkedIn from '@/public/LinkedIn.svg';
-import Youtube from '@/public/Youtube.svg';
+import Facebook from "@/public/Facebook.svg";
+import Instagram from "@/public/Instagram.svg";
+import LinkedIn from "@/public/LinkedIn.svg";
+import Youtube from "@/public/Youtube.svg";
 
 const Footer = () => {
   return (
-    <footer className="relative min-h-[36rem] w-full overflow-hidden bg-[#083F19] px-6 py-12 text-[#FDFDFD] md:px-20 md:pb-12 md:pt-24">
+    <footer className="relative min-h-[36rem] w-full overflow-hidden bg-[#083F19] px-6 py-12 font-jakartaSans text-[#FDFDFD] md:px-20 md:pb-12 md:pt-24">
       {/* Noise overlay */}
       <div
         className="absolute inset-0 z-10 opacity-100 md:opacity-70"
