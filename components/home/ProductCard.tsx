@@ -1,7 +1,7 @@
 "use client";
-import { ArrowRight } from 'lucide-react';
-import Link from 'next/link';
-import React, { useState } from 'react';
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import React, { useState } from "react";
 
 interface ProductCardProps {
   bgUrl: string;
@@ -58,7 +58,16 @@ const ProductCard = ({
           {isHovered && (
             <Link
               href={url}
-              className={`flex w-fit items-center gap-4 duration-300 hover:text-[${color}]`}
+              className="flex w-fit items-center gap-4 transition-colors duration-300"
+              style={
+                {
+                  "&:hover": {
+                    color: color,
+                  },
+                } as React.CSSProperties
+              }
+              onMouseEnter={(e) => (e.currentTarget.style.color = color)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "")}
             >
               Selengkapnya <ArrowRight className="h-6 w-6" />
             </Link>
