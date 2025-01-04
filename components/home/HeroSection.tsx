@@ -14,7 +14,7 @@ const HeroSection = () => {
         playsInline
         className={`absolute left-0 top-0 h-full w-full object-cover transition-opacity duration-500`}
       >
-        <source src="/hero-video.mp4" type="video/mp4" />
+        <source src="/cbi-video-profile.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
