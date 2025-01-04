@@ -1,6 +1,7 @@
 // components/HeroSection.jsx
 "use client";
 
+import DescriptionResponsive from "./DescriptionResponsive";
 import LinkGreen from "./LinkGreen";
 
 const HeroSection = () => {
@@ -22,25 +23,19 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black bg-opacity-50" />
 
       {/* Multi-step Blur Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-96">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/20 to-transparent" />
-        <div className="absolute inset-0 opacity-0 backdrop-blur-sm" />
-        <div className="absolute bottom-0 left-0 right-0 h-3/4 opacity-30 backdrop-blur-sm" />
-        <div className="absolute bottom-0 left-0 right-0 h-2/4 opacity-60 backdrop-blur-sm" />
-        <div className="absolute bottom-0 left-0 right-0 h-1/4 opacity-100 backdrop-blur-sm" />
-      </div>
+      <div className="absolute bottom-0 left-0 right-0 h-96 backdrop-blur-lg [mask:linear-gradient(transparent,white,white)]"></div>
 
       {/* Content Container */}
-      <div className="absolute bottom-0 left-1/2 z-10 mx-auto flex w-full max-w-7xl -translate-x-1/2 flex-col items-end gap-4 px-8 pb-24 text-white md:flex-row md:justify-between md:px-16 xl:px-0">
+      <div className="absolute bottom-0 left-1/2 z-10 mx-auto flex w-full max-w-7xl -translate-x-1/2 flex-col items-end gap-4 px-6 pb-24 text-white md:flex-row md:justify-between lg:bottom-6 lg:px-8 xl:px-0">
         {/* Left Content (Welcome Text) */}
         <div className="w-full">
-          <h1 className="text-4xl md:text-6xl">
+          <h1 className="text-4xl lg:text-5xl xl:text-6xl">
             <span className="font-bold">Solusi</span>
-            <span className="block md:mt-2">
+            <span className="block xl:mt-2">
               <span className="font-bold">Bioteknologi </span>
               Terintegrasi
             </span>
-            <span className="block md:mt-2">
+            <span className="block xl:mt-2">
               untuk <span className="font-bold">Masa Depan</span>
             </span>
           </h1>
@@ -48,11 +43,12 @@ const HeroSection = () => {
 
         {/* Right Content (Description and Button) */}
         <div className="flex flex-col gap-6">
-          <p className="ml-auto mt-4 max-w-2xl text-lg md:mt-0 md:text-lg">
+          <DescriptionResponsive className="ml-auto mt-4 md:mt-0 lg:max-w-3xl">
             Temukan bagaimana solusi bioteknologi kami dapat mengatasi
             permasalahan global di industri pertanian, peternakan, dan
             perikanan.
-          </p>
+          </DescriptionResponsive>
+
           <LinkGreen href="/">Info Selengkapnya</LinkGreen>
         </div>
       </div>
