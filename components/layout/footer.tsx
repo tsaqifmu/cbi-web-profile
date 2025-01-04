@@ -8,7 +8,7 @@ import Youtube from "@/public/Youtube.svg";
 
 const Footer = () => {
   return (
-    <footer className="relative min-h-[36rem] w-full overflow-hidden bg-[#083F19] px-6 py-12 font-jakartaSans text-[#FDFDFD] md:px-20 md:pb-12 md:pt-24">
+    <footer className="relative min-h-[36rem] w-full overflow-hidden bg-[#083F19] px-6 pb-6 pt-12 font-jakartaSans text-sm text-[#FDFDFD] lg:px-8 lg:pb-12 lg:pt-24 xl:px-0">
       {/* Noise overlay */}
       <div
         className="absolute inset-0 z-10 opacity-100 md:opacity-70"
@@ -138,13 +138,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="mb-8 mt-16 md:mt-24">
+        <div className="mb-8 mt-16 text-xs md:mt-24 lg:text-sm">
           <hr />
-          <div className="mt-6 flex flex-col-reverse justify-between text-sm md:flex-row md:text-base">
-            <p className="mt-4 md:mt-0">
+          <div className="mt-8 flex flex-col-reverse justify-between md:flex-row">
+            <p className="mt-6 lg:mt-0">
               © 2024 PT Centra Biotech Indonesia. All rights reserved.
             </p>
-            <div className="flex items-center justify-between md:gap-8">
+            <div className="flex items-center gap-6 lg:gap-8">
               <Link href="/" className="underline">
                 Privacy Policy
               </Link>

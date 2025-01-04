@@ -18,9 +18,9 @@ const NewsItem = ({ news }: NewsItemProps) => {
   const isTypeNews = news.type === "news";
 
   return (
-    <article className="max-w-72">
+    <article className="max-w-[310px]">
       {/* Image and label */}
-      <div className="relative h-72 w-72 overflow-hidden rounded-3xl border border-gray-200">
+      <div className="relative h-[310px] w-[310px] overflow-hidden rounded-lg border border-gray-200 lg:rounded-3xl">
         <Image
           src={news.imgUrl}
           alt="berita 1"
@@ -31,8 +31,10 @@ const NewsItem = ({ news }: NewsItemProps) => {
 
         <div
           className={cn(
-            "absolute left-4 top-4 rounded-lg px-4 py-2 text-white",
-            isTypeNews ? "bg-orange-300" : "bg-blue-300",
+            "absolute left-4 top-4 rounded-lg px-4 py-2 text-white backdrop-blur-md",
+            isTypeNews
+              ? "bg-[rgba(235,122,28,0.4)]"
+              : "bg-[rgba(28,103,173,0.4)]",
           )}
         >
           {isTypeNews ? "Berita" : "Artikel"}
@@ -40,12 +42,12 @@ const NewsItem = ({ news }: NewsItemProps) => {
       </div>
 
       {/* Title */}
-      <h1 className="mt-6 line-clamp-2 text-ellipsis text-2xl font-bold">
+      <h1 className="mt-6 line-clamp-2 text-ellipsis text-xl font-bold lg:text-2xl">
         {news.title}
       </h1>
 
       {/* Description */}
-      <p className="mt-2 line-clamp-2 text-ellipsis text-[#666]">
+      <p className="mt-2 line-clamp-2 text-ellipsis text-sm text-[rgba(102,102,102,1)] lg:text-base">
         {news.description}
       </p>
 

@@ -3,8 +3,8 @@ import { useMemo, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
-import HomeTitle from "./HomeTitle";
 import NewsItem from "./NewsItem";
+import TitleResponsive from "./TitleResponsive";
 
 const dummyNews = [
   {
@@ -53,14 +53,14 @@ const LatestNewsSection = () => {
       <section>
         <div className="mx-auto min-h-[40rem] max-w-7xl py-16 md:py-24">
           {/* Title */}
-          <div className="flex flex-col justify-between gap-6 px-6 md:flex-row md:items-center md:px-0">
+          <div className="flex flex-col justify-between gap-6 px-6 md:flex-row md:items-center lg:px-8 xl:px-0">
             <div className="flex-1">
-              <HomeTitle>Kabar Terbaru</HomeTitle>
+              <TitleResponsive>Kabar Terbaru</TitleResponsive>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-1 text-xs lg:gap-2 lg:text-sm">
               <button
                 className={cn(
-                  "rounded-full px-3 py-2",
+                  "rounded-[24px] px-3 py-2",
                   activeState === "all"
                     ? "bg-[#009933] text-white"
                     : "border border-gray-200 text-[#666]",
@@ -71,7 +71,7 @@ const LatestNewsSection = () => {
               </button>
               <button
                 className={cn(
-                  "rounded-full px-3 py-2",
+                  "rounded-[24px] px-3 py-2",
                   activeState === "news"
                     ? "bg-[#009933] text-white"
                     : "border border-gray-200 text-[#666]",
@@ -82,7 +82,7 @@ const LatestNewsSection = () => {
               </button>
               <button
                 className={cn(
-                  "rounded-full px-3 py-2",
+                  "rounded-[24px] px-3 py-2",
                   activeState === "article"
                     ? "bg-[#009933] text-white"
                     : "border border-gray-200 text-[#666]",
@@ -95,7 +95,7 @@ const LatestNewsSection = () => {
           </div>
 
           {/* News */}
-          <div className="justify mt-12 flex gap-6 overflow-x-scroll ps-6 md:overflow-hidden md:ps-0">
+          <div className="justify mt-12 flex gap-4 overflow-x-scroll ps-6 lg:overflow-hidden lg:ps-8 xl:ps-0">
             {news.map((item) => (
               <NewsItem key={item.slug} news={item} />
             ))}

@@ -1,31 +1,32 @@
 import Image from "next/image";
 
-import HomeTitle from "./HomeTitle";
+import DescriptionResponsive from "./DescriptionResponsive";
+import TitleResponsive from "./TitleResponsive";
 
 const WhySection = () => {
   return (
     <section className="min-h-[40rem] w-full bg-[#eee]">
-      <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 px-6 py-16 md:flex-row md:gap-16 md:px-0 md:py-24">
+      <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 px-6 py-16 md:flex-row md:py-24 lg:gap-6 lg:px-8 xl:px-0">
         {/* Text */}
         <div className="flex flex-1 flex-col">
-          <HomeTitle>Mengapa Bioteknologi?</HomeTitle>
-          <div className="mt-8 flex flex-col gap-6 text-lg text-[#666]">
-            <p>
+          <TitleResponsive>Mengapa Bioteknologi?</TitleResponsive>
+          <div className="mt-6 flex flex-col gap-6 text-[#666]">
+            <DescriptionResponsive>
               Sektor agribisnis berada di persimpangan kritis. Penurunan
               kualitas lahan, dampak bahan kimia, dan ancaman krisis ekosistem
               memaksa kita untuk mencari solusi baru yang tidak hanya efektif,
               tetapi juga berkelanjutan. Di tengah tantangan ini, bioteknologi
               muncul sebagai terobosan yang menjanjikan transformasi menyeluruh.
-            </p>
-            <p>
+            </DescriptionResponsive>
+            <DescriptionResponsive>
               Melalui pendekatan ilmiah berbasis mikroba alami, bioteknologi
               memberikan cara baru untuk meningkatkan produktivitas sekaligus
               memperbaiki keseimbangan alam. Ini bukan sekadar inovasi—ini
               adalah langkah visioner untuk memastikan pertanian, peternakan,
               dan perikanan tidak hanya bertahan, tetapi juga berkembang dengan
               cara yang lebih cerdas, efisien, dan selaras dengan masa depan
-              bumi
-            </p>
+              bumi.
+            </DescriptionResponsive>
           </div>
         </div>
 
@@ -35,7 +36,7 @@ const WhySection = () => {
           alt="Petani dan sawah"
           width={626}
           height={406}
-          className="max-h-[456px] flex-1 rounded-3xl object-cover md:h-[25rem]"
+          className="h-44 flex-1 rounded-3xl object-cover lg:h-[456px] xl:h-96"
         />
       </div>
     </section>
