@@ -68,7 +68,7 @@
 }
 
 h1 {
-  @apply text-4xl font-bold text-[#222] lg:text-5xl xl:text-[56px];
+  @apply text-4xl font-bold text-[#222] lg:text-5xl xl:text-[56px] xl:leading-[70px];
 }
 
 h2 {

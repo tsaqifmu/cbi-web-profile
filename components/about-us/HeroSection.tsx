@@ -13,12 +13,16 @@ const HeroSectionAboutUs = () => {
         height={500}
         className="h-full w-full object-cover object-center"
       />
-      <div className="font-inter absolute bottom-[40%] left-1/2 z-10 -translate-x-1/2 translate-y-1/2 pt-14 text-white lg:bottom-[35%]">
-        <div className="flex h-full flex-col items-center justify-center space-y-3">
-          <h1 className="w-3/4 text-center text-[56px] font-bold">
-            Perusahaan Bioteknologi Terkemuka di Indonesia
-          </h1>
-        </div>
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-35" />
+
+      {/* Multi-step Blur Gradient */}
+      <div className="absolute bottom-0 left-0 right-0 h-96 backdrop-blur-lg [mask:linear-gradient(transparent,white,white)]" />
+
+      <div className="absolute bottom-[40%] left-1/2 z-10 w-full -translate-x-1/2 translate-y-1/2 pt-14 lg:bottom-[30%]">
+        <h1 className="text-center text-white">
+          Perusahaan Bioteknologi <br /> Terkemuka di Indonesia
+        </h1>
       </div>
     </section>
   );
