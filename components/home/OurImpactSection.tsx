@@ -61,15 +61,17 @@ const OurImpactSection = () => {
                   <span className="block text-sm lg:text-base">
                     Pelopor Insektisida Hayati Cair di Indonesia
                   </span>
-                  <h1 className="text-2xl font-bold md:text-4xl">BIOKILLER</h1>
+                  <h1 className="text-2xl font-bold text-[rgba(253,253,253,1)] md:text-4xl">
+                    BIOKILLER
+                  </h1>
                 </div>
                 <div className="flex max-w-lg flex-col gap-6">
-                  <p className="text-sm lg:text-base">
+                  <p className="text-sm text-[rgba(253,253,253,1)] lg:text-base">
                     Biokiller merupakan insektisida hayati yang dikembangkan
                     oleh PT Centra Biotech Indonesia yang sudah memiliki izin
                     dari Kementerian Pertanian Indonesia.
                   </p>
-                  <p className="text-sm lg:text-base">
+                  <p className="text-sm text-[rgba(253,253,253,1)] lg:text-base">
                     Produk ini telah terbukti ampuh untuk membunuh hama yang
                     menjadi permasalahan di industri pertanian.
                   </p>
@@ -99,15 +101,17 @@ const OurImpactSection = () => {
                   <span className="block text-sm lg:text-base">
                     Pupuk Hayati Cair No.1 di Indonesia
                   </span>
-                  <h1 className="text-2xl font-bold md:text-4xl">FLORAONE</h1>
+                  <h1 className="text-2xl font-bold text-[rgba(253,253,253,1)] md:text-4xl">
+                    FLORAONE
+                  </h1>
                 </div>
                 <div className="flex max-w-lg flex-col gap-6 text-sm lg:text-base">
-                  <p className="text-sm lg:text-base">
+                  <p className="text-sm text-[rgba(253,253,253,1)] lg:text-base">
                     Pupuk cair pilihan petani Indonesia untuk menjadikan
                     pertanian yang sehat dan produktif. Dipercaya oleh jutaan
                     petani di seluruh Indonesia untuk berbagai jenis tanaman.
                   </p>
-                  <p className="text-sm lg:text-base">
+                  <p className="text-sm text-[rgba(253,253,253,1)] lg:text-base">
                     FloraOne telah terbukti dapat meningkatkan produktivitas
                     tanaman hingga 50% walaupun dengan pengurangan pupuk kimia
                     sebesar 50%
