@@ -1,27 +1,28 @@
 export const navLinks = [
   {
-    id: "berita",
-    title: "Berita",
+    id: "dashboard",
+    title: "Beranda",
+    route: "/",
   },
   {
     id: "about-us",
     title: "Tentang Kami",
+    route: "/about-us",
   },
   {
     id: "store",
-    title: "Store",
+    title: "Produk & Layanan",
+    route: "/product",
   },
   {
     id: "laporan",
-    title: "Laporan",
+    title: "Media & Informasi",
+    route: "/media",
   },
 
   {
     id: "artikel",
-    title: "Artikel",
-  },
-  {
-    id: "program-kegiatan",
-    title: "Program Kegiatan",
+    title: "Kontak",
+    route: "/contact",
   },
 ];
