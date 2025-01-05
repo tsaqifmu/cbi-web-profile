@@ -1,7 +1,6 @@
 // components/HeroSection.jsx
 "use client";
 
-import DescriptionResponsive from "./DescriptionResponsive";
 import LinkGreen from "./LinkGreen";
 
 const HeroSection = () => {
@@ -43,11 +42,11 @@ const HeroSection = () => {
 
         {/* Right Content (Description and Button) */}
         <div className="flex flex-col gap-6">
-          <DescriptionResponsive className="ml-auto mt-4 md:mt-0 lg:max-w-3xl">
+          <p className="text-[#FDFDFD]">
             Temukan bagaimana solusi bioteknologi kami dapat mengatasi
             permasalahan global di industri pertanian, peternakan, dan
             perikanan.
-          </DescriptionResponsive>
+          </p>
 
           <LinkGreen href="/">Info Selengkapnya</LinkGreen>
         </div>

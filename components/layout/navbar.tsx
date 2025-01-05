@@ -96,7 +96,7 @@ const NavBar = () => {
   return (
     // <ContainerPage className=''>
     <div className="absolute top-9 z-50 flex w-full items-center justify-center px-9 font-jakartaSans">
-      <header className="flex h-[80px] w-full items-center justify-between rounded-[32px] bg-[#FDFDFD33] px-6 py-4 text-white shadow-xl backdrop-blur-md xl:max-w-[1312px]">
+      <header className="flex h-[80px] w-full items-center justify-between rounded-[32px] bg-[#FDFDFD33] px-6 py-4 text-white shadow-xl backdrop-blur-md xl:max-w-7xl">
         <Logo />
         {/* FOR MOBILE LAYOUT*/}
         <MobileMenu toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
