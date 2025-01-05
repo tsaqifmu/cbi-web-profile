@@ -53,7 +53,7 @@ const ProductCard = ({
               : "bottom-0 left-0 right-0"
           }`}
         >
-          <p className="max-w-60 text-2xl font-bold lg:max-w-xs xl:text-3xl">
+          <p className="max-w-60 text-2xl font-bold text-[rgba(253,253,253,1)] lg:max-w-xs xl:text-3xl">
             {isHovered ? title2 : title}
           </p>
 
