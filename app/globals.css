@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -67,8 +63,16 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-jakartaSans text-foreground;
   }
+}
+
+h2 {
+  @apply text-[32px] font-bold text-[#222] lg:text-[40px] xl:text-5xl;
+}
+
+p {
+  @apply text-sm font-normal text-[#666] lg:text-base xl:text-lg;
 }
 
 .flexCenter {
@@ -84,6 +88,7 @@ body {
 .paragraph {
   @apply text-sm md:text-base lg:text-lg;
 }
+
 .heading1 {
   @apply text-3xl font-bold md:text-4xl lg:text-6xl;
 }
