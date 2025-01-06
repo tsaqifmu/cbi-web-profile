@@ -1,3 +1,4 @@
+import ContainerSection from "@/components/layout/container";
 import React from "react";
 
 const corporateValues = [
@@ -34,26 +35,38 @@ const corporateValues = [
 
 const CorporateValue = () => {
   return (
-    <div>
-      <h2>Corporate Value</h2>
+    <ContainerSection>
+      <div className="flex w-full flex-col gap-8 md:w-[40%] md:flex-row">
+        <h2>
+          Corporate <br /> Value
+        </h2>
 
-      <div className="space-y-4">
-        {corporateValues.map((value, index) => (
-          <div
-            key={index}
-            className="flex items-center space-x-4 rounded-lg bg-white p-6 shadow-sm"
-          >
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-600 text-xl font-bold text-white">
-              {value.letter}
+        <div className="bg-red-400 md:w-[60%]">
+          {corporateValues.map((value, index) => (
+            <div key={index} className="group">
+              <div className="flex w-full items-center space-x-4 rounded-lg px-2 py-4 transition-colors group-hover:bg-[#C46617]">
+                <div className="flex w-[40%] items-center justify-start">
+                  <span className="h-[43px] w-12 text-center text-4xl font-bold text-[#C46617] group-hover:text-[#FBE4D2]">
+                    {value.letter}
+                  </span>
+                  <p className="text-[#222222] group-hover:text-[#FBE4D2]">
+                    {value.value}
+                  </p>
+                </div>
+                <div className="w-[60%]">
+                  <p className="text-xs text-gray-600 group-hover:text-[#FBE4D2]">
+                    {value.description}
+                  </p>
+                </div>
+              </div>
+              {index !== corporateValues.length - 1 && (
+                <div className="my-2 border border-t border-[#AAAAAA]" />
+              )}
             </div>
-            <div>
-              <span className="font-medium text-orange-600">{value.value}</span>
-              <p className="text-gray-600">{value.description}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </ContainerSection>
   );
 };
 

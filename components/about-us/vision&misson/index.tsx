@@ -7,10 +7,8 @@ import CorporateValue from "./CorporateValue";
 const VisionMissionSection = () => {
   return (
     <section className="w-full bg-[#eee]">
-      <ContainerSection>
-        <VisionMission />
-        <CorporateValue />
-      </ContainerSection>
+      <VisionMission />
+      <CorporateValue />
     </section>
   );
 };
