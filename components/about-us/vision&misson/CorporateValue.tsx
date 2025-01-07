@@ -1,5 +1,4 @@
 import ContainerSection from "@/components/layout/container";
-import React from "react";
 
 const corporateValues = [
   {
@@ -36,25 +35,27 @@ const corporateValues = [
 const CorporateValue = () => {
   return (
     <ContainerSection>
-      <div className="flex w-full flex-col gap-8 md:w-[40%] md:flex-row">
-        <h2>
-          Corporate <br /> Value
-        </h2>
+      <div className="flex w-full flex-col gap-8 md:flex-row">
+        <div className="md:w-[40%]">
+          <h2>
+            Corporate <br /> Value
+          </h2>
+        </div>
 
-        <div className="bg-red-400 md:w-[60%]">
+        <div className="md:w-[60%]">
           {corporateValues.map((value, index) => (
             <div key={index} className="group">
               <div className="flex w-full items-center space-x-4 rounded-lg px-2 py-4 transition-colors group-hover:bg-[#C46617]">
                 <div className="flex w-[40%] items-center justify-start">
-                  <span className="h-[43px] w-12 text-center text-4xl font-bold text-[#C46617] group-hover:text-[#FBE4D2]">
+                  <span className="h-[43px] w-12 text-center text-4xl font-bold text-[#C46617] group-hover:text-[#FBE4D2] md:h-[60px] md:w-[68px] md:text-5xl">
                     {value.letter}
                   </span>
-                  <p className="text-[#222222] group-hover:text-[#FBE4D2]">
+                  <p className="text-[#222222] group-hover:text-[#FBE4D2] md:text-xl">
                     {value.value}
                   </p>
                 </div>
                 <div className="w-[60%]">
-                  <p className="text-xs text-gray-600 group-hover:text-[#FBE4D2]">
+                  <p className="text-xs text-gray-600 group-hover:text-[#FBE4D2] md:text-base xl:text-lg">
                     {value.description}
                   </p>
                 </div>
