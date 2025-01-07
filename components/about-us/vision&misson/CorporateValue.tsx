@@ -47,7 +47,7 @@ const CorporateValue = () => {
             <div key={index} className="group">
               <div className="flex w-full items-center space-x-4 rounded-lg px-2 py-4 transition-colors group-hover:bg-[#C46617]">
                 <div className="flex w-[40%] items-center justify-start">
-                  <span className="h-[43px] w-12 text-center text-4xl font-bold text-[#C46617] group-hover:text-[#FBE4D2] md:h-[60px] md:w-[68px] md:text-5xl">
+                  <span className="h-[2.688rem] w-12 text-center text-4xl font-bold text-[#C46617] group-hover:text-[#FBE4D2] md:h-[3.75rem] md:w-[4.25rem] md:text-5xl">
                     {value.letter}
                   </span>
                   <p className="text-[#222222] group-hover:text-[#FBE4D2] md:text-xl">

@@ -30,7 +30,7 @@ const Navbar: FC = () => {
 
   return (
     <div className="absolute top-9 z-50 flex w-full items-center justify-center px-9">
-      <header className="flex h-20 w-full max-w-7xl items-center justify-between rounded-[32px] bg-[#FDFDFD33] px-6 py-4 text-[#FDFDFD] backdrop-blur-md">
+      <header className="flex h-20 w-full max-w-7xl items-center justify-between rounded-[2rem] bg-[#FDFDFD33] px-6 py-4 text-[#FDFDFD] backdrop-blur-md">
         <Logo />
         <MobileMenu isOpen={isMenuOpen} onToggle={toggleMenu} />
         <DesktopMenu />

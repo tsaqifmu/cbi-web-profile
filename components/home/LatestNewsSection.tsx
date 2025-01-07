@@ -60,7 +60,7 @@ const LatestNewsSection = () => {
             <div className="flex gap-1 text-xs lg:gap-2 lg:text-sm">
               <button
                 className={cn(
-                  "rounded-[24px] px-3 py-2",
+                  "rounded-[1.5rem] px-3 py-2",
                   activeState === "all"
                     ? "bg-[#009933] text-white"
                     : "border border-gray-200 text-[#666]",
@@ -71,7 +71,7 @@ const LatestNewsSection = () => {
               </button>
               <button
                 className={cn(
-                  "rounded-[24px] px-3 py-2",
+                  "rounded-[1.5rem] px-3 py-2",
                   activeState === "news"
                     ? "bg-[#009933] text-white"
                     : "border border-gray-200 text-[#666]",
@@ -82,7 +82,7 @@ const LatestNewsSection = () => {
               </button>
               <button
                 className={cn(
-                  "rounded-[24px] px-3 py-2",
+                  "rounded-[1.5rem] px-3 py-2",
                   activeState === "article"
                     ? "bg-[#009933] text-white"
                     : "border border-gray-200 text-[#666]",

@@ -32,7 +32,7 @@ const HeroTitle = () => {
 
 const HeroDescription = () => {
   return (
-    <div className="flex flex-col gap-6 lg:w-[380px] xl:w-[500px]">
+    <div className="flex flex-col gap-6 lg:w-[23.75rem] xl:w-[31.25rem]">
       <p className="text-[#FDFDFD]">
         Temukan bagaimana solusi bioteknologi kami dapat mengatasi permasalahan
         global di industri pertanian, peternakan, dan perikanan.

@@ -34,7 +34,7 @@ const AboutUsSection: FC = () => {
           alt="about us photo"
           width={1312}
           height={400}
-          className="h-60 rounded-2xl object-cover object-center lg:h-[400px]"
+          className="h-60 rounded-2xl object-cover object-center lg:h-[25rem]"
         />
       </ContainerSection>
     </section>

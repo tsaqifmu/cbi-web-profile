@@ -31,7 +31,7 @@ const WhySection = () => {
           alt="Petani dan sawah"
           width={626}
           height={406}
-          className="h-44 flex-1 rounded-3xl object-cover md:h-[356px] lg:h-[456px] xl:h-96"
+          className="h-44 flex-1 rounded-3xl object-cover md:h-[22.25rem] lg:h-[28.5rem] xl:h-96"
         />
       </ContainerSection>
     </section>
