@@ -18,9 +18,9 @@ const NewsItem = ({ news }: NewsItemProps) => {
   const isTypeNews = news.type === "news";
 
   return (
-    <article className="max-w-[310px]">
+    <article className="max-w-[19.375rem]">
       {/* Image and label */}
-      <div className="relative h-[310px] w-[310px] overflow-hidden rounded-lg border border-gray-200 lg:rounded-3xl">
+      <div className="relative h-[19.375rem] w-[19.375rem] overflow-hidden rounded-lg border border-gray-200 lg:rounded-3xl">
         <Image
           src={news.imgUrl}
           alt="berita 1"

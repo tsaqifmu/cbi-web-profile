@@ -6,7 +6,7 @@ interface TitleResponsiveProps {
 
 const TitleResponsive = ({ children }: TitleResponsiveProps) => {
   return (
-    <h1 className="text-[32px] font-bold lg:text-4xl xl:text-5xl">
+    <h1 className="text-[2rem] font-bold lg:text-4xl xl:text-5xl">
       {children}
     </h1>
   );
