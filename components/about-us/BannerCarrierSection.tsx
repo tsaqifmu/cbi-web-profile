@@ -1,35 +1,5 @@
-import Image from "next/image";
-
 import LinkGreen from "@/components/home/LinkGreen";
 import ContainerSection from "@/components/layout/container";
-
-const CTAImage = () => (
-  <Image
-    src={"/img-contact-banner-bg.png"}
-    alt="CTA image"
-    width={1312}
-    height={400}
-    className="h-[327px] w-full overflow-hidden rounded-lg object-cover object-center brightness-50"
-  />
-);
-
-const CTAContent = () => (
-  <div className="z-10 bg-red-300">
-    <div className="space-y-6">
-      <h2 className="text-[#FDFDFD]">Meniti Karir Bersama Kami</h2>
-      <p className="text-[#FDFDFD]">
-        PT Centra Biotech Indonesia berkomitmen membangun Indonesia melalui
-        inovasi bioteknologi. Bergabung dengan tim profesional dan andal,
-        bersama memberi dampak positif untuk masa depan.
-      </p>
-    </div>
-    <div className="mt-6">
-      <LinkGreen href="/career" withArrow={false}>
-        Hubungi Kami
-      </LinkGreen>
-    </div>
-  </div>
-);
 
 const BannerCareerSection = () => {
   return (
