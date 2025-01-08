@@ -1,12 +1,11 @@
-import React from "react";
+import Image from "next/image";
 
 import VisionMission from "./VisionMission";
 import CorporateValue from "./CorporateValue";
-import Image from "next/image";
 
 const VisionMissionSection = () => {
   return (
-    <section className="relative w-full bg-[#eee]">
+    <section className="relative w-full overflow-hidden bg-[#eee]">
       <div className="absolute bottom-1/3 left-1/4 h-[64rem] w-[64rem] -translate-x-1/2 translate-y-1/3 xl:left-[15%]">
         <Image
           draggable={false}
@@ -19,7 +18,6 @@ const VisionMissionSection = () => {
       </div>
       <div className="relative z-10">
         <VisionMission />
-
         <CorporateValue />
       </div>
     </section>
