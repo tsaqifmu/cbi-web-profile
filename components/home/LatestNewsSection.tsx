@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 
 import NewsItem from "./NewsItem";
-import TitleResponsive from "./TitleResponsive";
 
 const dummyNews = [
   {
@@ -55,7 +54,7 @@ const LatestNewsSection = () => {
           {/* Title */}
           <div className="flex flex-col justify-between gap-6 px-6 md:flex-row md:items-center lg:px-8 xl:px-0">
             <div className="flex-1">
-              <TitleResponsive>Kabar Terbaru</TitleResponsive>
+              <h1>Kabar Terbaru</h1>
             </div>
             <div className="flex gap-1 text-xs lg:gap-2 lg:text-sm">
               <button

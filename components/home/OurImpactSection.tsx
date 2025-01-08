@@ -1,8 +1,5 @@
 import Image from "next/image";
 
-import DescriptionResponsive from "./DescriptionResponsive";
-import TitleResponsive from "./TitleResponsive";
-
 const OurImpactSection = () => {
   return (
     <section className="relative overflow-hidden bg-[#EEE]">
@@ -21,12 +18,12 @@ const OurImpactSection = () => {
         {/* Title */}
         <div className="flex flex-col justify-between gap-6 md:flex-row">
           <div className="flex-1">
-            <TitleResponsive>Dampak Kami</TitleResponsive>
+            <h1>Dampak Kami</h1>
           </div>
-          <DescriptionResponsive className="flex-1 text-[#666]">
+          <p className="flex-1 text-[#666]">
             Melalui riset berkelanjutan, kami terus berusaha untuk menjadi
             pelopor pengembangan inovasi bioteknologi terkini yang berkualitas.
-          </DescriptionResponsive>
+          </p>
         </div>
 
         {/* Banners */}
@@ -135,9 +132,9 @@ const OurImpactSection = () => {
         </div>
 
         <div className="mb-4 mt-14 flex flex-col justify-between md:flex-row">
-          <DescriptionResponsive className="max-w-[15rem] font-semibold">
+          <p className="max-w-[15rem] font-semibold text-[#222]">
             Produk kami telah meraih beberapa Sertifikasi
-          </DescriptionResponsive>
+          </p>
           <div className="mt-6 flex flex-wrap items-center space-x-12 space-y-6 md:mt-0 md:space-y-0">
             <Image
               src="/img-product-cert-1.png"
