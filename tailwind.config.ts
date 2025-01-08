@@ -12,6 +12,12 @@ export default {
       fontFamily: {
         jakartaSans: ["var(--font-plus-jakarta)"],
       },
+      maxWidth: {
+        "7xl": "1312px",
+      },
+      screens: {
+        xl: "1440px",
+      },
       colors: {
         primaryBlue: "#266693",
         background: "hsl(var(--background))",

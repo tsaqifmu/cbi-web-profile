@@ -1,7 +1,5 @@
-import DescriptionResponsive from "./DescriptionResponsive";
 import LinkGreen from "./LinkGreen";
 import ProductCard from "./ProductCard";
-import TitleResponsive from "./TitleResponsive";
 
 const ProductServiceSection = () => {
   return (
@@ -9,14 +7,14 @@ const ProductServiceSection = () => {
       <div className="mx-auto min-h-[40rem] max-w-7xl px-6 py-16 md:py-24 lg:px-8 xl:px-0">
         <div className="flex flex-col justify-between gap-4 md:flex-row">
           <div className="flex-1">
-            <TitleResponsive>Produk dan Layanan</TitleResponsive>
+            <h1>Produk dan Layanan</h1>
           </div>
           <div className="flex max-w-[30rem] flex-col gap-5">
-            <DescriptionResponsive className="text-[#666]">
+            <p className="text-[#666]">
               Tingkatkan produktivitas anda dengan produk Bioteknologi
               berkualitas tinggi. Jelajahi ragam inovasi bioteknologi terkini
               dari kami untuk berbagai pilihan industri.
-            </DescriptionResponsive>
+            </p>
             <LinkGreen className="mt-2" href="/">
               Selengkapnya
             </LinkGreen>

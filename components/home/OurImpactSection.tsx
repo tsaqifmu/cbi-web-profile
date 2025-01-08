@@ -1,8 +1,5 @@
 import Image from "next/image";
 
-import DescriptionResponsive from "./DescriptionResponsive";
-import TitleResponsive from "./TitleResponsive";
-
 const OurImpactSection = () => {
   return (
     <section className="relative overflow-hidden bg-[#EEE]">
@@ -21,12 +18,12 @@ const OurImpactSection = () => {
         {/* Title */}
         <div className="flex flex-col justify-between gap-6 md:flex-row">
           <div className="flex-1">
-            <TitleResponsive>Dampak Kami</TitleResponsive>
+            <h1>Dampak Kami</h1>
           </div>
-          <DescriptionResponsive className="flex-1 text-[#666]">
+          <p className="flex-1 text-[#666]">
             Melalui riset berkelanjutan, kami terus berusaha untuk menjadi
             pelopor pengembangan inovasi bioteknologi terkini yang berkualitas.
-          </DescriptionResponsive>
+          </p>
         </div>
 
         {/* Banners */}
@@ -61,15 +58,17 @@ const OurImpactSection = () => {
                   <span className="block text-sm lg:text-base">
                     Pelopor Insektisida Hayati Cair di Indonesia
                   </span>
-                  <h1 className="text-2xl font-bold md:text-4xl">BIOKILLER</h1>
+                  <h1 className="text-2xl font-bold text-[rgba(253,253,253,1)] md:text-4xl">
+                    BIOKILLER
+                  </h1>
                 </div>
                 <div className="flex max-w-lg flex-col gap-6">
-                  <p className="text-sm lg:text-base">
+                  <p className="text-sm text-[rgba(253,253,253,1)] lg:text-base">
                     Biokiller merupakan insektisida hayati yang dikembangkan
                     oleh PT Centra Biotech Indonesia yang sudah memiliki izin
                     dari Kementerian Pertanian Indonesia.
                   </p>
-                  <p className="text-sm lg:text-base">
+                  <p className="text-sm text-[rgba(253,253,253,1)] lg:text-base">
                     Produk ini telah terbukti ampuh untuk membunuh hama yang
                     menjadi permasalahan di industri pertanian.
                   </p>
@@ -99,15 +98,17 @@ const OurImpactSection = () => {
                   <span className="block text-sm lg:text-base">
                     Pupuk Hayati Cair No.1 di Indonesia
                   </span>
-                  <h1 className="text-2xl font-bold md:text-4xl">FLORAONE</h1>
+                  <h1 className="text-2xl font-bold text-[rgba(253,253,253,1)] md:text-4xl">
+                    FLORAONE
+                  </h1>
                 </div>
                 <div className="flex max-w-lg flex-col gap-6 text-sm lg:text-base">
-                  <p className="text-sm lg:text-base">
+                  <p className="text-sm text-[rgba(253,253,253,1)] lg:text-base">
                     Pupuk cair pilihan petani Indonesia untuk menjadikan
                     pertanian yang sehat dan produktif. Dipercaya oleh jutaan
                     petani di seluruh Indonesia untuk berbagai jenis tanaman.
                   </p>
-                  <p className="text-sm lg:text-base">
+                  <p className="text-sm text-[rgba(253,253,253,1)] lg:text-base">
                     FloraOne telah terbukti dapat meningkatkan produktivitas
                     tanaman hingga 50% walaupun dengan pengurangan pupuk kimia
                     sebesar 50%
@@ -131,9 +132,9 @@ const OurImpactSection = () => {
         </div>
 
         <div className="mb-4 mt-14 flex flex-col justify-between md:flex-row">
-          <DescriptionResponsive className="max-w-[15rem] font-semibold">
+          <p className="max-w-[15rem] font-semibold text-[#222]">
             Produk kami telah meraih beberapa Sertifikasi
-          </DescriptionResponsive>
+          </p>
           <div className="mt-6 flex flex-wrap items-center space-x-12 space-y-6 md:mt-0 md:space-y-0">
             <Image
               src="/img-product-cert-1.png"

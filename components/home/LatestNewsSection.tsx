@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 
 import NewsItem from "./NewsItem";
-import TitleResponsive from "./TitleResponsive";
 
 const dummyNews = [
   {
@@ -55,12 +54,12 @@ const LatestNewsSection = () => {
           {/* Title */}
           <div className="flex flex-col justify-between gap-6 px-6 md:flex-row md:items-center lg:px-8 xl:px-0">
             <div className="flex-1">
-              <TitleResponsive>Kabar Terbaru</TitleResponsive>
+              <h1>Kabar Terbaru</h1>
             </div>
             <div className="flex gap-1 text-xs lg:gap-2 lg:text-sm">
               <button
                 className={cn(
-                  "rounded-[24px] px-3 py-2",
+                  "rounded-[1.5rem] px-3 py-2",
                   activeState === "all"
                     ? "bg-[#009933] text-white"
                     : "border border-gray-200 text-[#666]",
@@ -71,7 +70,7 @@ const LatestNewsSection = () => {
               </button>
               <button
                 className={cn(
-                  "rounded-[24px] px-3 py-2",
+                  "rounded-[1.5rem] px-3 py-2",
                   activeState === "news"
                     ? "bg-[#009933] text-white"
                     : "border border-gray-200 text-[#666]",
@@ -82,7 +81,7 @@ const LatestNewsSection = () => {
               </button>
               <button
                 className={cn(
-                  "rounded-[24px] px-3 py-2",
+                  "rounded-[1.5rem] px-3 py-2",
                   activeState === "article"
                     ? "bg-[#009933] text-white"
                     : "border border-gray-200 text-[#666]",

@@ -69,14 +69,14 @@ const Footer = () => {
               height={36}
             />
             <div>
-              <h2 className="font-semibold">Alamat</h2>
-              <p className="max-w-sm">
+              <h4 className="font-semibold">Alamat</h4>
+              <p className="max-w-sm text-sm text-[rgba(253,253,253,1)]">
                 Sawahan RT 02 RW 07 Pasungan, Ceper, Klaten Jawa Tengah,
                 Indonesia 57465
               </p>
             </div>
             <div className="flex flex-col">
-              <h2 className="font-semibold">Kontak</h2>
+              <h4 className="font-semibold">Kontak</h4>
               <Link href="https://wa.me/6285183284691" className="underline">
                 0851 8328 4691
               </Link>
@@ -104,7 +104,7 @@ const Footer = () => {
           {/* Right */}
           <div className="mt-8 flex flex-1 flex-row gap-14 md:me-16 md:mt-0 md:justify-end md:gap-36">
             <div className="flex flex-col gap-4">
-              <h2 className="font-bold">Perusahaan</h2>
+              <h4 className="font-bold">Perusahaan</h4>
               <Link className="hover:underline" href="/">
                 Tentang Kami
               </Link>
@@ -120,7 +120,7 @@ const Footer = () => {
             </div>
 
             <div className="flex flex-col gap-4">
-              <h2 className="font-bold">Produk & Layanan</h2>
+              <h4 className="font-bold">Produk & Layanan</h4>
               <Link className="hover:underline" href="/">
                 Pertanian{" "}
               </Link>
@@ -141,7 +141,7 @@ const Footer = () => {
         <div className="mb-8 mt-16 text-xs md:mt-24 lg:text-sm">
           <hr />
           <div className="mt-8 flex flex-col-reverse justify-between md:flex-row">
-            <p className="mt-6 lg:mt-0">
+            <p className="mt-6 text-xs text-[rgba(253,253,253,1)] lg:mt-0 lg:text-sm">
               © 2024 PT Centra Biotech Indonesia. All rights reserved.
             </p>
             <div className="flex items-center gap-6 lg:gap-8">

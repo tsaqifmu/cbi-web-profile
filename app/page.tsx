@@ -7,13 +7,13 @@ import WhySection from "@/components/home/WhySection";
 
 export default function Home() {
   return (
-    <div className="font-jakartaSans">
+    <>
       <HeroSection />
       <WhySection />
       <ProductServiceSection />
       <OurImpactSection />
       <LatestNewsSection />
       <BannerContactSection />
-    </div>
+    </>
   );
 }

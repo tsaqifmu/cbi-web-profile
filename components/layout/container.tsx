@@ -1,18 +1,22 @@
-import { cn } from '@/lib/utils';
-import { FC, ReactNode } from 'react';
+import { cn } from "@/lib/utils";
+import { FC, ReactNode } from "react";
 
 interface ContainerProps {
   children: ReactNode;
   className?: string;
 }
 
-const ContainerPage: FC<ContainerProps> = ({ children, className }) => {
+const ContainerSection: FC<ContainerProps> = ({ children, className }) => {
   return (
-    <section className='flex items-center justify-center'>
-      <div className={cn(' xl:max-w-[1312px]', className)}></div>
+    <div
+      className={cn(
+        "mx-auto px-6 py-12 lg:max-w-7xl lg:px-9 lg:py-20 xl:px-0",
+        className,
+      )}
+    >
       {children}
-    </section>
+    </div>
   );
 };
 
-export default ContainerPage;
+export default ContainerSection;
