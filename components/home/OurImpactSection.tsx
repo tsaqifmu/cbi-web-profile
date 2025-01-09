@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import ContainerSection from "../layout/container";
+
 const OurImpactSection = () => {
   return (
     <section className="relative overflow-hidden bg-[#EEE]">
@@ -14,7 +16,7 @@ const OurImpactSection = () => {
         />
       </div>
 
-      <div className="relative z-10 mx-auto min-h-[40rem] max-w-7xl px-6 py-16 md:py-24 lg:px-8 xl:px-0">
+      <ContainerSection className="relative z-20">
         {/* Title */}
         <div className="flex flex-col justify-between gap-6 md:flex-row">
           <div className="flex-1">
@@ -173,7 +175,7 @@ const OurImpactSection = () => {
             />
           </div>
         </div>
-      </div>
+      </ContainerSection>
     </section>
   );
 };

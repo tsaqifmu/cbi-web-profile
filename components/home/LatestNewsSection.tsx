@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
+import ContainerSection from "../layout/container";
 import NewsItem from "./NewsItem";
 
 const dummyNews = [
@@ -50,7 +51,7 @@ const LatestNewsSection = () => {
   return (
     <>
       <section>
-        <div className="mx-auto min-h-[40rem] max-w-7xl py-16 md:py-24">
+        <ContainerSection>
           {/* Title */}
           <div className="flex flex-col justify-between gap-6 px-6 md:flex-row md:items-center lg:px-8 xl:px-0">
             <div className="flex-1">
@@ -99,7 +100,7 @@ const LatestNewsSection = () => {
               <NewsItem key={item.slug} news={item} />
             ))}
           </div>
-        </div>
+        </ContainerSection>
       </section>
     </>
   );
