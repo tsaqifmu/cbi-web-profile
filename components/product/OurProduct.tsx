@@ -1,24 +1,13 @@
+import ProductCard from "../home/ProductCard";
 import ContainerSection from "../layout/container";
-import LinkGreen from "./LinkGreen";
-import ProductCard from "./ProductCard";
 
-const ProductServiceSection = () => {
+const OurProductSection = () => {
   return (
     <section>
       <ContainerSection>
         <div className="flex flex-col justify-between gap-4 md:flex-row">
           <div className="flex-1">
-            <h1>Produk dan Layanan</h1>
-          </div>
-          <div className="flex max-w-[30rem] flex-col gap-5">
-            <p className="text-[#666]">
-              Tingkatkan produktivitas anda dengan produk Bioteknologi
-              berkualitas tinggi. Jelajahi ragam inovasi bioteknologi terkini
-              dari kami untuk berbagai pilihan industri.
-            </p>
-            <LinkGreen className="mt-2" href="/">
-              Selengkapnya
-            </LinkGreen>
+            <h1>Produk Kami</h1>
           </div>
         </div>
 
@@ -54,4 +43,4 @@ const ProductServiceSection = () => {
   );
 };
 
-export default ProductServiceSection;
+export default OurProductSection;

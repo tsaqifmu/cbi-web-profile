@@ -1,26 +1,19 @@
 import React from "react";
 
-import HeroSectionGeneral from "@/components/HeroSectionGeneral";
-import ProductServiceSection from "@/components/home/ProductServiceSection";
+import BannerContactSection from "@/components/product/BannerContactSection";
+import HeroSection from "@/components/product/HeroSection";
+import OurProductSection from "@/components/product/OurProduct";
+import OurServiceSection from "@/components/product/OurService";
 import WhySection from "@/components/product/WhySection";
 
 const ProductsAndServices = () => {
   return (
     <>
-      <HeroSectionGeneral
-        imgUrl="/img-products-and-services-hero.jpeg"
-        category="Produk & Layanan"
-        title={
-          <h1 className="text-center text-3xl font-bold text-white lg:text-5xl xl:text-[56px]">
-            Tingkatkan Produktivitas{" "}
-            <span className="font-normal">Anda dengan Produk</span> Bioteknologi
-            Berkualitas Tinggi
-          </h1>
-        }
-      />
-
+      <HeroSection />
       <WhySection />
-      <ProductServiceSection />
+      <OurProductSection />
+      <OurServiceSection />
+      <BannerContactSection />
     </>
   );
 };

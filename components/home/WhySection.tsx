@@ -7,7 +7,7 @@ const WhySection = () => {
     <section className="w-full bg-[#eee]">
       <ContainerSection className="flex flex-col items-center justify-between gap-8 md:flex-row xl:gap-16">
         {/* Text */}
-        <div className="flex flex-col gap-y-6">
+        <div className="flex flex-1 flex-col gap-y-6">
           <h2>Mengapa Bioteknologi?</h2>
           <p>
             Sektor agribisnis berada di persimpangan kritis. Penurunan kualitas
@@ -26,13 +26,15 @@ const WhySection = () => {
         </div>
 
         {/* Image */}
-        <Image
-          src="/img-why-section.png"
-          alt="Petani dan sawah"
-          width={626}
-          height={406}
-          className="h-44 flex-1 rounded-3xl object-cover md:h-[22.25rem] lg:h-[28.5rem] xl:h-96"
-        />
+        <div className="flex-1">
+          <Image
+            src="/img-why-section.png"
+            alt="Petani dan sawah"
+            width={626}
+            height={406}
+            className="h-44 flex-1 rounded-3xl object-cover md:h-[22.25rem] lg:h-[28.5rem] xl:h-96"
+          />
+        </div>
       </ContainerSection>
     </section>
   );
