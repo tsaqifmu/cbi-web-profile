@@ -75,6 +75,10 @@ h2 {
   @apply text-[32px] font-bold text-[#222] lg:text-[40px] xl:text-5xl;
 }
 
+h3 {
+  @apply text-[32px] font-bold text-[#222] lg:text-[40px];
+}
+
 p {
   @apply text-sm font-normal text-[#666] lg:text-base xl:text-lg;
 }
