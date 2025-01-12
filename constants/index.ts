@@ -17,7 +17,7 @@ export const navLinks = [
   {
     id: "laporan",
     title: "Media & Informasi",
-    route: "/media",
+    route: "/news",
   },
 
   {
@@ -27,7 +27,7 @@ export const navLinks = [
   },
 ];
 
-export type Platform = "facebook" | "twitter" | "linkedin";
+export type Platform = "facebook" | "twitter" | "linkedin" | "whatsapp";
 
 interface ShareIcon {
   id: number;
@@ -50,5 +50,10 @@ export const listIcon: ShareIcon[] = [
     id: 3,
     name: "facebook",
     url: "/share-icon/facebook.svg",
+  },
+  {
+    id: 4,
+    name: "whatsapp",
+    url: "/share-icon/whatsapp.svg",
   },
 ];
