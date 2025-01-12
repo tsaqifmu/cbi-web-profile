@@ -95,7 +95,7 @@ const LatestNewsSection = () => {
           </div>
 
           {/* News */}
-          <div className="justify mt-12 flex gap-4 overflow-x-scroll ps-6 lg:overflow-hidden lg:ps-8 xl:ps-0">
+          <div className="mt-12 flex gap-4 overflow-x-scroll ps-6 lg:overflow-hidden lg:ps-8 xl:ps-0">
             {news.map((item) => (
               <NewsItem key={item.slug} news={item} />
             ))}
