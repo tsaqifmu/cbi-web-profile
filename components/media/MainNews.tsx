@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 
 import ShareButtons from "./ShareButtons";
 import ContainerSection from "@/components/layout/container";
+import ReadMoreButton from "./ReadMoreButton";
 
 const ArticleContent = () => (
   <div className="md:w-1/2">
@@ -20,11 +20,8 @@ const ArticleContent = () => (
       </p>
     </div>
 
-    {/* Button  */}
-    <button className="mt-5 flex items-center gap-x-2 text-sm font-normal text-[#009933] transition-all hover:-translate-y-1 xl:text-base">
-      <span>Selengkapnya</span>
-      <ArrowRight size={14} />
-    </button>
+    {/* Read More Button */}
+    <ReadMoreButton />
 
     {/* Share Button List */}
     <div className="mt-6">
@@ -50,7 +47,7 @@ const MainNews = () => {
           alt="news image"
           width={656}
           height={500}
-          className="rounded-lg object-cover lg:w-1/2"
+          className="rounded-lg object-cover lg:w-1/2 lg:rounded-3xl"
         />
 
         {/* Article Content */}
