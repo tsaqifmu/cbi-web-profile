@@ -1,7 +1,6 @@
 import Image from "next/image";
-import ContainerSection from "@/components/layout/container";
 
-import ShareButtons from "../ShareButtons";
+import ShareButtons from "@/components/media/ShareButtons";
 import BreadcrumbBlogDetail from "./BreadcrumbBlogDetail";
 
 const ArticleDetailContent = () => {
