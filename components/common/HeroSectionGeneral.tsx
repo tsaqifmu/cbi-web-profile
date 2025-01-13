@@ -16,6 +16,7 @@ const HeroSectionGeneral = ({
 }: HeroSectionGeneralProps) => {
   return (
     <section className="relative h-[500px] overflow-hidden">
+      <div className="absolute inset-0 bg-[#222222]/40"></div>
       {/* Image background */}
       <Image
         src={imgUrl}
