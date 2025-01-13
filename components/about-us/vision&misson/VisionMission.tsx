@@ -22,12 +22,12 @@ const visionContents = [
   },
   {
     id: 4,
-    image: "/vision-mision/Icon3.png",
+    image: "/vision-mision/Icon4.png",
     desc: "Mengembalikan kesuburan alami tanah dengan memanfaatkan kekuatan regeneratif mikroba",
   },
   {
     id: 5,
-    image: "/vision-mision/Icon4.png",
+    image: "/vision-mision/Icon5.png",
     desc: "Membangun kolaborasi strategis dengan lembaga penelitian, akademisi, dan pemangku kepentingan lainnya untuk mengembangkan inovasi berkelanjutan",
   },
 ];
