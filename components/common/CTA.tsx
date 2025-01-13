@@ -1,11 +1,19 @@
-import LinkGreen from "../home/LinkGreen";
+import { FC } from "react";
+import LinkGreen from "@/components/home/LinkGreen";
 
-const CTASection = ({
+interface CTASectionProps {
+  backgroundImage?: string;
+  content: React.ReactNode;
+  buttonText?: string;
+  buttonHref?: string;
+}
+
+const CTASection: FC<CTASectionProps> = ({
   backgroundImage = "CTA-tentang-kami.png",
   content,
   buttonText = "Hubungi Kami",
   buttonHref = "/career",
-}: any) => {
+}) => {
   return (
     <div className="relative flex h-[25rem] w-full items-center justify-center overflow-hidden rounded-3xl bg-cover bg-bottom bg-no-repeat md:h-[22.5rem] xl:h-[25rem]">
       {/* Background image */}
