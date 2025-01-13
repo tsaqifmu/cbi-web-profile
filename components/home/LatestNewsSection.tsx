@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
+import ContainerSection from "../layout/container";
 import NewsItem from "./NewsItem";
 
 const dummyNews = [
@@ -50,7 +51,7 @@ const LatestNewsSection = () => {
   return (
     <>
       <section>
-        <div className="mx-auto min-h-[40rem] max-w-7xl py-16 md:py-24">
+        <ContainerSection>
           {/* Title */}
           <div className="flex flex-col justify-between gap-6 px-6 md:flex-row md:items-center lg:px-8 xl:px-0">
             <div className="flex-1">
@@ -94,12 +95,12 @@ const LatestNewsSection = () => {
           </div>
 
           {/* News */}
-          <div className="justify mt-12 flex gap-4 overflow-x-scroll ps-6 lg:overflow-hidden lg:ps-8 xl:ps-0">
+          <div className="mt-12 flex gap-4 overflow-x-scroll ps-6 lg:overflow-hidden lg:ps-8 xl:ps-0">
             {news.map((item) => (
               <NewsItem key={item.slug} news={item} />
             ))}
           </div>
-        </div>
+        </ContainerSection>
       </section>
     </>
   );

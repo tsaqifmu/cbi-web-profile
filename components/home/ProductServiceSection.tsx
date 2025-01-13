@@ -1,10 +1,11 @@
+import ContainerSection from "../layout/container";
 import LinkGreen from "./LinkGreen";
 import ProductCard from "./ProductCard";
 
 const ProductServiceSection = () => {
   return (
     <section>
-      <div className="mx-auto min-h-[40rem] max-w-7xl px-6 py-16 md:py-24 lg:px-8 xl:px-0">
+      <ContainerSection>
         <div className="flex flex-col justify-between gap-4 md:flex-row">
           <div className="flex-1">
             <h1>Produk dan Layanan</h1>
@@ -48,7 +49,7 @@ const ProductServiceSection = () => {
             url="/"
           />
         </div>
-      </div>
+      </ContainerSection>
     </section>
   );
 };

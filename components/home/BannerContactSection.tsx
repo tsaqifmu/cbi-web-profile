@@ -1,9 +1,10 @@
+import ContainerSection from "../layout/container";
 import LinkGreen from "./LinkGreen";
 
 const BannerContactSection = () => {
   return (
     <section className="bg-[#EEE]">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24 xl:px-0">
+      <ContainerSection>
         <div className="relative min-h-[20rem] w-full overflow-hidden rounded-3xl bg-cover bg-bottom bg-no-repeat lg:min-h-[22rem] xl:min-h-[25rem]">
           {/* Background dengan filter */}
           <div
@@ -35,7 +36,7 @@ const BannerContactSection = () => {
             </div>
           </div>
         </div>
-      </div>
+      </ContainerSection>
     </section>
   );
 };

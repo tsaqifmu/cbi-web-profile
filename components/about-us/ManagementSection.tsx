@@ -92,16 +92,20 @@ const ManagementSection = () => {
           {managementData.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="flex w-[18.75rem] flex-col gap-y-5">
-                <Image
-                  src={item.image}
-                  alt={`${item.name} photo`}
-                  width={400}
-                  height={400}
-                  className="h-[18.75rem] w-[18.75rem] rounded-[1.125rem] object-cover object-center"
-                />
+                <div className="relative bg-red-500">
+                  <Image
+                    src={item.image}
+                    alt={`${item.name} photo`}
+                    width={400}
+                    height={400}
+                    className="absolute h-[18.75rem] w-[18.75rem] rounded-[1.125rem] object-cover object-center"
+                  />
+                  <div className="absolute z-10">
+                    <h3 className="font-semibold">{item.name}</h3>
+                    <p className="mb-2 text-gray-600">{item.title}</p>
+                  </div>
+                </div>
                 <div className="text-sm">
-                  <h3 className="font-semibold">{item.name}</h3>
-                  <p className="mb-2 text-gray-600">{item.title}</p>
                   <p className="text-gray-700">{item.description}</p>
                 </div>
               </div>
