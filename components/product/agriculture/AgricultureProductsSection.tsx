@@ -103,7 +103,7 @@ const AgricultureProductsSection = () => {
       setActiveSlide(1);
       swiper?.slideTo(0);
     }
-  }, [activeMenu, swiper]);
+  }, [activeCategory, activeMenu, swiper]);
 
   return (
     <section>
