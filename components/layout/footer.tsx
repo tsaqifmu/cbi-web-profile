@@ -70,7 +70,7 @@ const Footer = () => {
             />
             <div>
               <h4 className="font-semibold">Alamat</h4>
-              <p className="max-w-sm text-sm text-[rgba(253,253,253,1)]">
+              <p className="max-w-xs text-sm text-[rgba(253,253,253,1)]">
                 Sawahan RT 02 RW 07 Pasungan, Ceper, Klaten Jawa Tengah,
                 Indonesia 57465
               </p>

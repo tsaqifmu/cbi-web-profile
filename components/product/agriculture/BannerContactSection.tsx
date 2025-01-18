@@ -20,7 +20,7 @@ const BannerContactSection = () => {
           {/* Konten */}
           <div className="absolute z-20 flex h-full w-full flex-col items-start justify-between p-8 md:flex-row md:items-center lg:px-24 lg:py-10">
             <div className="flex flex-1 items-center">
-              <h1 className="max-w-[12rem] text-[32px] font-normal !leading-tight text-white md:max-w-none lg:text-[40px] xl:max-w-4xl xl:text-5xl">
+              <h1 className="max-w-[16rem] text-[32px] font-normal !leading-tight text-white md:max-w-sm lg:text-[40px] xl:max-w-4xl xl:text-5xl">
                 Siap
                 <span className="font-bold">
                   {" "}

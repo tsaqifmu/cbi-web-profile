@@ -20,7 +20,7 @@ const productData = [
     id: "pupuk-hayati",
     name: "Pupuk Hayati",
     description:
-      "Pupuk hayati kami mengandung mikroorganisme yang membantu meningkatkan kesuburan tanah dan pertumbuhan tanaman secara alami.",
+      "Di Indonesia, produk kami telah digunakan oleh para petani di 19 provinsi dan terbukti efektif meningkatkan hasil panen dan kualitas produk pertanian, serta mendukung pertanian berkelanjutan.",
     products: [
       {
         id: 1,
@@ -85,7 +85,7 @@ const productData = [
 ];
 
 const AgricultureProductsSection = () => {
-  const [activeMenu, setActiveMenu] = useState("pupuk-hayati");
+  const [activeMenu, setActiveMenu] = useState(productData[0]?.id);
   const [swiper, setSwiper] = useState<SwiperType>();
   const [activeProduct, setActiveProduct] = useState(
     productData[0].products[0],
@@ -107,9 +107,9 @@ const AgricultureProductsSection = () => {
 
   return (
     <section>
-      <ContainerSection className="flex flex-col items-stretch overflow-hidden lg:flex-row lg:gap-10">
+      <ContainerSection className="flex flex-col items-stretch gap-4 overflow-hidden lg:gap-10 xl:flex-row">
         {/* Button and texts */}
-        <div className="flex w-1/3 flex-col gap-4 lg:gap-12">
+        <div className="flex flex-col gap-4 lg:gap-12 xl:w-1/3">
           {/* buttons */}
           <div className="flex gap-2">
             {productData.map((category) => (
@@ -132,10 +132,10 @@ const AgricultureProductsSection = () => {
         </div>
 
         {/* Swiper Image and Texts */}
-        <div className="flex flex-1 gap-16">
+        <div className="flex flex-1 flex-col gap-4 lg:flex-row lg:gap-16">
           <div className="h-[20rem] flex-1 rounded-3xl bg-[#99AC33] lg:h-[25rem]">
             <Image
-              className="h-full w-full scale-75 object-contain"
+              className="h-[20rem] w-full scale-75 object-contain lg:h-[25rem]"
               src={activeProduct.url}
               width={280}
               height={315}
@@ -169,11 +169,13 @@ const AgricultureProductsSection = () => {
             >
               {activeCategory?.products.map((product) => (
                 <SwiperSlide key={product.id}>
-                  <div className="flex h-full flex-col justify-center gap-4">
-                    <h3 className="text-2xl font-semibold text-[#222]">
+                  <div className="flex h-full flex-col gap-4 lg:justify-center">
+                    <h3 className="text-xl font-semibold text-[#222] lg:text-2xl">
                       {product.name}
                     </h3>
-                    <p className="text-sm text-[#666]">{product.description}</p>
+                    <p className="text-ellipsis text-sm text-[#666]">
+                      {product.description}
+                    </p>
                   </div>
                 </SwiperSlide>
               ))}
