@@ -19,7 +19,7 @@ const OurProductSection = () => {
             title2="Ingin Maksimalkan Potensi Pertanian Anda?"
             color="#009933"
             color2="#003311"
-            url="/"
+            url="/product/agriculture"
           />
           <ProductCard
             bgUrl="img-product-2.jpeg"
@@ -27,7 +27,7 @@ const OurProductSection = () => {
             title2="Ingin Maksimalkan Potensi Peternakan Anda?"
             color="#EB7A1C"
             color2="#4E2909"
-            url="/"
+            url="/product/livestock"
           />
           <ProductCard
             bgUrl="img-product-3.jpeg"
@@ -35,7 +35,7 @@ const OurProductSection = () => {
             title2="Ingin Maksimalkan Potensi Perikanan Anda?"
             color="#1C67AD"
             color2="#09223A"
-            url="/"
+            url="/product/fishery"
           />
         </div>
       </ContainerSection>
