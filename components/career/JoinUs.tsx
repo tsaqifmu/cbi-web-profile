@@ -33,5 +33,3 @@ const JoinUs = () => {
 };
 
 export default JoinUs;
-
-const test = "-bottom-24 left-36";
