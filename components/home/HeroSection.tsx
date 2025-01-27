@@ -1,3 +1,4 @@
+import { ApiPath, apiRequest } from "@/utils/apiClient";
 import LinkGreen from "./LinkGreen";
 
 const BackgroundVideo = () => {
@@ -43,7 +44,13 @@ const HeroDescription = () => {
   );
 };
 
-const HeroSection = () => {
+const HeroSection = async () => {
+  const { data } = await apiRequest({
+    path: ApiPath.DASHBOARD,
+    queryParams: { "populate[whySection][populate]": "image" },
+  });
+
+  console.log(data);
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Video Background */}
