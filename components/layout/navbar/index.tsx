@@ -4,8 +4,8 @@ import { FC, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import MobileMenu from "./MobileMenu";
-import DesktopMenu from "./DesktopMenu";
+import MobileMenu from "./mobile/MobileMenu";
+import DesktopMenu from "./desktop/DesktopMenu";
 
 interface LogoProps {
   className?: string;
