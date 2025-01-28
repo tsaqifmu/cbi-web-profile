@@ -1,5 +1,7 @@
+import { notFound } from "next/navigation";
 import { FC } from "react";
-import { ApiPath, apiRequest } from "@/utils/apiClient";
+
+import { Headline } from "@/utils/types";
 
 import LinkGreen from "./LinkGreen";
 
@@ -24,7 +26,7 @@ interface HeroTitleProps {
 
 const HeroTitle: FC<HeroTitleProps> = ({ title }) => {
   return (
-    <div className="w-fit">
+    <div className="w-fit max-w-lg">
       <h1 className="text-[#FDFDFD]">{title}</h1>
     </div>
   );
@@ -42,39 +44,39 @@ const HeroDescription: FC<HeroDescriptionProps> = ({
   return (
     <div className="flex flex-col gap-6 lg:w-[23.75rem] xl:w-[31.25rem]">
       <p className="text-[#FDFDFD]">{description}</p>
-
       <LinkGreen href="/">{ctaText}</LinkGreen>
     </div>
   );
 };
 
-const HeroSection = async () => {
-  const { data } = await apiRequest({
-    path: ApiPath.DASHBOARD,
-    queryParams: { populate: "headline" },
-  });
+const HeroSection = async ({ data }: { data: Headline }) => {
+  try {
+    return (
+      <section className="relative h-screen w-full overflow-hidden">
+        {/* Video Background */}
+        <BackgroundVideo />
 
-  return (
-    <section className="relative h-screen w-full overflow-hidden">
-      {/* Video Background */}
-      <BackgroundVideo />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50" />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-50" />
+        {/* Multi-step Blur Gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-96 backdrop-blur-lg [mask:linear-gradient(transparent,white,white)]" />
 
-      {/* Multi-step Blur Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-96 backdrop-blur-lg [mask:linear-gradient(transparent,white,white)]" />
+        {/* Main Content*/}
+        <div className="absolute bottom-0 left-1/2 z-10 mx-auto flex w-full max-w-7xl -translate-x-1/2 flex-col items-end gap-4 px-6 pb-24 md:flex-row md:justify-between lg:px-8 xl:px-0">
+          <HeroTitle title={data.title} />
+          <HeroDescription
+            description={data.description}
+            ctaText={data.ctaText}
+          />
+        </div>
+      </section>
+    );
+  } catch (error) {
+    console.error("Error fetching hero section data:", error);
 
-      {/* Main Content*/}
-      <div className="absolute bottom-0 left-1/2 z-10 mx-auto flex w-full max-w-7xl -translate-x-1/2 flex-col items-end gap-4 px-6 pb-24 md:flex-row md:justify-between lg:px-8 xl:px-0">
-        <HeroTitle title={data.headline.title} />
-        <HeroDescription
-          description={data.headline.description}
-          ctaText={data.headline.ctaText}
-        />
-      </div>
-    </section>
-  );
+    notFound();
+  }
 };
 
 export default HeroSection;

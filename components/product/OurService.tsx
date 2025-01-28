@@ -114,13 +114,17 @@ const OurServiceSection = () => {
                 onClick={() => swiper?.slidePrev()}
                 className="flex h-8 w-8 items-center justify-center rounded-sm bg-[#009933] shadow-lg backdrop-blur-sm transition-colors hover:bg-[#009933]/80 disabled:cursor-not-allowed disabled:opacity-50 xl:h-10 xl:w-10"
               >
-                <ArrowLeft size={16} className="text-white" />
+                <span className="text-white">
+                  <ArrowLeft size={16} />
+                </span>
               </button>
               <button
                 onClick={() => swiper?.slideNext()}
                 className="flex h-8 w-8 items-center justify-center rounded-sm bg-[#009933] shadow-lg backdrop-blur-sm transition-colors hover:bg-[#009933]/80 disabled:cursor-not-allowed disabled:opacity-50 xl:h-10 xl:w-10"
               >
-                <ArrowRight size={16} className="text-white" />
+                <span className="text-white">
+                  <ArrowRight size={16} />
+                </span>
               </button>
             </div>
           </div>
