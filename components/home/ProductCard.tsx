@@ -71,7 +71,7 @@ const ProductCard = ({
               onMouseEnter={(e) => (e.currentTarget.style.color = color)}
               onMouseLeave={(e) => (e.currentTarget.style.color = "")}
             >
-              Selengkapnya <ArrowRight className="h-3 w-3" />
+              Selengkapnya <ArrowRight size={12} />
             </Link>
           )}
         </div>

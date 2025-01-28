@@ -1,8 +1,10 @@
 import Image from "next/image";
 
+import { OurImpact } from "@/utils/types";
+
 import ContainerSection from "../layout/container";
 
-const OurImpactSection = () => {
+const OurImpactSection = ({ data }: { data: OurImpact }) => {
   return (
     <section className="relative overflow-hidden bg-[#EEE]">
       <div className="absolute left-0 top-0 h-[64rem] w-[64rem] -translate-x-[17rem] -translate-y-[26rem]">
@@ -20,12 +22,9 @@ const OurImpactSection = () => {
         {/* Title */}
         <div className="flex flex-col justify-between gap-6 md:flex-row">
           <div className="flex-1">
-            <h1>Dampak Kami</h1>
+            <h1>{data.title}</h1>
           </div>
-          <p className="flex-1 text-[#666]">
-            Melalui riset berkelanjutan, kami terus berusaha untuk menjadi
-            pelopor pengembangan inovasi bioteknologi terkini yang berkualitas.
-          </p>
+          <p className="flex-1 text-[#666]">{data.description}</p>
         </div>
 
         {/* Banners */}
@@ -36,7 +35,7 @@ const OurImpactSection = () => {
             <div
               className="absolute inset-0 bg-cover bg-bottom bg-no-repeat contrast-50"
               style={{
-                backgroundImage: "url(img-our-impact-banner-bg.png)",
+                backgroundImage: `url(${process.env.NEXT_PUBLIC_URL_API + data.product1bgimage.url})`,
               }}
             />
 
@@ -48,8 +47,8 @@ const OurImpactSection = () => {
               <div className="flex flex-1 items-end justify-center">
                 <Image
                   draggable={false}
-                  src="/img-product-biokiller.png"
-                  alt="biokiller"
+                  src={process.env.NEXT_PUBLIC_URL_API + data.product1image.url}
+                  alt={data.product1image.caption ?? "image product 1"}
                   width={700}
                   height={397}
                   className="h-full w-80 object-cover lg:w-fit"
@@ -85,7 +84,7 @@ const OurImpactSection = () => {
             <div
               className="absolute inset-0 bg-cover bg-bottom bg-no-repeat contrast-50"
               style={{
-                backgroundImage: "url(img-our-impact-banner-bg.png)",
+                backgroundImage: `url(${process.env.NEXT_PUBLIC_URL_API + data.product1bgimage.url})`,
               }}
             />
 
@@ -122,7 +121,7 @@ const OurImpactSection = () => {
               <div className="flex flex-1 items-end justify-center">
                 <Image
                   draggable={false}
-                  src="/img-product-floraone.png"
+                  src={process.env.NEXT_PUBLIC_URL_API + data.product2image.url}
                   alt="floraone"
                   width={480}
                   height={397}
