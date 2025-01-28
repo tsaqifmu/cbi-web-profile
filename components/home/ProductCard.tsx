@@ -21,13 +21,14 @@ const ProductCard = ({
   url,
 }: ProductCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const style = {
+    backgroundImage: `url("${bgUrl}")`,
+  };
 
   return (
     <div
       className="group relative h-[20rem] w-full overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat shadow-lg transition-all duration-300 xl:h-[27.625rem]"
-      style={{
-        backgroundImage: `url(${bgUrl})`,
-      }}
+      style={style}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

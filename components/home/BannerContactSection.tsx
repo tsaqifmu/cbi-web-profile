@@ -4,6 +4,10 @@ import ContainerSection from "../layout/container";
 import LinkGreen from "./LinkGreen";
 
 const BannerContactSection = ({ data }: { data: BannerContact }) => {
+  const style = {
+    backgroundImage: `url("${process.env.NEXT_PUBLIC_URL_API + data.image.url}")`,
+  };
+
   return (
     <section className="bg-[#EEE]">
       <ContainerSection>
@@ -11,9 +15,7 @@ const BannerContactSection = ({ data }: { data: BannerContact }) => {
           {/* Background dengan filter */}
           <div
             className="absolute inset-0 bg-cover bg-bottom bg-no-repeat"
-            style={{
-              backgroundImage: `url(${process.env.NEXT_PUBLIC_URL_API + data.image.url})`,
-            }}
+            style={style}
           />
 
           {/* Gradient overlay */}
