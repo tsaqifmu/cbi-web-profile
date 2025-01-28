@@ -1,4 +1,6 @@
+import { FC } from "react";
 import { ApiPath, apiRequest } from "@/utils/apiClient";
+
 import LinkGreen from "./LinkGreen";
 
 const BackgroundVideo = () => {
@@ -16,30 +18,32 @@ const BackgroundVideo = () => {
   );
 };
 
-const HeroTitle = () => {
+interface HeroTitleProps {
+  title: string;
+}
+
+const HeroTitle: FC<HeroTitleProps> = ({ title }) => {
   return (
     <div className="w-fit">
-      <h1 className="text-[#FDFDFD]">
-        Solusi <br /> Bioteknologi
-        <span className="font-normal"> Terintegrasi</span>
-        <span className="block xl:mt-2">
-          <span className="font-normal">untuk</span>
-          <span> Masa Depan</span>
-        </span>
-      </h1>
+      <h1 className="text-[#FDFDFD]">{title}</h1>
     </div>
   );
 };
 
-const HeroDescription = () => {
+interface HeroDescriptionProps {
+  description: string;
+  ctaText: string;
+}
+
+const HeroDescription: FC<HeroDescriptionProps> = ({
+  description,
+  ctaText,
+}) => {
   return (
     <div className="flex flex-col gap-6 lg:w-[23.75rem] xl:w-[31.25rem]">
-      <p className="text-[#FDFDFD]">
-        Temukan bagaimana solusi bioteknologi kami dapat mengatasi permasalahan
-        global di industri pertanian, peternakan, dan perikanan.
-      </p>
+      <p className="text-[#FDFDFD]">{description}</p>
 
-      <LinkGreen href="/">Info Selengkapnya</LinkGreen>
+      <LinkGreen href="/">{ctaText}</LinkGreen>
     </div>
   );
 };
@@ -47,10 +51,9 @@ const HeroDescription = () => {
 const HeroSection = async () => {
   const { data } = await apiRequest({
     path: ApiPath.DASHBOARD,
-    queryParams: { "populate[whySection][populate]": "image" },
+    queryParams: { populate: "headline" },
   });
 
-  console.log(data);
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Video Background */}
@@ -64,8 +67,11 @@ const HeroSection = async () => {
 
       {/* Main Content*/}
       <div className="absolute bottom-0 left-1/2 z-10 mx-auto flex w-full max-w-7xl -translate-x-1/2 flex-col items-end gap-4 px-6 pb-24 md:flex-row md:justify-between lg:px-8 xl:px-0">
-        <HeroTitle />
-        <HeroDescription />
+        <HeroTitle title={data.headline.title} />
+        <HeroDescription
+          description={data.headline.description}
+          ctaText={data.headline.ctaText}
+        />
       </div>
     </section>
   );

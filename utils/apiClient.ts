@@ -4,7 +4,7 @@ export enum ApiPath {
   DASHBOARD = "/dashboard",
 
   // Blog paths
-  BLOGS = "/blogs",
+  ARTICLES = "/articles",
 }
 
 export enum ApiMethod {
@@ -76,7 +76,7 @@ export async function apiRequest<T = any>({
 
   // Make the request
   const response = await fetch(
-    `${BASE_URL}${resolvedPath}${queryString}`,
+    `${BASE_URL}/api${resolvedPath}${queryString}`,
     requestOptions,
   );
 

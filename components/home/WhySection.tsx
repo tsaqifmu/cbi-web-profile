@@ -1,34 +1,30 @@
 import Image from "next/image";
 
+import { ApiPath, apiRequest } from "@/utils/apiClient";
+
 import ContainerSection from "@/components/layout/container";
 
-const WhySection = () => {
+const WhySection = async () => {
+  const { data } = await apiRequest({
+    path: ApiPath.DASHBOARD,
+    queryParams: { "populate[whySection][populate]": "image" },
+  });
+
+  const imageUrl = `${process.env.NEXT_PUBLIC_URL_API}${data.whySection.image.url}`;
+
   return (
     <section className="w-full bg-[#eee]">
       <ContainerSection className="flex flex-col items-center justify-between gap-8 md:flex-row xl:gap-16">
         {/* Text */}
         <div className="flex flex-1 flex-col gap-y-6">
-          <h2>Mengapa Bioteknologi?</h2>
-          <p>
-            Sektor agribisnis berada di persimpangan kritis. Penurunan kualitas
-            lahan, dampak bahan kimia, dan ancaman krisis ekosistem memaksa kita
-            untuk mencari solusi baru yang tidak hanya efektif, tetapi juga
-            berkelanjutan. Di tengah tantangan ini, bioteknologi muncul sebagai
-            terobosan yang menjanjikan transformasi menyeluruh.
-            <br /> <br />
-            Melalui pendekatan ilmiah berbasis mikroba alami, bioteknologi
-            memberikan cara baru untuk meningkatkan produktivitas sekaligus
-            memperbaiki keseimbangan alam. Ini bukan sekadar inovasi—ini adalah
-            langkah visioner untuk memastikan pertanian, peternakan, dan
-            perikanan tidak hanya bertahan, tetapi juga berkembang dengan cara
-            yang lebih cerdas, efisien, dan selaras dengan masa depan bumi.
-          </p>
+          <h2>{data.whySection.title}</h2>
+          <p>{data.whySection.description}</p>
         </div>
 
         {/* Image */}
         <div className="flex-1">
           <Image
-            src="/img-why-section.png"
+            src={imageUrl}
             alt="Petani dan sawah"
             width={626}
             height={406}
