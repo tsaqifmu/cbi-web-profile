@@ -190,13 +190,17 @@ const FisheryProductsSection = () => {
                 onClick={() => swiper?.slidePrev()}
                 className="flex h-12 w-fit items-center gap-2 rounded-[0.5rem] bg-[#009933] px-4 text-sm text-white transition-colors duration-300 hover:bg-green-700 lg:text-base xl:text-xl"
               >
-                <ArrowLeft className="h-4 w-4 text-white" />
+                <span className="text-white">
+                  <ArrowLeft size={16} />
+                </span>
               </button>
               <button
                 onClick={() => swiper?.slideNext()}
                 className="flex h-12 w-fit items-center gap-2 rounded-[0.5rem] bg-[#009933] px-4 text-sm text-white transition-colors duration-300 hover:bg-green-700 lg:text-base xl:text-xl"
               >
-                <ArrowRight className="h-4 w-4 text-white" />
+                <span className="text-white">
+                  <ArrowRight size={16} />
+                </span>
               </button>
             </div>
           </div>

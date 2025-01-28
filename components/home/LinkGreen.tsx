@@ -24,7 +24,7 @@ const LinkGreen = ({
         className,
       )}
     >
-      <span>{children}</span> {withArrow && <ArrowRight className="h-4 w-4" />}
+      <span>{children}</span> {withArrow && <ArrowRight size={16} />}
     </Link>
   );
 };

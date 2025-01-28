@@ -56,7 +56,7 @@ const NewsItem = ({ news }: NewsItemProps) => {
         href="/"
         className="mt-6 flex items-center gap-4 transition duration-300 hover:text-[#009933]"
       >
-        Selengkapnya <ArrowRight className="h-4 w-4" />
+        Selengkapnya <ArrowRight size={16} />
       </Link>
     </article>
   );
