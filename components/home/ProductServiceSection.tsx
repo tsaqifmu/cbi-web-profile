@@ -1,3 +1,4 @@
+import { getImageUrl } from '@/utils/image';
 import { Product, ProductService } from '@/utils/types';
 
 import ContainerSection from '../layout/container';
@@ -22,10 +23,10 @@ const ProductServiceSection = ({ data }: { data: ProductService }) => {
 
         {/* Images */}
         <div className="mt-14 flex flex-col gap-5 md:flex-row">
-          {data.products.map((product: Product) => (
+          {data.products?.map((product: Product) => (
             <ProductCard
               key={product.id}
-              imgUrl={process.env.NEXT_PUBLIC_URL_API + product.image.url}
+              imgUrl={getImageUrl(product?.image?.url)}
               title={product.title}
               title2={product.description}
               color1={`#${product.color1}`}

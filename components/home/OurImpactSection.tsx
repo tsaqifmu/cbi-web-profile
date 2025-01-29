@@ -1,8 +1,9 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import { OurImpact } from "@/utils/types";
+import { getImageUrl } from '@/utils/image';
+import { OurImpact } from '@/utils/types';
 
-import ContainerSection from "../layout/container";
+import ContainerSection from '../layout/container';
 
 const OurImpactSection = ({ data }: { data: OurImpact }) => {
   return (
@@ -35,7 +36,7 @@ const OurImpactSection = ({ data }: { data: OurImpact }) => {
             <div
               className="absolute inset-0 bg-cover bg-bottom bg-no-repeat contrast-50"
               style={{
-                backgroundImage: `url(${process.env.NEXT_PUBLIC_URL_API + data.product1bgimage.url})`,
+                backgroundImage: `url(${getImageUrl(data.product1bgimage?.url)})`,
               }}
             />
 
@@ -47,7 +48,7 @@ const OurImpactSection = ({ data }: { data: OurImpact }) => {
               <div className="flex flex-1 items-end justify-center">
                 <Image
                   draggable={false}
-                  src={process.env.NEXT_PUBLIC_URL_API + data.product1image.url}
+                  src={getImageUrl(data.product1image?.url)}
                   alt={data.product1image.caption ?? "image product 1"}
                   width={700}
                   height={397}
@@ -84,7 +85,7 @@ const OurImpactSection = ({ data }: { data: OurImpact }) => {
             <div
               className="absolute inset-0 bg-cover bg-bottom bg-no-repeat contrast-50"
               style={{
-                backgroundImage: `url(${process.env.NEXT_PUBLIC_URL_API + data.product1bgimage.url})`,
+                backgroundImage: `url(${getImageUrl(data.product1bgimage?.url)})`,
               }}
             />
 
@@ -121,7 +122,7 @@ const OurImpactSection = ({ data }: { data: OurImpact }) => {
               <div className="flex flex-1 items-end justify-center">
                 <Image
                   draggable={false}
-                  src={process.env.NEXT_PUBLIC_URL_API + data.product2image.url}
+                  src={getImageUrl(data?.product2image?.url)}
                   alt="floraone"
                   width={480}
                   height={397}

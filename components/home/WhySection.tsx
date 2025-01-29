@@ -1,11 +1,12 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import ContainerSection from "@/components/layout/container";
-import { WhySection as WhySectionType } from "@/utils/types";
+import ContainerSection from '@/components/layout/container';
+import { getImageUrl } from '@/utils/image';
+import { WhySection as WhySectionType } from '@/utils/types';
 
 const WhySection = async ({ data }: { data: WhySectionType }) => {
   try {
-    const imageUrl = `${process.env.NEXT_PUBLIC_URL_API}${data.image.url}`;
+    const imageUrl = getImageUrl(data?.image?.url);
 
     return (
       <section className="w-full bg-[#eee]">

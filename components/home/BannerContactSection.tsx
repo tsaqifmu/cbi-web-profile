@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { getImageUrl } from '@/utils/image';
 import { BannerContact } from '@/utils/types';
 
 import ContainerSection from '../layout/container';
@@ -12,7 +13,7 @@ const BannerContactSection = ({ data }: { data: BannerContact }) => {
         <div className="relative min-h-[20rem] w-full overflow-hidden rounded-3xl lg:min-h-[22rem] xl:min-h-[25rem]">
           {/* Background image */}
           <Image
-            src={process.env.NEXT_PUBLIC_URL_API + data.image.url}
+            src={getImageUrl(data.image?.url)}
             alt={data.title}
             fill
             className="object-cover object-bottom"
