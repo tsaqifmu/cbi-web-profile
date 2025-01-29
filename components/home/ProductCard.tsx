@@ -1,7 +1,8 @@
 "use client";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
-import React, { useState } from "react";
+import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useState } from 'react';
 
 interface ProductCardProps {
   bgUrl: string;
@@ -21,24 +22,30 @@ const ProductCard = ({
   url,
 }: ProductCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  const style = {
-    backgroundImage: `url("${bgUrl}")`,
-  };
 
   return (
     <div
-      className="group relative h-[20rem] w-full overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat shadow-lg transition-all duration-300 xl:h-[27.625rem]"
-      style={style}
+      className="group relative h-[20rem] w-full overflow-hidden rounded-3xl shadow-lg transition-all duration-300 xl:h-[27.625rem]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      {/* Background Image */}
+      <Image
+        src={bgUrl}
+        alt={title}
+        fill
+        className="object-cover transition-all duration-300"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        priority
+      />
+
       {/* Gradient overlay on hover */}
       <div
         className={`absolute inset-0 transition-opacity duration-300 ${
           isHovered ? "opacity-70" : "opacity-0"
         }`}
         style={{
-          background: `linear-gradient(to bottom, ${color}  0%, ${color2} 100%)`,
+          background: `linear-gradient(to bottom, ${color} 0%, ${color2} 100%)`,
         }}
       />
 
@@ -46,7 +53,7 @@ const ProductCard = ({
       <div className="absolute bottom-0 left-0 right-0 h-full">
         <div
           className={`absolute bottom-0 h-[50%] w-full backdrop-blur-lg [mask:linear-gradient(transparent,white,white)] group-hover:backdrop-blur-none group-hover:[mask:none]`}
-        ></div>
+        />
         <div
           className={`absolute flex flex-col gap-6 px-8 py-8 text-white transition-all duration-500 ${
             isHovered
