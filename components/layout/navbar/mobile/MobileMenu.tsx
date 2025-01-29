@@ -2,8 +2,6 @@ import { FC, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 
-import { MEDIA_LINKS, PRODUCT_LINKS } from "@/constants";
-
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -14,6 +12,7 @@ import {
 } from "@/components/ui/sheet";
 import { NavigationLink } from "@/components/layout/navbar/NavigationLink";
 import { AccordionMenu } from "@/components/layout/navbar/mobile/AccordionMenu";
+import { MEDIA_LINKS, PRODUCT_LINKS } from "@/constants/navbar";
 
 interface MobileMenuProps {
   isOpen: boolean;

@@ -1,22 +1,4 @@
-// types.ts
-interface NavigationLink {
-  title: string;
-  href: string;
-}
-
-// constants/navigation.ts
-export const PRODUCT_LINKS: NavigationLink[] = [
-  { title: "Pertanian", href: "/product/agriculture" },
-  { title: "Peternakan", href: "/product/livestock" },
-  { title: "Perikanan", href: "/product/fishery" },
-];
-
-export const MEDIA_LINKS: NavigationLink[] = [
-  { title: "Berita", href: "/news" },
-  { title: "Blog", href: "/blog" },
-  { title: "Brosur & Dokumen", href: "/documents" },
-];
-
+// for share buttons
 export type Platform = "facebook" | "twitter" | "linkedin" | "whatsapp";
 
 interface ShareIcon {
@@ -25,6 +7,7 @@ interface ShareIcon {
   url: string;
 }
 
+// for share buttons
 export const listIcon: ShareIcon[] = [
   {
     id: 1,
