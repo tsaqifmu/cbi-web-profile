@@ -3,9 +3,9 @@ import { ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { MEDIA_LINKS, PRODUCT_LINKS } from "@/constants";
+import { MEDIA_LINKS, PRODUCT_LINKS } from "@/constants/navbar";
 
+import { Button } from "@/components/ui/button";
 import { SearchButton } from "@/components/layout/navbar/desktop/SearchButton";
 import { DropdownMenu } from "@/components/layout/navbar/desktop/DropdownMenu";
 import { NavigationLink } from "@/components/layout/navbar/NavigationLink";
