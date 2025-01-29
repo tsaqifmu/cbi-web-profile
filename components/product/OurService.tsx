@@ -1,44 +1,23 @@
 "use client";
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import Image from "next/image";
-import { useState } from "react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { useState } from 'react';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import LinkGreen from "../home/LinkGreen";
-import ContainerSection from "../layout/container";
+import { ServicesSection } from '@/utils/types';
+
+import LinkGreen from '../home/LinkGreen';
+import ContainerSection from '../layout/container';
 
 import type { Swiper as SwiperType } from "swiper";
 
-const serviceData = [
-  {
-    id: 1,
-    image: "/management-photo-profile/pak-luhur.png",
-  },
-  {
-    id: 2,
-    image: "/management-photo-profile/pak-luhur.png",
-  },
-  {
-    id: 3,
-    image: "/management-photo-profile/pak-luhur.png",
-  },
-  {
-    id: 4,
-    image: "/management-photo-profile/pak-luhur.png",
-  },
-  {
-    id: 5,
-    image: "/management-photo-profile/pak-luhur.png",
-  },
-];
-
-const OurServiceSection = () => {
+const OurServiceSection = ({ data }: { data: ServicesSection }) => {
   const [swiper, setSwiper] = useState<SwiperType>();
 
   return (
@@ -46,16 +25,10 @@ const OurServiceSection = () => {
       <ContainerSection>
         <div className="flex flex-col justify-between gap-5 lg:flex-row lg:gap-24">
           <div className="flex-shrink">
-            <h1>Layanan Kami</h1>
+            <h1>{data.title}</h1>
           </div>
           <div className="flex flex-1 flex-col gap-5">
-            <p className="text-[#666]">
-              Dokter Tani adalah Klinik yang menyediakan layanan konsultasi,
-              diagnosis, dan resep obat untuk meningkatkan produktivitas
-              pertanian, peternakan, dan perikanan. Konsultasikan berbagai
-              kebutuhan solusi pertanian, peternakan dan perikanan dengan tim
-              ahli kami.
-            </p>
+            <p className="text-[#666]">{data.description}</p>
             <LinkGreen className="mt-2" href="/" withArrow={false}>
               Selengkapnya
             </LinkGreen>
@@ -84,20 +57,22 @@ const OurServiceSection = () => {
                 slidesPerView: 2,
               },
               1024: {
-                slidesPerView: 4,
+                slidesPerView: 3,
               },
             }}
             className="pb-16"
           >
-            {serviceData.map((item) => (
+            {data.services.map((item) => (
               <SwiperSlide key={item.id}>
-                <div className="flex w-[18.75rem] flex-col gap-y-5">
+                <div className="flex h-[20rem] w-full flex-col gap-y-5">
                   <Image
-                    src={item.image}
+                    src={
+                      process.env.NEXT_PUBLIC_URL_API + (item.image?.url ?? "")
+                    }
                     alt={`photo`}
                     width={400}
                     height={400}
-                    className="h-[18.75rem] w-[18.75rem] rounded-[1.125rem] object-cover object-center"
+                    className="h-full w-full rounded-[1.125rem] object-cover object-center"
                   />
                 </div>
               </SwiperSlide>

@@ -1,8 +1,8 @@
-import { ProductService } from "@/utils/types";
+import { Product, ProductService } from '@/utils/types';
 
-import ContainerSection from "../layout/container";
-import LinkGreen from "./LinkGreen";
-import ProductCard from "./ProductCard";
+import ContainerSection from '../layout/container';
+import LinkGreen from './LinkGreen';
+import ProductCard from './ProductCard';
 
 const ProductServiceSection = ({ data }: { data: ProductService }) => {
   return (
@@ -22,30 +22,17 @@ const ProductServiceSection = ({ data }: { data: ProductService }) => {
 
         {/* Images */}
         <div className="mt-14 flex flex-col gap-5 md:flex-row">
-          <ProductCard
-            bgUrl={process.env.NEXT_PUBLIC_URL_API + data.agricultureImage.url}
-            title="Pertanian"
-            title2="Ingin Maksimalkan Potensi Pertanian Anda?"
-            color="#009933"
-            color2="#003311"
-            url="/product/agriculture"
-          />
-          <ProductCard
-            bgUrl={process.env.NEXT_PUBLIC_URL_API + data.livestockImage.url}
-            title="Peternakan"
-            title2="Ingin Maksimalkan Potensi Peternakan Anda?"
-            color="#EB7A1C"
-            color2="#4E2909"
-            url="/product/livestock"
-          />
-          <ProductCard
-            bgUrl={process.env.NEXT_PUBLIC_URL_API + data.fisheryImage.url}
-            title="Perikanan"
-            title2="Ingin Maksimalkan Potensi Perikanan Anda?"
-            color="#1C67AD"
-            color2="#09223A"
-            url="/product/fishery"
-          />
+          {data.products.map((product: Product) => (
+            <ProductCard
+              key={product.id}
+              imgUrl={process.env.NEXT_PUBLIC_URL_API + product.image.url}
+              title={product.title}
+              title2={product.description}
+              color1={`#${product.color1}`}
+              color2={`#${product.color2}`}
+              url={`/product/${product.url}`}
+            />
+          ))}
         </div>
       </ContainerSection>
     </section>

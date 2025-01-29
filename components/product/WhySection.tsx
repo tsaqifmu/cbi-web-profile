@@ -1,33 +1,22 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import ContainerSection from "@/components/layout/container";
+import ContainerSection from '@/components/layout/container';
+import { WhySection as WhySectionType } from '@/utils/types';
 
-const WhySection = () => {
+const WhySection = ({ data }: { data: WhySectionType }) => {
   return (
     <section className="w-full bg-[#eee]">
       <ContainerSection className="flex flex-col items-center justify-between gap-8 md:flex-row xl:gap-16">
         {/* Text */}
         <div className="flex flex-1 flex-col gap-y-6">
-          <h2>Mengapa Kami?</h2>
-          <p>
-            PT Centra Biotech Indonesia merupakan salah satu perusahaan
-            bioteknologi terkemuka di Indonesia. Banyak inovasi produk
-            bioteknologi yang kami hasilkan dari riset kami yang menjadi pionir
-            dan terbukti dapat membantu industri pertanian, peternakan, dan
-            perikanan untuk meningkatkan hasil produktivitasnya.
-            <br /> <br />
-            Kami berkomitmen untuk terus memberdayakan masa depan Indonesia
-            melalui inovasi produk-produk bioteknologi berkualitas tinggi.
-            Dibekali dengan pengalaman selama kurang lebih 14 tahun, produk
-            bersertifikat, dan didukung oleh sumber daya profesional, kami terus
-            berusaha menyediakan produk-produk bioteknologi yang terbaik.
-          </p>
+          <h2>{data.title}</h2>
+          <p>{data.description}</p>
         </div>
 
         {/* Image */}
         <div className="flex-1">
           <Image
-            src="/img-why-section.png"
+            src={process.env.NEXT_PUBLIC_URL_API + data.image.url}
             alt="Petani dan sawah"
             width={626}
             height={406}

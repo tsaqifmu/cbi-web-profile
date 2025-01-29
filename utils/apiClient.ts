@@ -1,10 +1,12 @@
 // types.ts
 export enum ApiPath {
   // Dashboard paths
-  DASHBOARD = "/dashboard?populate[headline][populate]=*&populate[whySection][populate]=*&populate[productService][populate]=*&populate[ourImpact][populate]=*&populate[bannerContact][populate]=*",
+  DASHBOARD = "/dashboard?populate[headline][populate]=*&populate[whySection][populate]=*&populate[productService][populate][products][populate]=*&populate[ourImpact][populate]=*&populate[bannerContact][populate]=*",
 
   // Blog paths
   ARTICLES = "/articles",
+
+  PRODUCTS_AND_SERVICES = "/product-and-service?populate[headline][populate]=*&populate[whySection][populate]=*&populate[productsSection][populate][products][populate]=*&populate[servicesSection][populate][services][populate]=*&populate[bannerContactSection][populate]=*",
 }
 
 export enum ApiMethod {

@@ -1,9 +1,9 @@
-import { notFound } from "next/navigation";
-import { FC } from "react";
+import { notFound } from 'next/navigation';
+import { FC } from 'react';
 
-import { Headline } from "@/utils/types";
+import { Headline } from '@/utils/types';
 
-import LinkGreen from "./LinkGreen";
+import LinkGreen from './LinkGreen';
 
 const BackgroundVideo = () => {
   return (
@@ -63,7 +63,7 @@ const HeroSection = async ({ data }: { data: Headline }) => {
         <div className="absolute bottom-0 left-0 right-0 h-96 backdrop-blur-lg [mask:linear-gradient(transparent,white,white)]" />
 
         {/* Main Content*/}
-        <div className="absolute bottom-0 left-1/2 z-10 mx-auto flex w-full max-w-7xl -translate-x-1/2 flex-col items-end gap-4 px-6 pb-24 md:flex-row md:justify-between lg:px-8 xl:px-0">
+        <div className="absolute bottom-0 left-1/2 z-10 mx-auto flex w-full max-w-7xl -translate-x-1/2 flex-col gap-4 px-6 pb-24 md:flex-row md:items-end md:justify-between lg:px-8 xl:px-0">
           <HeroTitle title={data.title} />
           <HeroDescription
             description={data.description}

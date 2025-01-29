@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
 interface HeroSectionGeneralProps {
   imgUrl: string;
@@ -31,7 +31,7 @@ const HeroSectionGeneral = ({
 
       {/* Content */}
       <div className="font-inter absolute bottom-[40%] left-1/2 z-10 w-full max-w-6xl -translate-x-1/2 translate-y-1/2 pt-14 text-white lg:bottom-[35%]">
-        <div className="flex h-full flex-col items-center justify-center space-y-3">
+        <div className="mx-2 flex h-full flex-col items-center justify-center space-y-3 md:mx-0">
           {category && (
             <span className="block text-sm lg:text-base">{category}</span>
           )}

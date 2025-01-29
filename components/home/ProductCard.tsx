@@ -5,19 +5,19 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 
 interface ProductCardProps {
-  bgUrl: string;
+  imgUrl: string;
   title: string;
   title2: string;
-  color: string;
+  color1: string;
   color2: string;
   url: string;
 }
 
 const ProductCard = ({
-  bgUrl,
+  imgUrl,
   title,
   title2,
-  color,
+  color1,
   color2,
   url,
 }: ProductCardProps) => {
@@ -31,7 +31,7 @@ const ProductCard = ({
     >
       {/* Background Image */}
       <Image
-        src={bgUrl}
+        src={imgUrl}
         alt={title}
         fill
         className="object-cover transition-all duration-300"
@@ -45,7 +45,7 @@ const ProductCard = ({
           isHovered ? "opacity-70" : "opacity-0"
         }`}
         style={{
-          background: `linear-gradient(to bottom, ${color} 0%, ${color2} 100%)`,
+          background: `linear-gradient(to bottom, ${color1} 0%, ${color2} 100%)`,
         }}
       />
 
@@ -72,11 +72,11 @@ const ProductCard = ({
               style={
                 {
                   "&:hover": {
-                    color: color,
+                    color: color1,
                   },
                 } as React.CSSProperties
               }
-              onMouseEnter={(e) => (e.currentTarget.style.color = color)}
+              onMouseEnter={(e) => (e.currentTarget.style.color = color1)}
               onMouseLeave={(e) => (e.currentTarget.style.color = "")}
             >
               Selengkapnya <ArrowRight size={12} />
