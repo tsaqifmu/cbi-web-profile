@@ -1,19 +1,19 @@
 "use client";
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-import { useState } from 'react';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import { ServicesSection } from '@/utils/types';
+import { ServicesSection } from "@/utils/types";
 
-import LinkGreen from '../home/LinkGreen';
-import ContainerSection from '../layout/container';
+import LinkGreen from "../home/LinkGreen";
+import ContainerSection from "../layout/container";
 
 import type { Swiper as SwiperType } from "swiper";
 
@@ -29,7 +29,12 @@ const OurServiceSection = ({ data }: { data: ServicesSection }) => {
           </div>
           <div className="flex flex-1 flex-col gap-5">
             <p className="text-[#666]">{data.description}</p>
-            <LinkGreen className="mt-2" href="/" withArrow={false}>
+            <LinkGreen
+              className="mt-2"
+              target="_blank"
+              href="http://doktertani.co.id"
+              withArrow={false}
+            >
               Selengkapnya
             </LinkGreen>
           </div>

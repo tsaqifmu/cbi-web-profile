@@ -1,9 +1,9 @@
-import { notFound } from 'next/navigation';
-import { FC } from 'react';
+import { notFound } from "next/navigation";
+import { FC } from "react";
 
-import { Headline } from '@/utils/types';
+import { Headline } from "@/utils/types";
 
-import LinkGreen from './LinkGreen';
+import LinkGreen from "./LinkGreen";
 
 const BackgroundVideo = () => {
   return (
@@ -44,7 +44,7 @@ const HeroDescription: FC<HeroDescriptionProps> = ({
   return (
     <div className="flex flex-col gap-6 lg:w-[23.75rem] xl:w-[31.25rem]">
       <p className="text-[#FDFDFD]">{description}</p>
-      <LinkGreen href="/">{ctaText}</LinkGreen>
+      <LinkGreen href="/product">{ctaText}</LinkGreen>
     </div>
   );
 };

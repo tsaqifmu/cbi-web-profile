@@ -20,7 +20,7 @@ const CTAMediaSection = () => {
           backgroundImage="/cta-media.jpeg"
           content={<CTAContent />}
           buttonText="Hubungi Kami"
-          buttonHref="/karir"
+          buttonHref="/contact"
         />
       </ContainerSection>
     </section>

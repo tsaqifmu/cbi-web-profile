@@ -1,9 +1,9 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import { getImageUrl } from '@/utils/image';
-import { OurImpact } from '@/utils/types';
+import { getImageUrl } from "@/utils/image";
+import { OurImpact } from "@/utils/types";
 
-import ContainerSection from '../layout/container';
+import ContainerSection from "../layout/container";
 
 const OurImpactSection = ({ data }: { data: OurImpact }) => {
   return (
@@ -135,7 +135,7 @@ const OurImpactSection = ({ data }: { data: OurImpact }) => {
 
         <div className="mb-4 mt-14 flex flex-col justify-between md:flex-row">
           <p className="max-w-[15rem] font-semibold text-[#222]">
-            Produk kami telah meraih beberapa Sertifikasi
+            Produk kami telah memiliki perizinan dan beberapa sertifikat
           </p>
           <div className="mt-6 flex flex-wrap items-center space-x-12 space-y-6 md:mt-0 md:space-y-0">
             <Image

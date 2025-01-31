@@ -49,7 +49,7 @@ const Contact = () => {
               <MapPin />
               <a
                 className="hover:underline"
-                href="https://maps.app.goo.gl/aa6DmHF1iHUP5LMk6"
+                href="https://maps.app.goo.gl/jrzvpmv3gxQXVSST7"
                 target="_blank"
               >
                 Sawahan RT 02 RW 07 Pasungan, Ceper, Klaten <br />
@@ -59,7 +59,7 @@ const Contact = () => {
 
             <div className="mt-4">
               <a
-                href="https://maps.app.goo.gl/aa6DmHF1iHUP5LMk6"
+                href="https://maps.app.goo.gl/jrzvpmv3gxQXVSST7"
                 target="_blank"
                 className="flex items-center gap-2 text-sm text-green-500 underline lg:text-base"
               >
