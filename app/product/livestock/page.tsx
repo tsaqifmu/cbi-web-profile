@@ -150,7 +150,7 @@ const Livestock = () => {
       <section>
         <ContainerSection>
           <div>
-            <h1>
+            <h1 className="leading-[50px] lg:leading-[80px]">
               Mengapa memilih <br />
               Produk Peternakan kami?
             </h1>

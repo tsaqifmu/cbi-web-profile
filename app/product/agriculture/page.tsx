@@ -41,7 +41,7 @@ const Agriculture = async () => {
         <section>
           <ContainerSection>
             <div>
-              <h1>
+              <h1 className="leading-[50px] lg:leading-[80px]">
                 Mengapa memilih <br />
                 Produk Pertanian kami?
               </h1>

@@ -54,7 +54,7 @@ const ListNews = () => {
 
         {/* News Card */}
         <ScrollArea>
-          <div className="mt-12 flex gap-x-4 lg:gap-x-6">
+          <div className="mt-12 flex gap-x-4 pb-7 lg:gap-x-6">
             {news.map((item) => (
               <NewsCard
                 key={item.id}
@@ -69,7 +69,7 @@ const ListNews = () => {
         </ScrollArea>
 
         <ScrollArea>
-          <div className="mt-12 flex gap-x-4 md:mt-16 lg:gap-x-6">
+          <div className="mt-12 flex gap-x-4 pb-7 md:mt-16 lg:gap-x-6">
             {news.map((item) => (
               <NewsCard
                 key={item.id}
