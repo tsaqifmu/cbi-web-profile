@@ -1,7 +1,7 @@
-import { Product, ProductsSection } from '@/utils/types';
-
-import ProductCard from '../home/ProductCard';
-import ContainerSection from '../layout/container';
+import ProductCard from "../home/ProductCard";
+import ContainerSection from "../layout/container";
+import { getImageUrl } from "@/utils/image";
+import { Product, ProductsSection } from "@/utils/types";
 
 const OurProductSection = ({ data }: { data: ProductsSection }) => {
   return (
@@ -18,8 +18,9 @@ const OurProductSection = ({ data }: { data: ProductsSection }) => {
           {data.products.map((product: Product) => (
             <ProductCard
               key={product.id}
-              imgUrl={process.env.NEXT_PUBLIC_URL_API + product.image.url}
-              title={product.title}
+              imgUrl={getImageUrl(product?.image?.url)}
+              imgAlt={product.image.alternativeText ?? "Product image"}
+              title1={product.title}
               title2={product.description}
               color1={`#${product.color1}`}
               color2={`#${product.color2}`}

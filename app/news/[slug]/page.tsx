@@ -7,15 +7,12 @@ import { getArticleDetailQuery } from "@/utils/blogDetailQuery";
 import HeroSection from "@/components/media/article-detail/HeroSection";
 import ArticleDetail from "@/components/media/article-detail/ArticleDetail";
 
-interface newsDetailParams {
-  params: {
-    slug: string;
-  };
-}
-
-const NewsDetail = async ({ params }: newsDetailParams) => {
-  const resolvedParams = await Promise.resolve(params);
-  const query = getArticleDetailQuery(resolvedParams.slug);
+const NewsDetail = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
+  const query = getArticleDetailQuery((await params).slug);
   const { data } = await apiRequest<ArticleDetailResponse>({
     path: ApiPath.NEWS,
     queryParams: query,

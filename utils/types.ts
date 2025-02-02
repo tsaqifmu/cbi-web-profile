@@ -42,7 +42,7 @@ export interface Image {
   publishedAt: string;
 }
 
-interface Product {
+export interface Product {
   id: number;
   documentId: string;
   title: string;
@@ -56,7 +56,7 @@ interface Product {
   publishedAt: string;
 }
 
-interface ProductsSection {
+export interface ProductsSection {
   id: number;
   title: string;
   description: string | null;
@@ -74,7 +74,7 @@ interface Service {
   publishedAt: string;
 }
 
-interface ServicesSection {
+export interface ServicesSection {
   id: number;
   title: string;
   description: string;
