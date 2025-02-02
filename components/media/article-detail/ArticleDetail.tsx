@@ -6,6 +6,7 @@ import ContainerSection from "@/components/layout/container";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import ContainerBlog from "@/components/layout/ContainerBlog";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { BlocksContent } from "@strapi/blocks-react-renderer";
 
 const OtherArticle = () => (
   <>
@@ -24,7 +25,13 @@ const OtherArticle = () => (
   </>
 );
 
-const ArticleDetail = ({ content }: { content: any }) => {
+interface ArticleContent {
+  type: string;
+  data?: Record<string, any>;
+  children?: ArticleContent[];
+}
+
+const ArticleDetail = ({ content }: { content: BlocksContent }) => {
   return (
     <section>
       <ContainerBlog>
