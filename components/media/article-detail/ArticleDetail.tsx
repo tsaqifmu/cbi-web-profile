@@ -57,7 +57,7 @@ const OtherArticle = () => (
       <Button className="w-fit bg-[#009933] text-sm">Lihat Semua</Button>
     </div>
     <ScrollArea>
-      <div className="mt-12 flex gap-x-4 lg:gap-x-6">
+      {/* <div className="mt-12 flex gap-x-4 lg:gap-x-6">
         {news.map((item) => (
           <NewsCard
             key={item.id}
@@ -67,7 +67,7 @@ const OtherArticle = () => (
             imageUrl={item.imageUrl}
           />
         ))}
-      </div>
+      </div> */}
       <ScrollBar orientation="horizontal" />
     </ScrollArea>
   </>

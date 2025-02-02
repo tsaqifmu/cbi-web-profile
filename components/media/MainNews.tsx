@@ -1,12 +1,13 @@
 import React from "react";
 import Image from "next/image";
 
-import ShareButtons from "./ShareButtons";
-import ContainerSection from "@/components/layout/container";
-import ReadMoreButton from "./ReadMoreButton";
-import { NewsItem } from "@/types/responseTypes/dashboard/latestNews";
 import { getImageUrl } from "@/utils/image";
 import { formatDate } from "@/utils/formatDate";
+import ContainerSection from "@/components/layout/container";
+import { NewsItem } from "@/types/responseTypes/dashboard/latestNews";
+
+import ShareButtons from "./ShareButtons";
+import ReadMoreButton from "./ReadMoreButton";
 
 const ArticleContent = ({ content }: { content: NewsItem }) => (
   <div className="md:w-1/2">

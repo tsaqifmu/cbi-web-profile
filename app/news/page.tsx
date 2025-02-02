@@ -14,13 +14,11 @@ const Media = async () => {
       queryParams: query,
     });
 
-    console.log("ini data news", data);
-
     return (
       <section>
         <HeroSection title="Berita" category="Media & Informasi" />
         <MainNews data={data.headlineNews} />
-        <ListNews />
+        <ListNews news1={data.news1} news2={data.news2} />
         <CTASection />
       </section>
     );

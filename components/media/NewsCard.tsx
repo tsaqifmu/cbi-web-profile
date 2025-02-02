@@ -2,16 +2,21 @@ import { FC } from "react";
 import Image from "next/image";
 
 import ReadMoreButton from "./ReadMoreButton";
+import { Image as ImageType } from "@/types/responseTypes/image";
+import { getImageUrl } from "@/utils/image";
+import { formatDate } from "@/utils/formatDate";
 
 interface NewsCardProps {
-  imageUrl: string;
+  imageData: ImageType;
+  slug: string;
   title: string;
   date: string;
   description: string;
 }
 
 const NewsCard: FC<NewsCardProps> = ({
-  imageUrl,
+  imageData,
+  slug,
   title,
   date,
   description,
@@ -19,10 +24,10 @@ const NewsCard: FC<NewsCardProps> = ({
   return (
     <div className="w-[280px] flex-none snap-center lg:w-[306px] xl:w-[421px]">
       <Image
-        src={imageUrl}
-        alt={`${title} image`}
-        width={421}
-        height={300}
+        src={getImageUrl(imageData.url)}
+        alt={imageData.alternativeText ?? "Article image"}
+        width={imageData.width}
+        height={imageData.height}
         className="rounded-lg object-cover object-center lg:rounded-3xl"
       />
 
@@ -30,13 +35,13 @@ const NewsCard: FC<NewsCardProps> = ({
       <div className="mt-4 space-y-2">
         <div className="flex items-center justify-between">
           <h4 className="text-lg font-bold text-[#222222]">{title}</h4>
-          <p>{date}</p>
+          <p>{formatDate(date)}</p>
         </div>
         <p>{description}</p>
       </div>
 
       {/* Read More Button */}
-      <ReadMoreButton />
+      <ReadMoreButton link={`/news/${slug}`} />
     </div>
   );
 };
