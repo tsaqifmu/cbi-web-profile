@@ -25,12 +25,6 @@ const OtherArticle = () => (
   </>
 );
 
-interface ArticleContent {
-  type: string;
-  data?: Record<string, any>;
-  children?: ArticleContent[];
-}
-
 const ArticleDetail = ({ content }: { content: BlocksContent }) => {
   return (
     <section>
