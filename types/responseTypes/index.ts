@@ -1,4 +1,5 @@
 import { ArticleDetail } from "./articleDetailTypes";
+import { BlogData } from "./blogSectionType";
 import { Data } from "./dashboardTypes";
 import { NewsData } from "./newsSectionType";
 
@@ -13,5 +14,9 @@ export interface ArticleDetailResponse {
 }
 export interface NewsSectionResponse {
   data: NewsData;
+  meta: Record<string, never>;
+}
+export interface BlogSectionResponse {
+  data: BlogData;
   meta: Record<string, never>;
 }

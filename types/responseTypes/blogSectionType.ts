@@ -1,6 +1,6 @@
 import { ArticleItem } from "./dashboard/latestNews";
 
-export interface NewsData {
+export interface BlogData {
   // Strapi default data
   id: number;
   documentId: string;
@@ -9,7 +9,7 @@ export interface NewsData {
   publishedAt: string;
 
   // Section type
-  headlineNews: ArticleItem;
-  news1: ArticleItem[];
-  news2: ArticleItem[];
+  headlineBlog: ArticleItem;
+  blog1: ArticleItem[];
+  blog2: ArticleItem[];
 }

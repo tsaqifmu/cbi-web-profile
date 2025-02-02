@@ -1,18 +1,6 @@
 import { Image } from "../image";
 
-interface BlogPost {
-  id: number;
-  documentId: string;
-  title: string;
-  shortDescription: string;
-  slug: string;
-  createdAt: string;
-  publishedAt: string;
-  type: string;
-  image: Image;
-}
-
-export interface NewsItem {
+export interface ArticleItem {
   id: number;
   documentId: string;
   title: string;
@@ -26,6 +14,6 @@ export interface NewsItem {
 
 export interface LatestNews {
   id: number;
-  blogs: BlogPost[];
-  news: NewsItem[];
+  blogs: ArticleItem[];
+  news: ArticleItem[];
 }

@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { getImageUrl } from "@/utils/image";
-import { NewsItem as NewsItemProps } from "@/types/responseTypes/dashboard/latestNews";
+import { ArticleItem } from "@/types/responseTypes/dashboard/latestNews";
 
 // Constants
 const NEWS_TYPE = {
@@ -18,8 +18,8 @@ const LABEL_STYLES = {
 } as const;
 
 interface ArticleImageProps {
-  image: NewsItemProps["image"];
-  type: NewsItemProps["type"];
+  image: ArticleItem["image"];
+  type: ArticleItem["type"];
 }
 
 const ArticleImage: React.FC<ArticleImageProps> = ({ image, type }) => {
@@ -53,7 +53,7 @@ interface ArticleContentProps {
   title: string;
   shortDescription: string;
   slug: string;
-  type: NewsItemProps["type"];
+  type: ArticleItem["type"];
 }
 
 const ArticleContent: React.FC<ArticleContentProps> = ({
@@ -86,7 +86,7 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
 };
 
 interface NewsItemComponentProps {
-  article: NewsItemProps;
+  article: ArticleItem;
 }
 
 const NewsItem: React.FC<NewsItemComponentProps> = ({ article }) => {

@@ -1,15 +1,15 @@
-import NewsCard from "./NewsCard";
-
 import ContainerSection from "@/components/layout/container";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { NewsItem } from "@/types/responseTypes/dashboard/latestNews";
+import { ArticleItem } from "@/types/responseTypes/dashboard/latestNews";
 
-const ListNews = ({
+import ArticleCard from "./ArticleCard";
+
+const ListArticle = ({
   news1,
   news2,
 }: {
-  news1: NewsItem[];
-  news2: NewsItem[];
+  news1: ArticleItem[];
+  news2: ArticleItem[];
 }) => {
   return (
     <section>
@@ -20,14 +20,7 @@ const ListNews = ({
         <ScrollArea>
           <div className="mt-12 flex gap-x-4 pb-7 lg:gap-x-6">
             {news1.map((item) => (
-              <NewsCard
-                key={item.id}
-                slug={item.slug}
-                title={item.title}
-                date={item.publishedAt}
-                description={item.shortDescription}
-                imageData={item.image}
-              />
+              <ArticleCard key={item.id} articleItemData={item} />
             ))}
           </div>
           <ScrollBar orientation="horizontal" />
@@ -36,14 +29,7 @@ const ListNews = ({
         <ScrollArea>
           <div className="mt-12 flex gap-x-4 pb-7 md:mt-16 lg:gap-x-6">
             {news2.map((item) => (
-              <NewsCard
-                key={item.id}
-                slug={item.slug}
-                title={item.title}
-                date={item.publishedAt}
-                description={item.shortDescription}
-                imageData={item.image}
-              />
+              <ArticleCard key={item.id} articleItemData={item} />
             ))}
           </div>
           <ScrollBar orientation="horizontal" />
@@ -53,4 +39,4 @@ const ListNews = ({
   );
 };
 
-export default ListNews;
+export default ListArticle;

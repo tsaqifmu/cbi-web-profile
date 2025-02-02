@@ -1,6 +1,6 @@
 import HeroSection from "@/components/media/HeroSection";
-import MainNews from "@/components/media/MainNews";
-import ListNews from "@/components/media/ListNews";
+import MainArticle from "@/components/media/MainArticle";
+import ListArticle from "@/components/media/ListArticle";
 import CTASection from "@/components/media/CTA";
 import { getNewsSectionQuery } from "@/utils/newsSectionQuery";
 import { ApiPath, apiRequest } from "@/utils/apiClient";
@@ -17,8 +17,8 @@ const Media = async () => {
     return (
       <section>
         <HeroSection title="Berita" category="Media & Informasi" />
-        <MainNews data={data.headlineNews} />
-        <ListNews news1={data.news1} news2={data.news2} />
+        <MainArticle data={data.headlineNews} />
+        <ListArticle news1={data.news1} news2={data.news2} />
         <CTASection />
       </section>
     );

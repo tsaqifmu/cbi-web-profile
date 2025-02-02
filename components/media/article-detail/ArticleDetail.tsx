@@ -1,7 +1,7 @@
 import ArticleDetailContent from "./ArticleDetailContent";
 
 import { Button } from "@/components/ui/button";
-import NewsCard from "@/components/media/NewsCard";
+import ArticleCard from "@/components/media/ArticleCard";
 import ContainerSection from "@/components/layout/container";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import ContainerBlog from "@/components/layout/ContainerBlog";
@@ -59,13 +59,7 @@ const OtherArticle = () => (
     <ScrollArea>
       {/* <div className="mt-12 flex gap-x-4 lg:gap-x-6">
         {news.map((item) => (
-          <NewsCard
-            key={item.id}
-            title={item.title}
-            date={item.date}
-            description={item.description}
-            imageUrl={item.imageUrl}
-          />
+          <ArticleCard key={item.id} articleItemData={item} />
         ))}
       </div> */}
       <ScrollBar orientation="horizontal" />
