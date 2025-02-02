@@ -8,6 +8,7 @@ export enum ApiPath {
   // Article paths
   BLOGS = "/blogs",
   NEWS = "/articles",
+  NEWS_SECTION = "/news-section",
 
   PRODUCTS_AND_SERVICES = "/product-and-service?populate[headline][populate]=*&populate[whySection][populate]=*&populate[productsSection][populate][products][populate]=*&populate[servicesSection][populate][services][populate]=*&populate[bannerContactSection][populate]=*",
 

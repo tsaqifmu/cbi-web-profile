@@ -4,24 +4,20 @@ import Image from "next/image";
 import ShareButtons from "./ShareButtons";
 import ContainerSection from "@/components/layout/container";
 import ReadMoreButton from "./ReadMoreButton";
+import { NewsItem } from "@/types/responseTypes/dashboard/latestNews";
+import { getImageUrl } from "@/utils/image";
+import { formatDate } from "@/utils/formatDate";
 
-const ArticleContent = () => (
+const ArticleContent = ({ content }: { content: NewsItem }) => (
   <div className="md:w-1/2">
     <div className="mt-4 space-y-2">
-      <p>13 Desember 2024</p>
-      <h3>News Title</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        varius enim in eros.Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Suspendisse varius enim in eros.Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Suspendisse varius enim in eros.Lorem ipsum
-        dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in
-        eros....
-      </p>
+      <p>{formatDate(content.publishedAt)}</p>
+      <h3>{content.title}</h3>
+      <p>{content.shortDescription}</p>
     </div>
 
     {/* Read More Button */}
-    <ReadMoreButton />
+    <ReadMoreButton link={`/news/${content.slug}`} />
 
     {/* Share Button List */}
     <div className="mt-6">
@@ -31,27 +27,27 @@ const ArticleContent = () => (
       {/* List Socmed Icons */}
       <ShareButtons
         title={"Article"}
-        url={"https://lucide.dev/icons/arrow-right"} // Jangan lupa diganti dengan url article yang mau di copy
+        url={"http://localhost:3000/" + `/news/${content.slug}`} // Jangan lupa diganti dengan url article yang mau di copy
       />
     </div>
   </div>
 );
 
-const MainNews = () => {
+const MainNews = ({ data }: { data: NewsItem }) => {
   return (
     <section>
       <ContainerSection className="md:flex md:gap-x-9">
         {/* Article Image */}
         <Image
-          src={"/news-1.png"}
-          alt="news image"
-          width={656}
-          height={500}
+          src={getImageUrl(data?.image?.url)}
+          alt={data.image.alternativeText ?? "Headline image"}
+          width={data.image.width}
+          height={data.image.height}
           className="rounded-lg object-cover lg:w-1/2 lg:rounded-3xl"
         />
 
         {/* Article Content */}
-        <ArticleContent />
+        <ArticleContent content={data} />
       </ContainerSection>
     </section>
   );
