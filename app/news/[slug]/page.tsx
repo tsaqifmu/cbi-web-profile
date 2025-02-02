@@ -27,7 +27,6 @@ const NewsDetail = async ({ params }: newsDetailParams) => {
 
   const newsDetailData = data[0];
 
-  console.log("ini params", newsDetailData);
   return (
     <section>
       <HeroSection data={newsDetailData} />

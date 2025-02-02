@@ -27,7 +27,6 @@ const BlogDetail = async ({ params }: blogDetailParams) => {
 
   const blogDetailData = data[0];
 
-  console.log("ini params", blogDetailData);
   return (
     <section>
       <HeroSection data={blogDetailData} />

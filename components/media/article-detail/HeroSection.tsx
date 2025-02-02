@@ -4,8 +4,6 @@ import { ArticleDetail } from "@/types/responseTypes/articleDetailTypes";
 import { getImageUrl } from "@/utils/image";
 
 const HeroSection = ({ data }: { data: ArticleDetail }) => {
-  console.log("ini data image", data?.image?.url);
-
   return (
     <HeroSectionGeneral
       imgUrl={getImageUrl(data?.image?.url)}
