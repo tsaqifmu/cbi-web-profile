@@ -6,50 +6,99 @@ import { cn } from "@/lib/utils";
 import { getImageUrl } from "@/utils/image";
 import { NewsItem as NewsItemProps } from "@/types/responseTypes/dashboard/latestNews";
 
-const NewsItem = ({ article }: { article: NewsItemProps }) => {
-  const isTypeNews = article.type === "news";
+// Constants
+const NEWS_TYPE = {
+  NEWS: "news",
+  ARTICLE: "article",
+} as const;
+
+const LABEL_STYLES = {
+  [NEWS_TYPE.NEWS]: "bg-[rgba(235,122,28,0.4)]",
+  [NEWS_TYPE.ARTICLE]: "bg-[rgba(28,103,173,0.4)]",
+} as const;
+
+interface ArticleImageProps {
+  image: NewsItemProps["image"];
+  type: NewsItemProps["type"];
+}
+
+const ArticleImage: React.FC<ArticleImageProps> = ({ image, type }) => {
+  const isTypeNews = type === NEWS_TYPE.NEWS;
 
   return (
-    <article className="max-w-[19.375rem]">
-      {/* Image and label */}
-      <div className="relative h-[19.375rem] w-[19.375rem] overflow-hidden rounded-lg border border-gray-200 lg:rounded-3xl">
-        <Image
-          src={getImageUrl(article.image.url)}
-          alt={article.image.alternativeText ?? "Image article"}
-          width={article.image.width}
-          height={article.image.height}
-          className="h-full w-full object-cover"
-        />
+    <div className="relative h-[19.375rem] w-[19.375rem] overflow-hidden rounded-lg border border-gray-200 lg:rounded-3xl">
+      <Image
+        src={getImageUrl(image.url)}
+        alt={image.alternativeText ?? "Image article"}
+        width={image.width}
+        height={image.height}
+        className="h-full w-full object-cover"
+      />
 
-        <div
-          className={cn(
-            "absolute left-4 top-4 rounded-lg px-4 py-2 text-white backdrop-blur-md",
-            isTypeNews
-              ? "bg-[rgba(235,122,28,0.4)]"
-              : "bg-[rgba(28,103,173,0.4)]",
-          )}
-        >
-          {isTypeNews ? "Berita" : "Artikel"}
-        </div>
+      <div
+        className={cn(
+          "absolute left-4 top-4 rounded-lg px-4 py-2 text-white backdrop-blur-md",
+          isTypeNews
+            ? LABEL_STYLES[NEWS_TYPE.NEWS]
+            : LABEL_STYLES[NEWS_TYPE.ARTICLE],
+        )}
+      >
+        {isTypeNews ? "Berita" : "Artikel"}
       </div>
+    </div>
+  );
+};
 
-      {/* Title */}
-      <h1 className="mt-6 line-clamp-2 text-ellipsis text-xl font-bold lg:text-2xl">
-        {article.title}
-      </h1>
+interface ArticleContentProps {
+  title: string;
+  shortDescription: string;
+  slug: string;
+  type: NewsItemProps["type"];
+}
 
-      {/* Description */}
-      <p className="mt-2 line-clamp-2 text-ellipsis text-sm text-[rgba(102,102,102,1)] lg:text-base">
-        {article.shortDescription}
+const ArticleContent: React.FC<ArticleContentProps> = ({
+  title,
+  shortDescription,
+  slug,
+  type,
+}) => {
+  const isTypeNews = type === NEWS_TYPE.NEWS;
+  const linkPath = isTypeNews ? `/news/${slug}` : `/blog/${slug}`;
+
+  return (
+    <>
+      <h2 className="mt-6 line-clamp-2 text-ellipsis text-xl font-bold lg:text-2xl">
+        {title}
+      </h2>
+
+      <p className="mt-2 line-clamp-2 text-ellipsis text-sm lg:text-base">
+        {shortDescription}
       </p>
 
-      {/* Link */}
       <Link
-        href={isTypeNews ? `/news/${article.slug}` : `/blog/${article.slug}`}
-        className="mt-6 flex items-center gap-4 transition duration-300 hover:text-[#009933]"
+        href={linkPath}
+        className="mt-6 flex items-center gap-4 transition-colors duration-300 hover:text-[#009933]"
       >
-        Selengkapnya <ArrowRight size={16} />
+        Selengkapnya <ArrowRight className="h-4 w-4" />
       </Link>
+    </>
+  );
+};
+
+interface NewsItemComponentProps {
+  article: NewsItemProps;
+}
+
+const NewsItem: React.FC<NewsItemComponentProps> = ({ article }) => {
+  return (
+    <article className="max-w-[19.375rem]">
+      <ArticleImage image={article.image} type={article.type} />
+      <ArticleContent
+        title={article.title}
+        shortDescription={article.shortDescription}
+        slug={article.slug}
+        type={article.type}
+      />
     </article>
   );
 };
