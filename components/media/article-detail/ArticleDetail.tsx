@@ -1,54 +1,11 @@
-import ArticleDetailContent from "./ArticleDetailContent";
+// import ArticleDetailContent from "./ArticleDetailContent";
 
 import { Button } from "@/components/ui/button";
-import ArticleCard from "@/components/media/ArticleCard";
+// import ArticleCard from "@/components/media/ArticleCard";
 import ContainerSection from "@/components/layout/container";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import ContainerBlog from "@/components/layout/ContainerBlog";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
-
-const news = [
-  {
-    id: 1,
-    title: "News Title",
-    date: "12 Desember 2024",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    imageUrl: "/img-news-1.png",
-  },
-  {
-    id: 2,
-    title: "News Title",
-    date: "12 Desember 2024",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    imageUrl: "/img-news-1.png",
-  },
-  {
-    id: 3,
-    title: "News Title",
-    date: "12 Desember 2024",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    imageUrl: "/img-news-1.png",
-  },
-  {
-    id: 4,
-    title: "News Title",
-    date: "12 Desember 2024",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    imageUrl: "/img-news-1.png",
-  },
-  {
-    id: 5,
-    title: "News Title",
-    date: "12 Desember 2024",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    imageUrl: "/img-news-1.png",
-  },
-];
 
 const OtherArticle = () => (
   <>
@@ -67,7 +24,7 @@ const OtherArticle = () => (
   </>
 );
 
-const ArticleDetail = ({ content }: any) => {
+const ArticleDetail = ({ content }: { content: any }) => {
   return (
     <section>
       <ContainerBlog>
