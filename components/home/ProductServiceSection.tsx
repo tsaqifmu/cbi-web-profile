@@ -31,7 +31,8 @@ const ProductServiceSection = ({ data }: { data: ProductService }) => {
             <ProductCard
               key={product.id}
               imgUrl={getImageUrl(product?.image?.url)}
-              title={product.title}
+              imgAlt={product.image.alternativeText ?? "Product image"}
+              title1={product.title}
               title2={product.description}
               color1={`#${product.color1}`}
               color2={`#${product.color2}`}

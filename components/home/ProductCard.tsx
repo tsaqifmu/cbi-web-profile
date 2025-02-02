@@ -1,12 +1,14 @@
 "use client";
-import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useState } from 'react';
+
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 interface ProductCardProps {
   imgUrl: string;
-  title: string;
+  imgAlt: string;
+  title1: string;
   title2: string;
   color1: string;
   color2: string;
@@ -15,7 +17,8 @@ interface ProductCardProps {
 
 const ProductCard = ({
   imgUrl,
-  title,
+  imgAlt,
+  title1,
   title2,
   color1,
   color2,
@@ -32,7 +35,7 @@ const ProductCard = ({
       {/* Background Image */}
       <Image
         src={imgUrl}
-        alt={title}
+        alt={imgAlt}
         fill
         className="object-cover transition-all duration-300"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -62,7 +65,7 @@ const ProductCard = ({
           }`}
         >
           <p className="max-w-60 text-2xl font-bold text-[rgba(253,253,253,1)] lg:max-w-xs xl:text-3xl">
-            {isHovered ? title2 : title}
+            {isHovered ? title2 : title1}
           </p>
 
           {isHovered && (

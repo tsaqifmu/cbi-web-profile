@@ -129,9 +129,9 @@ const OurImpactSection = ({ data }: { data: OurImpact }) => {
                 <Image
                   draggable={false}
                   src={getImageUrl(data?.product2image?.url)}
-                  alt="floraone"
-                  width={480}
-                  height={397}
+                  alt={data.product2image.alternativeText ?? "Product Image"}
+                  width={data.product2image.width}
+                  height={data.product2image.height}
                   className="h-full w-80 object-cover lg:w-fit"
                 />
               </div>

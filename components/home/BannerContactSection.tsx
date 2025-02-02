@@ -18,7 +18,7 @@ const BannerContactSection = ({
           {/* Background image */}
           <Image
             src={getImageUrl(data.image?.url)}
-            alt={data.title}
+            alt={data.image.alternativeText ?? "Contact Image"}
             fill
             className="object-cover object-bottom"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"

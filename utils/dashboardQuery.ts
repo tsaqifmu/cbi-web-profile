@@ -48,6 +48,7 @@ export const getDashboardQuery = () => {
             "slug",
             "createdAt",
             "publishedAt",
+            "type",
           ],
           populate: {
             image: {
@@ -62,6 +63,7 @@ export const getDashboardQuery = () => {
             "slug",
             "createdAt",
             "publishedAt",
+            "type",
           ],
           populate: {
             image: {

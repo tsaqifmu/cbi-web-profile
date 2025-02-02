@@ -8,6 +8,7 @@ interface BlogPost {
   slug: string;
   createdAt: string;
   publishedAt: string;
+  type: string;
   image: Image;
 }
 
@@ -19,6 +20,7 @@ export interface NewsItem {
   slug: string;
   createdAt: string;
   publishedAt: string;
+  type: string;
   image: Image;
 }
 
