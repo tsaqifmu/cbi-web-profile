@@ -2,22 +2,22 @@ import { notFound } from "next/navigation";
 
 import { ApiPath, apiRequest } from "@/utils/apiClient";
 import { ArticleDetailResponse } from "@/types/responseTypes";
+import { getArticleDetailQuery } from "@/utils/blogDetailQuery";
 
 import HeroSection from "@/components/media/article-detail/HeroSection";
 import ArticleDetail from "@/components/media/article-detail/ArticleDetail";
-import { getArticleDetailQuery } from "@/utils/blogDetailQuery";
 
-interface blogDetailParams {
+interface newsDetailParams {
   params: {
     slug: string;
   };
 }
 
-const BlogDetail = async ({ params }: blogDetailParams) => {
+const NewsDetail = async ({ params }: newsDetailParams) => {
   const resolvedParams = await Promise.resolve(params);
   const query = getArticleDetailQuery(resolvedParams.slug);
   const { data } = await apiRequest<ArticleDetailResponse>({
-    path: ApiPath.BLOGS,
+    path: ApiPath.NEWS,
     queryParams: query,
   });
 
@@ -25,15 +25,15 @@ const BlogDetail = async ({ params }: blogDetailParams) => {
     notFound();
   }
 
-  const blogDetailData = data[0];
+  const newsDetailData = data[0];
 
-  console.log("ini params", blogDetailData);
+  console.log("ini params", newsDetailData);
   return (
     <section>
-      <HeroSection data={blogDetailData} />
-      <ArticleDetail content={blogDetailData.content} />
+      <HeroSection data={newsDetailData} />
+      <ArticleDetail content={newsDetailData.content} />
     </section>
   );
 };
 
-export default BlogDetail;
+export default NewsDetail;

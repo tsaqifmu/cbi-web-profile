@@ -1,10 +1,7 @@
 import qs from "qs";
 
-export const generateQuery = (params: Record<string, any>) => {
-  return qs.stringify(
-    { populate: params },
-    {
-      encodeValuesOnly: true,
-    },
-  );
+export const generateQuery = (paramsQuery: Record<string, any>) => {
+  return qs.stringify(paramsQuery, {
+    encodeValuesOnly: true,
+  });
 };

@@ -6,20 +6,18 @@ import { cn } from "@/lib/utils";
 import { getImageUrl } from "@/utils/image";
 import { NewsItem as NewsItemProps } from "@/types/responseTypes/dashboard/latestNews";
 
-const NewsItem = ({ news }: { news: NewsItemProps }) => {
-  const isTypeNews = news.type === "news";
-
-  console.log("ini data news item", news);
+const NewsItem = ({ article }: { article: NewsItemProps }) => {
+  const isTypeNews = article.type === "news";
 
   return (
     <article className="max-w-[19.375rem]">
       {/* Image and label */}
       <div className="relative h-[19.375rem] w-[19.375rem] overflow-hidden rounded-lg border border-gray-200 lg:rounded-3xl">
         <Image
-          src={getImageUrl(news.image.url)}
-          alt={news.image.alternativeText ?? "Image article"}
-          width={news.image.width}
-          height={news.image.height}
+          src={getImageUrl(article.image.url)}
+          alt={article.image.alternativeText ?? "Image article"}
+          width={article.image.width}
+          height={article.image.height}
           className="h-full w-full object-cover"
         />
 
@@ -37,17 +35,17 @@ const NewsItem = ({ news }: { news: NewsItemProps }) => {
 
       {/* Title */}
       <h1 className="mt-6 line-clamp-2 text-ellipsis text-xl font-bold lg:text-2xl">
-        {news.title}
+        {article.title}
       </h1>
 
       {/* Description */}
       <p className="mt-2 line-clamp-2 text-ellipsis text-sm text-[rgba(102,102,102,1)] lg:text-base">
-        {news.shortDescription}
+        {article.shortDescription}
       </p>
 
       {/* Link */}
       <Link
-        href="/"
+        href={isTypeNews ? `/news/${article.slug}` : `/blog/${article.slug}`}
         className="mt-6 flex items-center gap-4 transition duration-300 hover:text-[#009933]"
       >
         Selengkapnya <ArrowRight size={16} />

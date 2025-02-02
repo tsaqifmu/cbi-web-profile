@@ -5,6 +5,7 @@ import NewsCard from "@/components/media/NewsCard";
 import ContainerSection from "@/components/layout/container";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import ContainerBlog from "@/components/layout/ContainerBlog";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 const news = [
   {
@@ -72,11 +73,12 @@ const OtherArticle = () => (
   </>
 );
 
-const ArticleDetail = () => {
+const ArticleDetail = ({ content }: any) => {
   return (
     <section>
       <ContainerBlog>
-        <ArticleDetailContent />
+        <BlocksRenderer content={content} />
+        {/* <ArticleDetailContent /> */}
       </ContainerBlog>
       <ContainerSection>
         <OtherArticle />

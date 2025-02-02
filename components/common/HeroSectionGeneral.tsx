@@ -1,11 +1,11 @@
 "use client";
 
-import Image from 'next/image';
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
 interface HeroSectionGeneralProps {
   imgUrl: string;
-  category?: string;
+  category?: string | null | undefined;
   title: React.ReactNode;
 }
 

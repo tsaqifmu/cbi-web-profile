@@ -5,8 +5,9 @@ export enum ApiPath {
 
   DASHBOARD_OLD = "/dashboard?populate[headline][populate]=*&populate[whySection][populate]=*&populate[productService][populate][products][populate]=*&populate[ourImpact][populate]=*&populate[bannerContact][populate]=*&populate[latestNews][populate]=*",
 
-  // Blog paths
-  ARTICLES = "/articles",
+  // Article paths
+  BLOGS = "/blogs",
+  NEWS = "/articles",
 
   PRODUCTS_AND_SERVICES = "/product-and-service?populate[headline][populate]=*&populate[whySection][populate]=*&populate[productsSection][populate][products][populate]=*&populate[servicesSection][populate][services][populate]=*&populate[bannerContactSection][populate]=*",
 

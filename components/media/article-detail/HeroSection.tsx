@@ -1,21 +1,28 @@
+import { formatDate } from "@/utils/formatDate";
 import HeroSectionGeneral from "@/components/common/HeroSectionGeneral";
+import { ArticleDetail } from "@/types/responseTypes/articleDetailTypes";
+import { getImageUrl } from "@/utils/image";
 
-const HeroSection = () => {
+const HeroSection = ({ data }: { data: ArticleDetail }) => {
+  console.log("ini data image", data?.image?.url);
+
   return (
     <HeroSectionGeneral
-      imgUrl="/blog-detail.jpeg"
-      category="Kategori"
+      imgUrl={getImageUrl(data?.image?.url)}
+      category={data.type}
       title={
         <>
           <h1 className="text-center text-3xl font-bold text-white lg:text-5xl xl:text-[56px]">
-            Blog title heading will go here
+            {data.title}
           </h1>
           <div className="flex items-center justify-center gap-x-2 pt-6">
             <p className="text-xs font-bold text-white">
               Oleh <span className="font-normal">nama</span>
             </p>
             <span>•</span>
-            <p className="text-xs font-normal text-white">12 Desember 2024</p>
+            <p className="text-xs font-normal text-white">
+              {formatDate(data.publishedAt)}
+            </p>
           </div>
         </>
       }

@@ -17,8 +17,6 @@ enum NewsType {
 const LatestNewsSection = ({ data }: { data: LatestNews }) => {
   const [activeState, setActiveState] = useState<NewsType>(NewsType.ALL);
 
-  // console.log("Ini data latest news", data);
-
   // Menggunakan useMemo untuk memfilter data
   const filteredNews = useMemo(() => {
     const allItems = [...data?.blogs, ...data?.news];
@@ -82,7 +80,7 @@ const LatestNewsSection = ({ data }: { data: LatestNews }) => {
           {/* News */}
           <div className="mt-12 flex gap-4 overflow-x-scroll ps-6 lg:overflow-hidden lg:ps-8 xl:ps-0">
             {filteredNews.map((item) => (
-              <NewsItem key={item.slug} news={item} />
+              <NewsItem key={item.slug} article={item} />
             ))}
           </div>
         </ContainerSection>
