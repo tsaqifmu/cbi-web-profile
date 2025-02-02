@@ -3,33 +3,26 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
+import { NewsItem as NewsItemProps } from "@/types/responseTypes/dashboard/latestNews";
 
-interface NewsItemProps {
-  news: {
-    title: string;
-    slug: string;
-    imgUrl: string;
-    type: string;
-    description: string;
-  };
-}
+const NewsItem = ({ news }: { news: NewsItemProps }) => {
+  // const isTypeNews = news.type === "news";
 
-const NewsItem = ({ news }: NewsItemProps) => {
-  const isTypeNews = news.type === "news";
+  console.log("ini news", news);
 
   return (
     <article className="max-w-[19.375rem]">
       {/* Image and label */}
       <div className="relative h-[19.375rem] w-[19.375rem] overflow-hidden rounded-lg border border-gray-200 lg:rounded-3xl">
-        <Image
-          src={news.imgUrl}
+        {/* <Image
+          src={news.}
           alt="berita 1"
           width={310}
           height={310}
           className="h-full w-full object-cover"
-        />
+        /> */}
 
-        <div
+        {/* <div
           className={cn(
             "absolute left-4 top-4 rounded-lg px-4 py-2 text-white backdrop-blur-md",
             isTypeNews
@@ -38,7 +31,7 @@ const NewsItem = ({ news }: NewsItemProps) => {
           )}
         >
           {isTypeNews ? "Berita" : "Artikel"}
-        </div>
+        </div> */}
       </div>
 
       {/* Title */}
@@ -48,7 +41,7 @@ const NewsItem = ({ news }: NewsItemProps) => {
 
       {/* Description */}
       <p className="mt-2 line-clamp-2 text-ellipsis text-sm text-[rgba(102,102,102,1)] lg:text-base">
-        {news.description}
+        {news.shortDescription}
       </p>
 
       {/* Link */}

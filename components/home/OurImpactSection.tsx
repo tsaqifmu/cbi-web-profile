@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { getImageUrl } from "@/utils/image";
-import { OurImpact } from "@/utils/types";
+import { OurImpact } from "@/types/responseTypes/dashboard/ourImpact";
 
 import ContainerSection from "../layout/container";
 
@@ -52,7 +52,7 @@ const OurImpactSection = ({ data }: { data: OurImpact }) => {
                 <Image
                   draggable={false}
                   src={getImageUrl(data.product1image?.url)}
-                  alt={data.product1image.caption ?? "image product 1"}
+                  alt={data.product1image.alternativeText ?? "image product 1"}
                   width={700}
                   height={397}
                   className="h-full w-80 object-cover lg:w-fit"

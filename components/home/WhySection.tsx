@@ -1,10 +1,11 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import ContainerSection from '@/components/layout/container';
-import { getImageUrl } from '@/utils/image';
-import { WhySection as WhySectionType } from '@/utils/types';
+import { getImageUrl } from "@/utils/image";
+import { WhySection as WhySectionProps } from "@/types/responseTypes/dashboard/whySection";
 
-const WhySection = async ({ data }: { data: WhySectionType }) => {
+import ContainerSection from "@/components/layout/container";
+
+const WhySection = async ({ data }: { data: WhySectionProps }) => {
   try {
     const imageUrl = getImageUrl(data?.image?.url);
 

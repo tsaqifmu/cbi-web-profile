@@ -1,9 +1,8 @@
-import { notFound } from "next/navigation";
 import { FC } from "react";
-
-import { Headline } from "@/utils/types";
+import { notFound } from "next/navigation";
 
 import LinkGreen from "./LinkGreen";
+import { Headline } from "@/types/responseTypes/dashboard/headline";
 
 const BackgroundVideo = () => {
   return (

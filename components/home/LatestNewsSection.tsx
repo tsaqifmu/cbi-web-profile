@@ -1,52 +1,35 @@
 "use client";
+
 import { useMemo, useState } from "react";
 
 import { cn } from "@/lib/utils";
+import { LatestNews } from "@/types/responseTypes/dashboard/latestNews";
 
-import ContainerSection from "../layout/container";
 import NewsItem from "./NewsItem";
+import ContainerSection from "../layout/container";
 
-const dummyNews = [
-  {
-    title: "Judul berita 1",
-    slug: "judul-berita-1",
-    imgUrl: "/img-news-1.png",
-    type: "news",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enigmatic sigma boy mannn chill dong",
-  },
-  {
-    title: "Judul berita 2",
-    slug: "judul-berita-2",
-    imgUrl: "/img-news-2.png",
-    type: "article",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enigmatic sigma boy mannn chill dong",
-  },
-  {
-    title: "Judul berita 3",
-    slug: "judul-berita-3",
-    imgUrl: "/img-news-3.png",
-    type: "news",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enigmatic sigma boy mannn chill dong",
-  },
-  {
-    title: "Judul berita 4",
-    slug: "judul-berita-4",
-    imgUrl: "/img-news-4.png",
-    type: "article",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enigmatic sigma boy mannn chill dong",
-  },
-];
+enum NewsType {
+  ALL = "all",
+  ARTICLE = "article",
+  NEWS = "news",
+}
 
-const LatestNewsSection = () => {
-  const [activeState, setActiveState] = useState("all");
-  const news = useMemo(() => {
-    if (activeState === "all") return dummyNews;
-    return dummyNews.filter((item) => item.type === activeState);
-  }, [activeState]);
+const LatestNewsSection = ({ data }: { data: LatestNews }) => {
+  const [activeState, setActiveState] = useState<NewsType>(NewsType.ALL);
+
+  // Menggunakan useMemo untuk memfilter data
+  const filteredNews = useMemo(() => {
+    const allItems = [...data?.blogs, ...data?.news];
+
+    switch (activeState) {
+      case NewsType.ARTICLE:
+        return data?.blogs;
+      case NewsType.NEWS:
+        return data?.news;
+      default:
+        return allItems;
+    }
+  }, [data, activeState]);
 
   return (
     <>
@@ -61,33 +44,33 @@ const LatestNewsSection = () => {
               <button
                 className={cn(
                   "rounded-[1.5rem] px-3 py-2",
-                  activeState === "all"
+                  activeState === NewsType.ALL
                     ? "bg-[#009933] text-white"
                     : "border border-gray-200 text-[#666]",
                 )}
-                onClick={() => setActiveState("all")}
+                onClick={() => setActiveState(NewsType.ALL)}
               >
                 Semua
               </button>
               <button
                 className={cn(
                   "rounded-[1.5rem] px-3 py-2",
-                  activeState === "news"
+                  activeState === NewsType.NEWS
                     ? "bg-[#009933] text-white"
                     : "border border-gray-200 text-[#666]",
                 )}
-                onClick={() => setActiveState("news")}
+                onClick={() => setActiveState(NewsType.NEWS)}
               >
                 Berita
               </button>
               <button
                 className={cn(
                   "rounded-[1.5rem] px-3 py-2",
-                  activeState === "article"
+                  activeState === NewsType.ARTICLE
                     ? "bg-[#009933] text-white"
                     : "border border-gray-200 text-[#666]",
                 )}
-                onClick={() => setActiveState("article")}
+                onClick={() => setActiveState(NewsType.ARTICLE)}
               >
                 Artikel
               </button>
@@ -96,7 +79,7 @@ const LatestNewsSection = () => {
 
           {/* News */}
           <div className="mt-12 flex gap-4 overflow-x-scroll ps-6 lg:overflow-hidden lg:ps-8 xl:ps-0">
-            {news.map((item) => (
+            {filteredNews.map((item) => (
               <NewsItem key={item.slug} news={item} />
             ))}
           </div>
