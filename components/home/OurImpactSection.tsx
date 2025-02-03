@@ -32,18 +32,21 @@ const OurImpactSection = ({ data }: { data: OurImpact }) => {
         <div className="mt-12 flex flex-col gap-10">
           {/* Banner 1 */}
           <div className="relative min-h-[35rem] w-full overflow-hidden rounded-3xl bg-cover bg-bottom bg-no-repeat md:min-h-[25rem]">
-            {/* Background dengan filter */}
-            <div
-              className="absolute inset-0 bg-cover bg-bottom bg-no-repeat contrast-50"
-              style={{
-                backgroundImage: `url(${getImageUrl(data.product1bgimage?.url)})`,
-              }}
-            />
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <Image
+                src={getImageUrl(data.product1bgimage?.url)}
+                alt="Background image 1"
+                fill
+                className="object-cover object-bottom contrast-50"
+                priority
+              />
+            </div>
 
             {/* Gradient overlay */}
             <div className="absolute inset-0 z-10 bg-gradient-to-t from-transparent to-[#952C1F] to-60% md:bg-gradient-to-r" />
 
-            {/* Konten */}
+            {/* Content */}
             <div className="absolute z-20 flex h-full w-full flex-col-reverse pt-8 md:flex-row md:pt-0">
               <div className="flex flex-1 items-end justify-center">
                 <Image
@@ -81,20 +84,23 @@ const OurImpactSection = ({ data }: { data: OurImpact }) => {
 
           {/* Banner 2 */}
           <div className="relative min-h-[35rem] w-full overflow-hidden rounded-3xl bg-cover bg-bottom bg-no-repeat md:min-h-[25rem]">
-            {/* Background dengan filter */}
-            <div
-              className="absolute inset-0 bg-cover bg-bottom bg-no-repeat contrast-50"
-              style={{
-                backgroundImage: `url(${getImageUrl(data.product1bgimage?.url)})`,
-              }}
-            />
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <Image
+                src={getImageUrl(data.product1bgimage?.url)}
+                alt="Background image 2"
+                fill
+                className="object-cover object-bottom contrast-50"
+                priority
+              />
+            </div>
 
             {/* Gradient overlay */}
             <div className="absolute inset-0 z-10 bg-gradient-to-t from-transparent to-[#98AF1D] to-40% md:bg-gradient-to-l" />
 
-            {/* Konten */}
+            {/* Content */}
             <div className="absolute z-20 flex h-full w-full flex-col pt-8 md:flex-row md:pt-0">
-              {/* teks */}
+              {/* Text */}
               <div className="flex flex-1 flex-col justify-center gap-6 px-6 leading-6 text-white md:ms-16">
                 <div>
                   <span className="block text-sm lg:text-base">
@@ -118,7 +124,7 @@ const OurImpactSection = ({ data }: { data: OurImpact }) => {
                 </div>
               </div>
 
-              {/* gambar */}
+              {/* Image */}
               <div className="flex flex-1 items-end justify-center">
                 <Image
                   draggable={false}
@@ -135,7 +141,7 @@ const OurImpactSection = ({ data }: { data: OurImpact }) => {
 
         <div className="mb-4 mt-14 flex flex-col justify-between md:flex-row">
           <p className="max-w-[15rem] font-semibold text-[#222]">
-            Produk kami telah memiliki perizinan dan beberapa sertifikat
+            Produk kami telah meraih beberapa Sertifikasi
           </p>
           <div className="mt-6 flex flex-wrap items-center space-x-12 space-y-6 md:mt-0 md:space-y-0">
             <Image
