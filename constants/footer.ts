@@ -22,7 +22,7 @@ export const SOCIAL_LINKS = [
   },
   {
     icon: "/Youtube.svg",
-    href: "https://www.instagram.com/centrabiotechindonesia/?utm_source=ig_web_button_share_sheet",
+    href: "https://www.youtube.com/@centrabiotechindonesia",
     alt: "youtube",
   },
 ];

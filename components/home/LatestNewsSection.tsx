@@ -1,108 +1,118 @@
 "use client";
+
 import { useMemo, useState } from "react";
-
 import { cn } from "@/lib/utils";
-
-import ContainerSection from "../layout/container";
+import { LatestNews } from "@/types/responseTypes/dashboard/latestNews";
+import ContainerSection from "@/components/layout/container";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import NewsItem from "./NewsItem";
 
-const dummyNews = [
-  {
-    title: "Judul berita 1",
-    slug: "judul-berita-1",
-    imgUrl: "/img-news-1.png",
-    type: "news",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enigmatic sigma boy mannn chill dong",
-  },
-  {
-    title: "Judul berita 2",
-    slug: "judul-berita-2",
-    imgUrl: "/img-news-2.png",
-    type: "article",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enigmatic sigma boy mannn chill dong",
-  },
-  {
-    title: "Judul berita 3",
-    slug: "judul-berita-3",
-    imgUrl: "/img-news-3.png",
-    type: "news",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enigmatic sigma boy mannn chill dong",
-  },
-  {
-    title: "Judul berita 4",
-    slug: "judul-berita-4",
-    imgUrl: "/img-news-4.png",
-    type: "article",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enigmatic sigma boy mannn chill dong",
-  },
-];
+// Constants
+const NEWS_TYPES = {
+  ALL: "all",
+  ARTICLE: "article",
+  NEWS: "news",
+} as const;
 
-const LatestNewsSection = () => {
-  const [activeState, setActiveState] = useState("all");
-  const news = useMemo(() => {
-    if (activeState === "all") return dummyNews;
-    return dummyNews.filter((item) => item.type === activeState);
-  }, [activeState]);
+type NewsType = (typeof NEWS_TYPES)[keyof typeof NEWS_TYPES];
+
+interface FilterButtonProps {
+  isActive: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}
+
+// Extracted components
+const FilterButton: React.FC<FilterButtonProps> = ({
+  isActive,
+  onClick,
+  children,
+}) => (
+  <button
+    className={cn(
+      "rounded-[1.5rem] px-3 py-2 transition-colors duration-200",
+      isActive
+        ? "bg-[#009933] text-white"
+        : "border border-gray-200 text-[#666666] hover:bg-gray-50",
+    )}
+    onClick={onClick}
+  >
+    {children}
+  </button>
+);
+
+interface NewsFilterProps {
+  activeType: NewsType;
+  onTypeChange: (type: NewsType) => void;
+}
+
+const NewsFilter: React.FC<NewsFilterProps> = ({
+  activeType,
+  onTypeChange,
+}) => (
+  <div className="flex gap-1 text-xs lg:gap-2 lg:text-sm">
+    <FilterButton
+      isActive={activeType === NEWS_TYPES.ALL}
+      onClick={() => onTypeChange(NEWS_TYPES.ALL)}
+    >
+      Semua
+    </FilterButton>
+    <FilterButton
+      isActive={activeType === NEWS_TYPES.NEWS}
+      onClick={() => onTypeChange(NEWS_TYPES.NEWS)}
+    >
+      Berita
+    </FilterButton>
+    <FilterButton
+      isActive={activeType === NEWS_TYPES.ARTICLE}
+      onClick={() => onTypeChange(NEWS_TYPES.ARTICLE)}
+    >
+      Artikel
+    </FilterButton>
+  </div>
+);
+
+interface LatestNewsSectionProps {
+  data: LatestNews;
+}
+
+const LatestNewsSection: React.FC<LatestNewsSectionProps> = ({ data }) => {
+  const [activeType, setActiveType] = useState<NewsType>(NEWS_TYPES.ALL);
+
+  const filteredNews = useMemo(() => {
+    const { blogs, news } = data;
+    const allItems = [...blogs, ...news];
+
+    switch (activeType) {
+      case NEWS_TYPES.ARTICLE:
+        return blogs;
+      case NEWS_TYPES.NEWS:
+        return news;
+      default:
+        return allItems;
+    }
+  }, [data, activeType]);
 
   return (
-    <>
-      <section>
-        <ContainerSection>
-          {/* Title */}
-          <div className="flex flex-col justify-between gap-6 px-6 md:flex-row md:items-center lg:px-8 xl:px-0">
-            <div className="flex-1">
-              <h1>Kabar Terbaru</h1>
-            </div>
-            <div className="flex gap-1 text-xs lg:gap-2 lg:text-sm">
-              <button
-                className={cn(
-                  "rounded-[1.5rem] px-3 py-2",
-                  activeState === "all"
-                    ? "bg-[#009933] text-white"
-                    : "border border-gray-200 text-[#666]",
-                )}
-                onClick={() => setActiveState("all")}
-              >
-                Semua
-              </button>
-              <button
-                className={cn(
-                  "rounded-[1.5rem] px-3 py-2",
-                  activeState === "news"
-                    ? "bg-[#009933] text-white"
-                    : "border border-gray-200 text-[#666]",
-                )}
-                onClick={() => setActiveState("news")}
-              >
-                Berita
-              </button>
-              <button
-                className={cn(
-                  "rounded-[1.5rem] px-3 py-2",
-                  activeState === "article"
-                    ? "bg-[#009933] text-white"
-                    : "border border-gray-200 text-[#666]",
-                )}
-                onClick={() => setActiveState("article")}
-              >
-                Artikel
-              </button>
-            </div>
+    <section className="w-full">
+      <ContainerSection>
+        <div className="flex flex-col justify-between gap-6 px-6 md:flex-row md:items-center lg:px-8 xl:px-0">
+          <div className="flex-1">
+            <h1>Kabar Terbaru</h1>
           </div>
+          <NewsFilter activeType={activeType} onTypeChange={setActiveType} />
+        </div>
 
-          {/* News */}
-          <div className="mt-12 flex gap-4 overflow-x-scroll ps-6 lg:overflow-hidden lg:ps-8 xl:ps-0">
-            {news.map((item) => (
-              <NewsItem key={item.slug} news={item} />
+        <ScrollArea className="w-full">
+          <div className="mt-12 flex gap-4 pb-7 ps-6 lg:ps-8 xl:ps-0">
+            {filteredNews.map((item) => (
+              <NewsItem key={item.slug} article={item} />
             ))}
           </div>
-        </ContainerSection>
-      </section>
-    </>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
+      </ContainerSection>
+    </section>
   );
 };
 

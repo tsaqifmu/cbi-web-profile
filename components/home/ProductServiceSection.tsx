@@ -1,9 +1,13 @@
-import { getImageUrl } from '@/utils/image';
-import { Product, ProductService } from '@/utils/types';
+import { getImageUrl } from "@/utils/image";
 
-import ContainerSection from '../layout/container';
-import LinkGreen from './LinkGreen';
-import ProductCard from './ProductCard';
+import {
+  Product,
+  ProductService,
+} from "@/types/responseTypes/dashboard/productService";
+
+import LinkGreen from "./LinkGreen";
+import ProductCard from "./ProductCard";
+import ContainerSection from "../layout/container";
 
 const ProductServiceSection = ({ data }: { data: ProductService }) => {
   return (
@@ -27,7 +31,8 @@ const ProductServiceSection = ({ data }: { data: ProductService }) => {
             <ProductCard
               key={product.id}
               imgUrl={getImageUrl(product?.image?.url)}
-              title={product.title}
+              imgAlt={product.image.alternativeText ?? "Product image"}
+              title1={product.title}
               title2={product.description}
               color1={`#${product.color1}`}
               color2={`#${product.color2}`}
