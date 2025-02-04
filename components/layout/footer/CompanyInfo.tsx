@@ -6,7 +6,7 @@ import { SOCIAL_LINKS } from "@/constants/footer";
 const SocialLinks = () => (
   <div className="flex gap-4">
     {SOCIAL_LINKS.map(({ icon, href, alt }) => (
-      <Link key={alt} href={href}>
+      <Link key={alt} href={href} target="_blank">
         <Image
           src={icon}
           height={24}

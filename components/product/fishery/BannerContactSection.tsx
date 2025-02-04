@@ -31,7 +31,7 @@ const BannerContactSection = () => {
               </h1>
             </div>
             <div className="mt-4 flex items-center justify-end md:mt-0">
-              <LinkGreen href="/" withArrow={false}>
+              <LinkGreen href="/contact" withArrow={false}>
                 Hubungi Kami
               </LinkGreen>
             </div>

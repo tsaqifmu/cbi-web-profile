@@ -1,13 +1,12 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import ContainerSection from '@/components/layout/container';
-import { getImageUrl } from '@/utils/image';
-import { WhySection as WhySectionType } from '@/utils/types';
+import { getImageUrl } from "@/utils/image";
+import { WhySection as WhySectionProps } from "@/types/responseTypes/dashboard/whySection";
 
-const WhySection = async ({ data }: { data: WhySectionType }) => {
+import ContainerSection from "@/components/layout/container";
+
+const WhySection = async ({ data }: { data: WhySectionProps }) => {
   try {
-    const imageUrl = getImageUrl(data?.image?.url);
-
     return (
       <section className="w-full bg-[#eee]">
         <ContainerSection className="flex flex-col items-center justify-between gap-8 md:flex-row xl:gap-16">
@@ -20,10 +19,13 @@ const WhySection = async ({ data }: { data: WhySectionType }) => {
           {/* Image */}
           <div className="flex-1">
             <Image
-              src={imageUrl}
-              alt="Petani dan sawah"
-              width={626}
-              height={406}
+              src={getImageUrl(data?.image?.url)}
+              alt={
+                data?.image.alternativeText ??
+                "image of farmers and rice fields"
+              }
+              width={data.image.width}
+              height={data.image.height}
               className="h-44 flex-1 rounded-3xl object-cover md:h-[22.25rem] lg:h-[28.5rem] xl:h-96"
             />
           </div>

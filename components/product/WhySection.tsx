@@ -1,7 +1,7 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import ContainerSection from '@/components/layout/container';
-import { WhySection as WhySectionType } from '@/utils/types';
+import ContainerSection from "@/components/layout/container";
+import { WhySection as WhySectionType } from "@/types/responseTypes/dashboard/whySection";
 
 const WhySection = ({ data }: { data: WhySectionType }) => {
   return (

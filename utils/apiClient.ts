@@ -1,10 +1,15 @@
 // types.ts
 export enum ApiPath {
   // Dashboard paths
-  DASHBOARD = "/dashboard?populate[headline][populate]=*&populate[whySection][populate]=*&populate[productService][populate][products][populate]=*&populate[ourImpact][populate]=*&populate[bannerContact][populate]=*",
+  DASHBOARD = "/dashboard",
 
-  // Blog paths
-  ARTICLES = "/articles",
+  DASHBOARD_OLD = "/dashboard?populate[headline][populate]=*&populate[whySection][populate]=*&populate[productService][populate][products][populate]=*&populate[ourImpact][populate]=*&populate[bannerContact][populate]=*&populate[latestNews][populate]=*",
+
+  // Article paths
+  BLOGS = "/blogs",
+  NEWS = "/articles",
+  NEWS_SECTION = "/news-section",
+  BLOG_SECTION = "/blog-section",
 
   PRODUCTS_AND_SERVICES = "/product-and-service?populate[headline][populate]=*&populate[whySection][populate]=*&populate[productsSection][populate][products][populate]=*&populate[servicesSection][populate][services][populate]=*&populate[bannerContactSection][populate]=*",
 
@@ -33,7 +38,7 @@ export interface ApiRequestConfig {
   path: ApiPath;
   method?: ApiMethod;
   pathParams?: Record<string, string>;
-  queryParams?: Record<string, never>;
+  queryParams?: any;
   body?: never;
 }
 
