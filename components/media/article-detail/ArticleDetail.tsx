@@ -28,7 +28,7 @@ const OtherArticle = async ({ type }: { type: string }) => {
       <>
         <div className="mt-20 flex flex-col gap-y-6">
           <h2>Blog Lainnya</h2>
-          {/* Ini perlu ganti ke link */}
+          {/* Ini buat component Link */}
           <Button className="w-fit bg-[#009933] text-sm">Lihat Semua</Button>
         </div>
         <ScrollArea>
