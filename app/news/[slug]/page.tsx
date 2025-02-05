@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 
 import { ApiPath, apiRequest } from "@/utils/apiClient";
 import { ArticleDetailResponse } from "@/types/responseTypes";
-import { getArticleDetailQuery } from "@/utils/blogDetailQuery";
+import { getArticleDetailQuery } from "@/utils/articlesDetailQuery";
 
 import HeroSection from "@/components/media/article-detail/HeroSection";
 import ArticleDetail from "@/components/media/article-detail/ArticleDetail";
@@ -27,7 +27,10 @@ const NewsDetail = async ({
   return (
     <section>
       <HeroSection data={newsDetailData} />
-      <ArticleDetail content={newsDetailData.content} />
+      <ArticleDetail
+        content={newsDetailData.content}
+        type={newsDetailData.type}
+      />
     </section>
   );
 };

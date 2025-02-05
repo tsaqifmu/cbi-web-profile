@@ -21,7 +21,7 @@ export interface BlogSectionResponse {
   data: BlogData;
   meta: Record<string, never>;
 }
-export interface BlogCollectionResponse {
+export interface ArticlesCollectionResponse {
   data: ArticleItem[];
   meta: Record<string, never>;
 }

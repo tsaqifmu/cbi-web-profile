@@ -1,6 +1,6 @@
 import { generateQuery } from "./generateQuery";
 
-export const getBlogCollectionQuery = () => {
+export const getArticlesCollectionQuery = () => {
   const params = {
     fields: [
       "title",
