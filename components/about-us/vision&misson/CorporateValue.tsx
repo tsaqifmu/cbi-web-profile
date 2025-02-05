@@ -60,6 +60,8 @@ const CorporateValue = () => {
                   </p>
                 </div>
               </div>
+
+              {/* Devider line */}
               {index !== corporateValues.length - 1 && (
                 <div className="my-2 border border-t border-[#AAAAAA]" />
               )}
