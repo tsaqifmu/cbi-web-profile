@@ -1,5 +1,4 @@
 import { BlocksContent } from "@strapi/blocks-react-renderer";
-import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 import { ApiPath, apiRequest } from "@/utils/apiClient";
 import { getArticlesCollectionQuery } from "@/utils/articlesCollectionQuery";
@@ -11,6 +10,7 @@ import ArticleCard from "@/components/media/ArticleCard";
 import ContainerSection from "@/components/layout/container";
 import ContainerBlog from "@/components/layout/ContainerBlog";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import BlocksRendererClient from "@/components/common/BlockRendererClient";
 
 const getApiPathByType = (type: string): ApiPath => {
   return type === "news" ? ApiPath.NEWS : ApiPath.BLOGS;
@@ -52,11 +52,10 @@ const ArticleDetail = ({
   content: BlocksContent;
   type: string;
 }) => {
-  console.log("ini type", type);
   return (
     <section>
       <ContainerBlog>
-        <BlocksRenderer content={content} />
+        <BlocksRendererClient content={content} />
       </ContainerBlog>
       <ContainerSection>
         <OtherArticle type={type} />
