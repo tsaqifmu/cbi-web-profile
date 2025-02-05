@@ -2,9 +2,9 @@ import { BlocksContent } from "@strapi/blocks-react-renderer";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 import { ApiPath, apiRequest } from "@/utils/apiClient";
-import { getBlogCollectionQuery } from "@/utils/blogCollectionQuery";
+import { getArticlesCollectionQuery } from "@/utils/articlesCollectionQuery";
 
-import { BlogCollectionResponse } from "@/types/responseTypes";
+import { ArticlesCollectionResponse } from "@/types/responseTypes";
 
 import { Button } from "@/components/ui/button";
 import ArticleCard from "@/components/media/ArticleCard";
@@ -12,11 +12,15 @@ import ContainerSection from "@/components/layout/container";
 import ContainerBlog from "@/components/layout/ContainerBlog";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
-const OtherArticle = async () => {
+const getApiPathByType = (type: string): ApiPath => {
+  return type === "news" ? ApiPath.NEWS : ApiPath.BLOGS;
+};
+
+const OtherArticle = async ({ type }: { type: string }) => {
   try {
-    const query = getBlogCollectionQuery();
-    const { data } = await apiRequest<BlogCollectionResponse>({
-      path: ApiPath.BLOGS,
+    const query = getArticlesCollectionQuery();
+    const { data } = await apiRequest<ArticlesCollectionResponse>({
+      path: getApiPathByType(type),
       queryParams: query,
     });
 
@@ -41,14 +45,21 @@ const OtherArticle = async () => {
   }
 };
 
-const ArticleDetail = ({ content }: { content: BlocksContent }) => {
+const ArticleDetail = ({
+  content,
+  type,
+}: {
+  content: BlocksContent;
+  type: string;
+}) => {
+  console.log("ini type", type);
   return (
     <section>
       <ContainerBlog>
         <BlocksRenderer content={content} />
       </ContainerBlog>
       <ContainerSection>
-        <OtherArticle />
+        <OtherArticle type={type} />
       </ContainerSection>
     </section>
   );
