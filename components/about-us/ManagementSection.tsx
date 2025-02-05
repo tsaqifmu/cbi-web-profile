@@ -62,11 +62,11 @@ const ManagementSection = () => {
   return (
     <section className="py-16">
       <ContainerSection>
-        <h1 className="mb-8 text-3xl font-bold">Manajemen</h1>
+        <h2 className="mb-8">Manajemen</h2>
 
         <Swiper
           modules={[Pagination, Navigation, Autoplay]}
-          spaceBetween={30}
+          spaceBetween={20}
           slidesPerView={1}
           pagination={{
             clickable: true,
@@ -87,21 +87,21 @@ const ManagementSection = () => {
               slidesPerView: 3,
             },
             1440: {
-              slidesPerView: 4,
+              slidesPerView: 3,
             },
           }}
-          className="pb-16"
+          className="mt-16 pb-16"
         >
           {managementData.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="flex w-[18.75rem] flex-col gap-y-5">
+              <div className="flex w-[18.75rem] flex-col gap-y-5 lg:w-[25rem]">
                 <div className="relative">
                   <Image
                     src={item.image}
                     alt={`${item.name} photo`}
                     width={400}
                     height={400}
-                    className="h-[18.75rem] w-[18.75rem] rounded-[1.125rem] object-cover object-center"
+                    className="h-[18.75rem] w-[18.75rem] rounded-[1.125rem] object-cover object-center lg:h-[25rem] lg:w-[25rem]"
                   />
                   <div className="absolute bottom-2 left-4 z-10">
                     <h4 className="text-base font-bold text-[#FDFDFD] lg:text-xl">
@@ -110,8 +110,10 @@ const ManagementSection = () => {
                     <p className="text-[#FDFDFD]">{item.title}</p>
                   </div>
                 </div>
-                <div className="text-sm">
-                  <p className="text-gray-700">{item.description}</p>
+                <div>
+                  <p className="text-gray-700 lg:text-base">
+                    {item.description}
+                  </p>
                 </div>
               </div>
             </SwiperSlide>

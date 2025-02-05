@@ -10,14 +10,15 @@ import {
 interface LinkSectionProps {
   title: string;
   links: NavigationLink[];
+  target?: string;
 }
 
 // Components
 const LinkSection: FC<LinkSectionProps> = ({ title, links }) => (
   <div className="flex flex-col gap-4">
     <h4 className="font-bold">{title}</h4>
-    {links.map(({ label, href }) => (
-      <Link key={label} className="hover:underline" href={href}>
+    {links.map(({ label, href, target }) => (
+      <Link key={label} className="hover:underline" href={href} target={target}>
         {label}
       </Link>
     ))}
