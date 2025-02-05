@@ -6,8 +6,6 @@ import {
   type BlocksContent,
 } from "@strapi/blocks-react-renderer";
 
-import { getImageUrl } from "@/utils/image";
-
 const BlocksRendererClient = ({
   content,
 }: {
