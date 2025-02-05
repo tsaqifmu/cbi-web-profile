@@ -79,7 +79,7 @@ const TabButton: FC<TabButtonProps> = ({ isActive, onClick, children }) => (
       "rounded-full px-4 py-2 transition-colors",
       isActive
         ? "bg-[#009933] text-white hover:bg-[#009933] hover:text-white"
-        : "bg-gray-200 text-gray-700 hover:bg-gray-300",
+        : "border border-[#EEEEEE] bg-[#FDFDFD] text-[#666666] hover:bg-[#009933] hover:text-white",
     )}
   >
     {children}
