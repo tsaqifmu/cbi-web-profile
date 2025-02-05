@@ -30,6 +30,7 @@ export const SOCIAL_LINKS = [
 export interface NavigationLink {
   label: string;
   href: string;
+  target?: string;
 }
 
 export const COMPANY_LINKS: NavigationLink[] = [
@@ -43,5 +44,9 @@ export const PRODUCT_LINKS: NavigationLink[] = [
   { label: "Pertanian", href: "/product/agriculture" },
   { label: "Peternakan", href: "/product/livestock" },
   { label: "Perikanan", href: "/product/fishery" },
-  { label: "Dokter Tani", href: "/" },
+  {
+    label: "Dokter Tani",
+    href: "https://www.doktertani.co.id/",
+    target: "_blank",
+  },
 ];

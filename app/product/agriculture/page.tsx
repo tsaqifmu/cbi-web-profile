@@ -46,7 +46,7 @@ const Agriculture = async () => {
                 Produk Pertanian kami?
               </h1>
               <div className="mt-8 flex flex-col gap-8 md:flex-row lg:mt-24">
-                <div className="group flex flex-1 flex-col rounded-lg px-8 py-6 shadow-md transition duration-300 hover:bg-[#C46617] lg:py-12">
+                <div className="group flex flex-1 flex-col rounded-lg bg-[#FDFDFD] px-8 py-6 drop-shadow-[0_0_10px_rgba(0,0,0,0.1)] transition duration-300 hover:bg-[#C46617] lg:py-12">
                   <CustomSvgIcon
                     url={getImageUrl(data?.whySection?.why1?.image?.url)}
                   />
@@ -55,7 +55,7 @@ const Agriculture = async () => {
                   </p>
                 </div>
 
-                <div className="group flex flex-1 flex-col rounded-lg px-8 py-6 shadow-md transition-all duration-300 hover:bg-[#C46617] lg:py-12">
+                <div className="group flex flex-1 flex-col rounded-lg bg-[#FDFDFD] px-8 py-6 drop-shadow-[0_0_10px_rgba(0,0,0,0.1)] transition-all duration-300 hover:bg-[#C46617] lg:py-12">
                   <CustomSvgIcon
                     url={
                       process.env.NEXT_PUBLIC_URL_API +
@@ -67,7 +67,7 @@ const Agriculture = async () => {
                   </p>
                 </div>
 
-                <div className="group flex flex-1 flex-col rounded-lg px-8 py-6 shadow-md transition-all duration-300 hover:bg-[#C46617] lg:py-12">
+                <div className="group flex flex-1 flex-col rounded-lg bg-[#FDFDFD] px-8 py-6 drop-shadow-[0_0_10px_rgba(0,0,0,0.1)] transition-all duration-300 hover:bg-[#C46617] lg:py-12">
                   <CustomSvgIcon
                     url={
                       process.env.NEXT_PUBLIC_URL_API +

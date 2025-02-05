@@ -158,7 +158,7 @@ const Livestock = () => {
               {whyData.map((item) => (
                 <div
                   key={item.id}
-                  className="group flex flex-1 flex-col rounded-lg px-8 py-6 shadow-md transition duration-300 hover:bg-[#C46617] lg:py-12"
+                  className="group flex flex-1 flex-col rounded-lg bg-[#FDFDFD] px-8 py-6 drop-shadow-[0_0_10px_rgba(0,0,0,0.1)] transition duration-300 hover:bg-[#C46617] lg:py-12"
                 >
                   {item.icon}
                   <p className="mt-6 text-sm text-[#666] !transition-none group-hover:text-white lg:mt-8 lg:text-base">

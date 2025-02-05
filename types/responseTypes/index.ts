@@ -1,5 +1,6 @@
 import { ArticleDetail } from "./articleDetailTypes";
 import { BlogData } from "./blogSectionType";
+import { ArticleItem } from "./dashboard/latestNews";
 import { Data } from "./dashboardTypes";
 import { NewsData } from "./newsSectionType";
 
@@ -18,5 +19,9 @@ export interface NewsSectionResponse {
 }
 export interface BlogSectionResponse {
   data: BlogData;
+  meta: Record<string, never>;
+}
+export interface ArticlesCollectionResponse {
+  data: ArticleItem[];
   meta: Record<string, never>;
 }

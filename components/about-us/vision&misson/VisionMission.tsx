@@ -37,10 +37,10 @@ const VisionMission = () => {
     <ContainerSection>
       <div className="flex flex-col gap-8 md:flex-row">
         <div className="space-y-6 md:w-[40%]">
-          <h1>
+          <h2>
             Visi & Misi <br /> Kami
-          </h1>
-          <p>
+          </h2>
+          <p className="max-w-96">
             Mensejahterakan Petani dan Peternak dengan Produk yang Ramah
             Lingkungan dan Berkelanjutan
           </p>
