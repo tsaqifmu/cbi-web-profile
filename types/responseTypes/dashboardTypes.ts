@@ -1,9 +1,9 @@
-import { Headline } from "./dashboard/headline";
+import { Headline } from "./headline";
 import { OurImpact } from "./dashboard/ourImpact";
 import { LatestNews } from "./dashboard/latestNews";
 import { WhySection } from "./dashboard/whySection";
 import { ProductService } from "./dashboard/productService";
-import { BannerContactSection } from "./dashboard/bannerContact";
+import { BannerContactSection } from "./bannerContact";
 
 export interface Data {
   // Strapi default data

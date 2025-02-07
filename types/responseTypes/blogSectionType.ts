@@ -1,4 +1,6 @@
+import { BannerContactSection } from "./bannerContact";
 import { ArticleItem } from "./dashboard/latestNews";
+import { Headline } from "./headline";
 
 export interface BlogData {
   // Strapi default data
@@ -9,7 +11,9 @@ export interface BlogData {
   publishedAt: string;
 
   // Section type
+  headline: Headline;
   headlineBlog: ArticleItem;
   blog1: ArticleItem[];
   blog2: ArticleItem[];
+  bannerContactSection: BannerContactSection;
 }

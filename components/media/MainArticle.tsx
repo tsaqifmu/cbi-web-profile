@@ -48,7 +48,7 @@ const MainArticle = ({ data }: { data: ArticleItem }) => {
           alt={data.image.alternativeText ?? "Headline image"}
           width={data.image.width}
           height={data.image.height}
-          className="rounded-lg object-cover lg:w-1/2 lg:rounded-3xl"
+          className="rounded-lg object-cover md:w-1/2 lg:rounded-3xl"
         />
 
         {/* Article Content */}

@@ -1,5 +1,5 @@
-import { BannerContactSection } from "@/types/responseTypes/dashboard/bannerContact";
-import { Headline } from "@/types/responseTypes/dashboard/headline";
+import { BannerContactSection } from "@/types/responseTypes/bannerContact";
+import { Headline } from "@/types/responseTypes/headline";
 import { WhySection } from "@/types/responseTypes/dashboard/whySection";
 
 export interface ImageFormat {

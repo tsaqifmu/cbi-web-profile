@@ -1,10 +1,12 @@
+import { NewsSectionResponse } from "@/types/responseTypes";
+
+import { ApiPath, apiRequest } from "@/utils/apiClient";
+import { getNewsSectionQuery } from "@/utils/newsSectionQuery";
+
+import CTASection from "@/components/media/CTA";
 import HeroSection from "@/components/media/HeroSection";
 import MainArticle from "@/components/media/MainArticle";
 import ListArticle from "@/components/media/ListArticle";
-import CTASection from "@/components/media/CTA";
-import { getNewsSectionQuery } from "@/utils/newsSectionQuery";
-import { ApiPath, apiRequest } from "@/utils/apiClient";
-import { NewsSectionResponse } from "@/types/responseTypes";
 
 const Media = async () => {
   try {
@@ -16,10 +18,13 @@ const Media = async () => {
 
     return (
       <section>
-        <HeroSection title="Berita" category="Media & Informasi" />
+        <HeroSection
+          title={data.headline.description}
+          category={data.headline.title}
+        />
         <MainArticle data={data.headlineNews} />
         <ListArticle news1={data.news1} news2={data.news2} />
-        <CTASection />
+        <CTASection data={data.bannerContactSection} />
       </section>
     );
   } catch (e) {

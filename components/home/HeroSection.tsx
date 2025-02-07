@@ -2,7 +2,7 @@ import { FC } from "react";
 import { notFound } from "next/navigation";
 
 import LinkGreen from "./LinkGreen";
-import { Headline } from "@/types/responseTypes/dashboard/headline";
+import { Headline } from "@/types/responseTypes/headline";
 
 const BackgroundVideo = () => {
   return (

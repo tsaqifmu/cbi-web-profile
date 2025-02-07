@@ -3,6 +3,9 @@ import { generateQuery } from "./generateQuery";
 export const getNewsSectionQuery = () => {
   const params = {
     populate: {
+      headline: {
+        populate: "*",
+      },
       headlineNews: {
         fields: [
           "title",
@@ -42,6 +45,14 @@ export const getNewsSectionQuery = () => {
           "publishedAt",
           "type",
         ],
+        populate: {
+          image: {
+            fields: ["url", "alternativeText", "width", "height"],
+          },
+        },
+      },
+      bannerContactSection: {
+        fields: ["title", "ctaText"],
         populate: {
           image: {
             fields: ["url", "alternativeText", "width", "height"],

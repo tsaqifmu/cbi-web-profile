@@ -1,4 +1,6 @@
+import { Headline } from "./headline";
 import { ArticleItem } from "./dashboard/latestNews";
+import { BannerContactSection } from "./bannerContact";
 
 export interface NewsData {
   // Strapi default data
@@ -9,7 +11,9 @@ export interface NewsData {
   publishedAt: string;
 
   // Section type
+  headline: Headline;
   headlineNews: ArticleItem;
   news1: ArticleItem[];
   news2: ArticleItem[];
+  bannerContactSection: BannerContactSection;
 }
