@@ -1,5 +1,5 @@
 import { ApiPath, apiRequest } from "@/utils/apiClient";
-import { getDashboardQuery } from "@/utils/dashboardQuery";
+import { getDashboardQuery } from "@/utils/queries/dashboardQuery";
 
 import { DashboardResponse } from "@/types/responseTypes";
 

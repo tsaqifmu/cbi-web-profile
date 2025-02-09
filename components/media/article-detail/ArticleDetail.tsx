@@ -1,7 +1,7 @@
 import { BlocksContent } from "@strapi/blocks-react-renderer";
 
 import { ApiPath, apiRequest } from "@/utils/apiClient";
-import { getArticlesCollectionQuery } from "@/utils/articlesCollectionQuery";
+import { getArticlesCollectionQuery } from "@/utils/queries/articlesCollectionQuery";
 
 import { ArticlesCollectionResponse } from "@/types/responseTypes";
 

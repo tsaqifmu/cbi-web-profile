@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 
-import { getImageUrl } from "@/utils/image";
+import { getImageUrl } from "@/utils/getImageUrl";
 import { formatDate } from "@/utils/formatDate";
 import ContainerSection from "@/components/layout/container";
-import { ArticleItem } from "@/types/responseTypes/dashboard/latestNews";
+import { ArticleItem } from "@/types/responseTypes/article/articleItem";
 
 import ShareButtons from "./ShareButtons";
 import ReadMoreButton from "./ReadMoreButton";
@@ -48,7 +48,7 @@ const MainArticle = ({ data }: { data: ArticleItem }) => {
           alt={data.image.alternativeText ?? "Headline image"}
           width={data.image.width}
           height={data.image.height}
-          className="rounded-lg object-cover lg:w-1/2 lg:rounded-3xl"
+          className="rounded-lg object-cover md:w-1/2 lg:rounded-3xl"
         />
 
         {/* Article Content */}

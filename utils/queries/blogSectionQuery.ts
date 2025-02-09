@@ -1,9 +1,12 @@
-import { generateQuery } from "./generateQuery";
+import { generateQuery } from "../generateQuery";
 
-export const getNewsSectionQuery = () => {
+export const getBlogSectionQuery = () => {
   const params = {
     populate: {
-      headlineNews: {
+      headline: {
+        populate: "*",
+      },
+      headlineBlog: {
         fields: [
           "title",
           "shortDescription",
@@ -18,7 +21,7 @@ export const getNewsSectionQuery = () => {
           },
         },
       },
-      news1: {
+      blog1: {
         fields: [
           "title",
           "shortDescription",
@@ -33,7 +36,7 @@ export const getNewsSectionQuery = () => {
           },
         },
       },
-      news2: {
+      blog2: {
         fields: [
           "title",
           "shortDescription",
@@ -42,6 +45,14 @@ export const getNewsSectionQuery = () => {
           "publishedAt",
           "type",
         ],
+        populate: {
+          image: {
+            fields: ["url", "alternativeText", "width", "height"],
+          },
+        },
+      },
+      bannerContactSection: {
+        fields: ["title", "ctaText"],
         populate: {
           image: {
             fields: ["url", "alternativeText", "width", "height"],

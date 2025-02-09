@@ -3,67 +3,19 @@
 import { FC, ReactNode, useState } from "react";
 
 import { cn } from "@/lib/utils";
-import { downloadPDF } from "@/utils/downloadPdf";
 
 import { Button } from "@/components/ui/button";
 import ContainerSection from "@/components/layout/container";
 import { DocumentCard } from "@/components/document/DocumentCard";
+import {
+  Brochure,
+  Certificate,
+} from "@/types/responseTypes/MediaInformationData";
 
 enum DocumentType {
   BROCHURE = "brochure",
   CERTIFICATE = "certificate",
 }
-
-export interface Document {
-  id: number;
-  title: string;
-  description: string;
-  type: DocumentType;
-  fileName: string;
-}
-
-const documents: Document[] = [
-  {
-    id: 1,
-    title: "Brosur Produk 1",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    type: DocumentType.BROCHURE,
-    fileName: "contoh-file.pdf",
-  },
-  {
-    id: 2,
-    title: "Brosur Produk 2",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    type: DocumentType.BROCHURE,
-    fileName: "contoh-file.pdf",
-  },
-  {
-    id: 3,
-    title: "Brosur Produk 3",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    type: DocumentType.BROCHURE,
-    fileName: "contoh-file.pdf",
-  },
-  {
-    id: 4,
-    title: "Sertifikat Pupuk 1",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    type: DocumentType.CERTIFICATE,
-    fileName: "contoh-file.pdf",
-  },
-  {
-    id: 5,
-    title: "Sertifikat Pupuk 2",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    type: DocumentType.CERTIFICATE,
-    fileName: "contoh-file.pdf",
-  },
-];
 
 interface TabButtonProps {
   isActive: boolean;
@@ -86,38 +38,18 @@ const TabButton: FC<TabButtonProps> = ({ isActive, onClick, children }) => (
   </Button>
 );
 
-const DocumentBrochure = () => {
+const DocumentBrochure = ({
+  certificates,
+  brochures,
+}: {
+  certificates: Certificate[];
+  brochures: Brochure[];
+}) => {
   const [activeTab, setActiveTab] = useState<DocumentType>(
     DocumentType.BROCHURE,
   );
-  const [isDownloading, setIsDownloading] = useState<number | null>(null);
-
-  const filteredDocument = documents.filter(
-    (document) => document.type === activeTab,
-  );
-
-  const handleDownload = async (documentId: number) => {
-    setIsDownloading(documentId);
-
-    try {
-      const document = documents.find((doc) => doc.id === documentId);
-      if (!document) {
-        throw new Error("Document not found");
-      }
-
-      const success = await downloadPDF(document);
-      if (!success) {
-        throw new Error("Failed to download document");
-      }
-    } catch (error) {
-      console.error(error);
-      // Tambahkan toast atau alert di sini
-      // contoh dengan toast dari shadcn/ui:
-      // toast.error("Gagal mengunduh dokumen");
-    } finally {
-      setIsDownloading(null);
-    }
-  };
+  const filteredDocument =
+    activeTab === DocumentType.BROCHURE ? brochures : certificates;
 
   return (
     <section>
@@ -140,12 +72,7 @@ const DocumentBrochure = () => {
         {/* Card Document */}
         <div className="space-y-6">
           {filteredDocument.map((document) => (
-            <DocumentCard
-              key={document.id}
-              document={document}
-              onDownload={handleDownload}
-              isDownloading={isDownloading === document.id}
-            />
+            <DocumentCard key={document.id} document={document} />
           ))}
         </div>
       </ContainerSection>

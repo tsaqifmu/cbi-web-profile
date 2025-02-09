@@ -1,14 +1,14 @@
-import { ArticleDetail } from "./articleDetailTypes";
-import { BlogData } from "./blogSectionType";
-import { ArticleItem } from "./dashboard/latestNews";
-import { Data } from "./dashboardTypes";
-import { NewsData } from "./newsSectionType";
+import { Data } from "./dashboard/dashboardTypes";
+import { BlogData } from "./article/blogSectionType";
+import { NewsData } from "./article/newsSectionType";
+import { ArticleDetail } from "./article/articleDetailTypes";
+import { MediaInformationData } from "./MediaInformationData";
+import { ArticleItem } from "./article/articleItem";
 
 export interface DashboardResponse {
   data: Data;
   meta: Record<string, never>;
 }
-
 export interface ArticleDetailResponse {
   data: ArticleDetail[];
   meta: Record<string, never>;
@@ -23,5 +23,9 @@ export interface BlogSectionResponse {
 }
 export interface ArticlesCollectionResponse {
   data: ArticleItem[];
+  meta: Record<string, never>;
+}
+export interface MediaInformationResponse {
+  data: MediaInformationData;
   meta: Record<string, never>;
 }

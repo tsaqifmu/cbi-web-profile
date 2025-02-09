@@ -28,7 +28,7 @@ const CTASection: FC<CTASectionProps> = ({
       <div className="absolute inset-0 z-10 bg-[#171717]/80" />
 
       {/* Content */}
-      <div className="absolute z-20 xl:p-12">
+      <div className="absolute z-20 w-full xl:p-12">
         <div className="h-full items-center justify-between p-12 md:flex">
           {content}
           <div className="mt-6">

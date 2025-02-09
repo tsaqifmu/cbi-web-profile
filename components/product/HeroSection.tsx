@@ -1,5 +1,5 @@
 import HeroSectionGeneral from "@/components/common/HeroSectionGeneral";
-import { Headline } from "@/types/responseTypes/dashboard/headline";
+import { Headline } from "@/types/responseTypes/headline";
 
 const HeroSection = ({ data }: { data: Headline }) => {
   return (

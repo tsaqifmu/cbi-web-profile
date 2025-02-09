@@ -1,25 +1,26 @@
-import ContainerSection from "../layout/container";
-import CTASection from "../common/CTA";
+import { getImageUrl } from "@/utils/getImageUrl";
 
-const CTAContent = () => (
-  <div className="space-y-6 md:w-2/3">
-    <h1 className="text-[2rem] font-normal text-[#FDFDFD] lg:text-[2.5rem] xl:text-[3rem]">
-      Siap{" "}
-      <span className="font-bold">
-        Tingkatkan Kualitas Anda dengan Produk Bioteknologi Kami?
-      </span>
+import CTASection from "@/components/common/CTA";
+import ContainerSection from "@/components/layout/container";
+
+import { BannerContactSection } from "@/types/responseTypes/bannerContact";
+
+const CTAContent = ({ title }: { title: string }) => (
+  <div className="max-w-[820px] space-y-6">
+    <h1 className="text-[#FDFDFD] lg:text-[40px] lg:leading-[50px] xl:text-5xl/[60px]">
+      {title}
     </h1>
   </div>
 );
 
-const CTAMediaSection = () => {
+const CTAMediaSection = ({ data }: { data: BannerContactSection }) => {
   return (
     <section className="h-full w-full bg-[#EEE]">
       <ContainerSection className="h-full">
         <CTASection
-          backgroundImage="/cta-media.jpeg"
-          content={<CTAContent />}
-          buttonText="Hubungi Kami"
+          backgroundImage={getImageUrl(data.image.url)}
+          content={<CTAContent title={data.title} />}
+          buttonText={data.ctaText}
           buttonHref="/contact"
         />
       </ContainerSection>
