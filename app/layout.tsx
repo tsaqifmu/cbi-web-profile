@@ -3,20 +3,15 @@ import "./globals.css";
 
 import { Plus_Jakarta_Sans } from "next/font/google";
 
-import Footer from "@/components/layout/footer/footer";
+import { Toaster } from "@/components/ui/sonner";
 import Navbar from "@/components/layout/navbar/index";
+import Footer from "@/components/layout/footer/footer";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  // Specify weight yang dibutuhkan
   weight: ["300", "400", "500", "600", "700", "800"],
-  // Optionally, specify italic styles if needed
-  // style: ['normal', 'italic'],
-  // Optionally, specify display
   display: "swap",
-  // Optionally, specify fallback
   fallback: ["system-ui", "arial"],
-  // Optionally, specify variable support
   variable: "--font-plus-jakarta",
 });
 
@@ -36,6 +31,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Toaster position="top-center" expand={true} richColors />
       </body>
     </html>
   );
