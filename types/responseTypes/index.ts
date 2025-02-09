@@ -4,6 +4,7 @@ import { NewsData } from "./article/newsSectionType";
 import { ArticleDetail } from "./article/articleDetailTypes";
 import { MediaInformationData } from "./MediaInformationData";
 import { ArticleItem } from "./article/articleItem";
+import { ContactPageData } from "./contactPageData";
 
 export interface DashboardResponse {
   data: Data;
@@ -27,5 +28,9 @@ export interface ArticlesCollectionResponse {
 }
 export interface MediaInformationResponse {
   data: MediaInformationData;
+  meta: Record<string, never>;
+}
+export interface ContactResponse {
+  data: ContactPageData;
   meta: Record<string, never>;
 }
