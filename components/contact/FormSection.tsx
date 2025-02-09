@@ -1,88 +1,190 @@
 "use client";
 
-import React from "react";
+import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
+import { useState, ChangeEvent, FormEvent } from "react";
+
+import { FormField } from "./FormField";
+import { SubmitButton } from "./SubmitButton";
+
+// Types
+interface FormData {
+  firstName: string;
+  lastName: string;
+  company: string;
+  email: string;
+  phone: string;
+  message: string;
+  agreement: boolean;
+}
+
+// Constants
+const INITIAL_FORM_STATE: FormData = {
+  firstName: "",
+  lastName: "",
+  company: "",
+  email: "",
+  phone: "",
+  message: "",
+  agreement: false,
+};
+
+const EMAIL_CONFIG = {
+  TO_EMAIL: "mushoddaqt@gmail.com",
+  SERVICE_ID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+  TEMPLATE_ID: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+  PUBLIC_KEY: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+};
 
 const FormSection = () => {
-  const handleSubmit = () => {};
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState<FormData>(INITIAL_FORM_STATE);
+
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const resetForm = () => {
+    setFormData(INITIAL_FORM_STATE);
+  };
+
+  const createEmailTemplateParams = (
+    formData: FormData,
+  ): Record<string, unknown> => ({
+    to_email: EMAIL_CONFIG.TO_EMAIL,
+    from_name: `${formData.firstName} ${formData.lastName}`,
+    from_email: formData.email,
+    company: formData.company,
+    phone: formData.phone,
+    message: formData.message,
+  });
+
+  const validateEmailConfig = () => {
+    if (
+      !EMAIL_CONFIG.SERVICE_ID ||
+      !EMAIL_CONFIG.TEMPLATE_ID ||
+      !EMAIL_CONFIG.PUBLIC_KEY
+    ) {
+      throw new Error("EmailJS credentials are not properly configured");
+    }
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const emailPromise = new Promise(async (resolve, reject) => {
+      try {
+        validateEmailConfig();
+
+        const templateParams = createEmailTemplateParams(formData);
+
+        await emailjs.send(
+          EMAIL_CONFIG.SERVICE_ID!,
+          EMAIL_CONFIG.TEMPLATE_ID!,
+          templateParams,
+          EMAIL_CONFIG.PUBLIC_KEY,
+        );
+
+        resetForm();
+        resolve("Pesan berhasil dikirim! Kami akan menghubungi Anda segera.");
+      } catch (error) {
+        reject(error);
+      } finally {
+        setIsSubmitting(false);
+      }
+    });
+
+    toast.promise(emailPromise, {
+      loading: "Sedang mengirim pesan...",
+      success: (data) => data as string,
+      error: "Maaf, terjadi kesalahan. Silakan coba lagi nanti.",
+    });
+  };
+
   return (
     <div className="flex-1">
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid gap-4 md:grid-cols-2">
-          <div>
-            <label className="mb-1 block text-gray-700">
-              Nama Depan <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Nama Depan Anda"
-              className="w-full rounded border p-2 focus:border-green-500 focus:ring-2 focus:ring-green-500"
-              required
-            />
-          </div>
-          <div>
-            <label className="mb-1 block text-gray-700">
-              Nama Belakang <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Nama Belakang Anda"
-              className="w-full rounded border p-2 focus:border-green-500 focus:ring-2 focus:ring-green-500"
-              required
-            />
-          </div>
-        </div>
-
-        <div>
-          <label className="mb-1 block text-gray-700">
-            Nama Perusahaan/Instansi <span className="text-red-500">*</span>
-          </label>
-          <input
+          <FormField
+            label="Nama Depan"
+            name="firstName"
             type="text"
-            placeholder="Nama Perusahaan/Instansi Anda"
-            className="w-full rounded border p-2 focus:border-green-500 focus:ring-2 focus:ring-green-500"
+            value={formData.firstName}
+            onChange={handleInputChange}
+            placeholder="Nama Depan Anda"
+            required
+          />
+          <FormField
+            label="Nama Belakang"
+            name="lastName"
+            type="text"
+            value={formData.lastName}
+            onChange={handleInputChange}
+            placeholder="Nama Belakang Anda"
             required
           />
         </div>
+
+        <FormField
+          label="Nama Perusahaan/Instansi"
+          name="company"
+          type="text"
+          value={formData.company}
+          onChange={handleInputChange}
+          placeholder="Nama Perusahaan/Instansi Anda"
+          required
+        />
 
         <div className="grid gap-4 md:grid-cols-2">
-          <div>
-            <label className="mb-1 block text-gray-700">
-              Email <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="email"
-              placeholder="Alamat Email Anda"
-              className="w-full rounded border p-2 focus:border-green-500 focus:ring-2 focus:ring-green-500"
-              required
-            />
-          </div>
-          <div>
-            <label className="mb-1 block text-gray-700">
-              Nomor Telepon/HP <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="tel"
-              placeholder="+62"
-              className="w-full rounded border p-2 focus:border-green-500 focus:ring-2 focus:ring-green-500"
-              required
-            />
-          </div>
-        </div>
-
-        <div>
-          <label className="mb-1 block text-gray-700">
-            Pesan <span className="text-red-500">*</span>
-          </label>
-          <textarea
-            placeholder="Tuliskan pesanmu..."
-            rows={4}
-            className="w-full rounded border p-2 focus:border-green-500 focus:ring-2 focus:ring-green-500"
+          <FormField
+            label="Email"
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            placeholder="Alamat Email Anda"
+            required
+          />
+          <FormField
+            label="Nomor Telepon/HP"
+            name="phone"
+            type="tel"
+            value={formData.phone}
+            onChange={handleInputChange}
+            placeholder="+62"
             required
           />
         </div>
 
+        <FormField
+          label="Pesan"
+          name="message"
+          type="textarea"
+          value={formData.message}
+          onChange={handleInputChange}
+          placeholder="Tuliskan pesanmu..."
+          required
+          rows={4}
+        />
+
         <div className="flex items-start space-x-2">
-          <input type="checkbox" className="mt-1" required />
+          <input
+            type="checkbox"
+            name="agreement"
+            checked={formData.agreement}
+            onChange={handleInputChange}
+            className="mt-1"
+            required
+          />
           <label className="text-sm text-gray-600">
             Pelanggan/Calon Pelanggan dengan ini memahami, menyetujui dan
             memberikan persetujuan kepada PT Centra Biotech Indonesia untuk
@@ -91,15 +193,12 @@ const FormSection = () => {
           </label>
         </div>
 
-        <button
-          type="submit"
-          className="rounded bg-green-600 px-6 py-2 text-white transition-colors hover:bg-green-700"
-        >
-          Kirim
-        </button>
+        <SubmitButton isSubmitting={isSubmitting} />
       </form>
     </div>
   );
 };
+
+// Components
 
 export default FormSection;
