@@ -1,33 +1,35 @@
+import Image from "next/image";
+
 import LinkGreen from "@/components/home/LinkGreen";
 import ContainerSection from "@/components/layout/container";
+import { BannerContactSection as BannerContactSectionType } from "@/types/responseTypes/dashboard/bannerContact";
+import { getImageUrl } from "@/utils/image";
 
-const BannerContactSection = () => {
+const BannerContactSection = ({ data }: { data: BannerContactSectionType }) => {
   return (
     <section className="bg-[#EEE]">
       <ContainerSection>
         <div className="relative min-h-[22rem] w-full overflow-hidden rounded-3xl bg-cover bg-bottom bg-no-repeat xl:min-h-[25rem]">
-          {/* Background dengan filter */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: "url(/img-product-livestock-banner.png)",
-            }}
-          />
+          {/* Background with Image component */}
+          <div className="absolute inset-0">
+            <Image
+              src={getImageUrl(data?.image?.url)}
+              alt="Agriculture Banner"
+              fill
+              priority
+              className="object-cover object-bottom"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+            />
+          </div>
 
           {/* Gradient overlay */}
           <div className="absolute inset-0 z-10 bg-[#171717]/80" />
 
-          {/* Konten */}
+          {/* Content */}
           <div className="absolute z-20 flex h-full w-full flex-col items-start justify-between p-8 md:flex-row md:items-center lg:px-24 lg:py-10">
             <div className="flex flex-1 items-center">
               <h1 className="max-w-[16rem] text-[32px] font-normal !leading-tight text-white md:max-w-sm lg:text-[40px] xl:max-w-4xl xl:text-5xl">
-                Siap
-                <span className="font-bold">
-                  {" "}
-                  Tingkatkan Hasil Panen
-                </span> Anda <br className="lg:hidden" />
-                dengan
-                <span className="font-bold"> Produk Bioteknologi kami?</span>
+                {data?.title}
               </h1>
             </div>
             <div className="mt-4 flex items-center justify-end md:mt-0">

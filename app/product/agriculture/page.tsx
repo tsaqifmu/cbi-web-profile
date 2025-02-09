@@ -87,7 +87,7 @@ const Agriculture = async () => {
           productCategories={data.productCategoriesSection}
         />
 
-        <BannerContactSection />
+        <BannerContactSection data={data.bannerContactSection} />
       </>
     );
   } catch (e) {
