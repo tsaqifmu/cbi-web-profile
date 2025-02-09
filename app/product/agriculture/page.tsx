@@ -4,7 +4,7 @@ import ContainerSection from "@/components/layout/container";
 import AgricultureProductsSection from "@/components/product/agriculture/AgricultureProductsSection";
 import BannerContactSection from "@/components/product/agriculture/BannerContactSection";
 import { ApiPath, apiRequest } from "@/utils/apiClient";
-import { getImageUrl } from "@/utils/image";
+import { getImageUrl } from "@/utils/getImageUrl";
 import { ProductAgricultureResponse } from "@/utils/types";
 
 const Agriculture = async () => {

@@ -1,7 +1,7 @@
 import { BlogSectionResponse } from "@/types/responseTypes";
 
 import { ApiPath, apiRequest } from "@/utils/apiClient";
-import { getBlogSectionQuery } from "@/utils/blogSectionQuery";
+import { getBlogSectionQuery } from "@/utils/queries/blogSectionQuery";
 
 import CTASection from "@/components/media/CTA";
 import HeroSection from "@/components/media/HeroSection";

@@ -1,33 +1,23 @@
-import { Document } from "@/components/document/DocumentBrochure";
-
-// Declare window.fs type
-declare global {
-  interface Window {
-    fs: {
-      readFile: (filename: string) => Promise<Uint8Array>;
-    };
-  }
-}
-
-// Types
-
-// Utility function to download PDF
-export const downloadPDF = async (doc: Document) => {
+export const handleFileDownload = async (
+  fileUrl: string,
+  fileName?: string,
+) => {
   try {
-    // Gunakan fetch untuk mengambil file dari folder public
-    const response = await fetch(`/documents/${doc.fileName}`);
-    if (!response.ok) throw new Error("Failed to fetch PDF");
+    // Fetch file
+    const response = await fetch(fileUrl);
+    if (!response.ok) throw new Error("Download failed");
 
-    // Convert response ke blob
     const blob = await response.blob();
 
-    // Buat URL untuk blob
-    const url = window.URL.createObjectURL(blob);
+    // Buat URL objek untuk blob
+    const downloadUrl = window.URL.createObjectURL(blob);
 
-    // Buat element anchor untuk download
-    const link = document.createElement("a") as HTMLAnchorElement;
-    link.href = url;
-    link.download = doc.fileName;
+    // Buat element anchor temporary
+    const link = document.createElement("a");
+    link.href = downloadUrl;
+
+    // Gunakan fileName yang diberikan atau ambil dari URL
+    link.download = fileName || fileUrl.split("/").pop() || "downloaded-file";
 
     // Trigger download
     document.body.appendChild(link);
@@ -35,11 +25,11 @@ export const downloadPDF = async (doc: Document) => {
     document.body.removeChild(link);
 
     // Cleanup
-    window.URL.revokeObjectURL(url);
+    window.URL.revokeObjectURL(downloadUrl);
 
     return true;
   } catch (error) {
-    console.error("Error downloading PDF:", error);
-    return false;
+    console.error("Error downloading file:", error);
+    throw error;
   }
 };

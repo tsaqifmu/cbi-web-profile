@@ -1,6 +1,6 @@
-import { BannerContactSection } from "./bannerContact";
-import { ArticleItem } from "./dashboard/latestNews";
-import { Headline } from "./headline";
+import { BannerContactSection } from "../bannerContact";
+import { Headline } from "../headline";
+import { ArticleItem } from "./articleItem";
 
 export interface BlogData {
   // Strapi default data

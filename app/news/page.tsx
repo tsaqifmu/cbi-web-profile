@@ -1,7 +1,7 @@
 import { NewsSectionResponse } from "@/types/responseTypes";
 
 import { ApiPath, apiRequest } from "@/utils/apiClient";
-import { getNewsSectionQuery } from "@/utils/newsSectionQuery";
+import { getNewsSectionQuery } from "@/utils/queries/newsSectionQuery";
 
 import CTASection from "@/components/media/CTA";
 import HeroSection from "@/components/media/HeroSection";

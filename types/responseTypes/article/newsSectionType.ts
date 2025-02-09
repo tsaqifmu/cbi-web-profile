@@ -1,6 +1,6 @@
-import { Headline } from "./headline";
-import { ArticleItem } from "./dashboard/latestNews";
-import { BannerContactSection } from "./bannerContact";
+import { Headline } from "../headline";
+import { BannerContactSection } from "../bannerContact";
+import { ArticleItem } from "./articleItem";
 
 export interface NewsData {
   // Strapi default data

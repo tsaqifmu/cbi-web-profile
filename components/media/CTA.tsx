@@ -1,4 +1,4 @@
-import { getImageUrl } from "@/utils/image";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 import CTASection from "@/components/common/CTA";
 import ContainerSection from "@/components/layout/container";

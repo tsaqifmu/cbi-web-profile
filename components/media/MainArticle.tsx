@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 
-import { getImageUrl } from "@/utils/image";
+import { getImageUrl } from "@/utils/getImageUrl";
 import { formatDate } from "@/utils/formatDate";
 import ContainerSection from "@/components/layout/container";
-import { ArticleItem } from "@/types/responseTypes/dashboard/latestNews";
+import { ArticleItem } from "@/types/responseTypes/article/articleItem";
 
 import ShareButtons from "./ShareButtons";
 import ReadMoreButton from "./ReadMoreButton";

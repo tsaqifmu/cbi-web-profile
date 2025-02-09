@@ -1,14 +1,30 @@
 import React from "react";
 import HeroSection from "@/components/document/HeroSection";
 import DocumentBrochure from "@/components/document/DocumentBrochure";
+import { getDocumentsQuery } from "@/utils/queries/documentsQuery";
+import { ApiPath, apiRequest } from "@/utils/apiClient";
+import { MediaInformationResponse } from "@/types/responseTypes";
 
-const page = () => {
-  return (
-    <section>
-      <HeroSection />
-      <DocumentBrochure />
-    </section>
-  );
+const MediaInformation = async () => {
+  try {
+    const query = getDocumentsQuery();
+    const { data } = await apiRequest<MediaInformationResponse>({
+      path: ApiPath.DOCUMENTS,
+      queryParams: query,
+    });
+
+    return (
+      <section>
+        <HeroSection data={data.headline} />
+        <DocumentBrochure
+          certificates={data.certificates}
+          brochures={data.brochures}
+        />
+      </section>
+    );
+  } catch (e) {
+    console.error(e);
+  }
 };
 
-export default page;
+export default MediaInformation;

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { OurImpact } from "@/types/responseTypes/dashboard/ourImpact";
-import { getImageUrl } from "@/utils/image";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 import ContainerSection from "../layout/container";
 

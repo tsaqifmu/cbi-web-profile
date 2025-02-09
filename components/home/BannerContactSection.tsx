@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { getImageUrl } from "@/utils/image";
+import { getImageUrl } from "@/utils/getImageUrl";
 import { BannerContactSection as BannerContactSectionProps } from "@/types/responseTypes/bannerContact";
 
 import LinkGreen from "./LinkGreen";
