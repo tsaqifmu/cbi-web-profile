@@ -1,7 +1,7 @@
 import { BlocksContent } from "@strapi/blocks-react-renderer";
 
 import { ApiPath, apiRequest } from "@/utils/apiClient";
-import { getArticlesCollectionQuery } from "@/utils/articlesCollectionQuery";
+import { getArticlesCollectionQuery } from "@/utils/queries/articlesCollectionQuery";
 
 import { ArticlesCollectionResponse } from "@/types/responseTypes";
 
@@ -28,6 +28,7 @@ const OtherArticle = async ({ type }: { type: string }) => {
       <>
         <div className="mt-20 flex flex-col gap-y-6">
           <h2>Blog Lainnya</h2>
+          {/* Ini buat component Link */}
           <Button className="w-fit bg-[#009933] text-sm">Lihat Semua</Button>
         </div>
         <ScrollArea>

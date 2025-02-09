@@ -1,8 +1,8 @@
 import ContainerSection from "@/components/layout/container";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { ArticleItem } from "@/types/responseTypes/dashboard/latestNews";
 
 import ArticleCard from "./ArticleCard";
+import { ArticleItem } from "@/types/responseTypes/article/articleItem";
 
 const ListArticle = ({
   news1,

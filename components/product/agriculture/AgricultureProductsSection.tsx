@@ -1,19 +1,19 @@
 "use client";
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css/effect-fade';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import ContainerSection from '@/components/layout/container';
-import { cn } from '@/lib/utils';
-import { getImageUrl } from '@/utils/image'; // Import the utility function
-import { ProductCategory } from '@/utils/types';
+import ContainerSection from "@/components/layout/container";
+import { cn } from "@/lib/utils";
+import { getImageUrl } from "@/utils/getImageUrl"; // Import the utility function
+import { ProductCategory } from "@/utils/types";
 
 import type { Swiper as SwiperType } from "swiper";
 

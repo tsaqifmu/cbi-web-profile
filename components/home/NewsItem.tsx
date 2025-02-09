@@ -3,8 +3,8 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { getImageUrl } from "@/utils/image";
-import { ArticleItem } from "@/types/responseTypes/dashboard/latestNews";
+import { getImageUrl } from "@/utils/getImageUrl";
+import { ArticleItem } from "@/types/responseTypes/article/articleItem";
 
 // Constants
 const NEWS_TYPE = {

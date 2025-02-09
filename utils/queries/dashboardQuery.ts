@@ -1,4 +1,4 @@
-import { generateQuery } from "./generateQuery";
+import { generateQuery } from "../generateQuery";
 
 export const getDashboardQuery = () => {
   const params = {

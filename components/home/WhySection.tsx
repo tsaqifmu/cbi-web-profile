@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { getImageUrl } from "@/utils/image";
+import { getImageUrl } from "@/utils/getImageUrl";
 import { WhySection as WhySectionProps } from "@/types/responseTypes/dashboard/whySection";
 
 import ContainerSection from "@/components/layout/container";

@@ -1,4 +1,4 @@
-import { getImageUrl } from "@/utils/image";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 import {
   Product,

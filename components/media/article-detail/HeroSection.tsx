@@ -1,7 +1,7 @@
 import { formatDate } from "@/utils/formatDate";
 import HeroSectionGeneral from "@/components/common/HeroSectionGeneral";
-import { ArticleDetail } from "@/types/responseTypes/articleDetailTypes";
-import { getImageUrl } from "@/utils/image";
+import { ArticleDetail } from "@/types/responseTypes/article/articleDetailTypes";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 const HeroSection = ({ data }: { data: ArticleDetail }) => {
   return (

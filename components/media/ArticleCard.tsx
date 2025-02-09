@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 import ReadMoreButton from "./ReadMoreButton";
-import { getImageUrl } from "@/utils/image";
+import { getImageUrl } from "@/utils/getImageUrl";
 import { formatDate } from "@/utils/formatDate";
-import { ArticleItem } from "@/types/responseTypes/dashboard/latestNews";
+import { ArticleItem } from "@/types/responseTypes/article/articleItem";
 
 const ArticleCard = ({ articleItemData }: { articleItemData: ArticleItem }) => {
   const linkPath =

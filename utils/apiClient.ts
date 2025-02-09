@@ -10,6 +10,10 @@ export enum ApiPath {
   NEWS = "/articles",
   NEWS_SECTION = "/news-section",
   BLOG_SECTION = "/blog-section",
+  DOCUMENTS = "/media-and-information",
+
+  // Contact path
+  CONTACT = "/contact",
 
   PRODUCTS_AND_SERVICES = "/product-and-service?populate[headline][populate]=*&populate[whySection][populate]=*&populate[productsSection][populate][products][populate]=*&populate[servicesSection][populate][services][populate]=*&populate[bannerContactSection][populate]=*",
 

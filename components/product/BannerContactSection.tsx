@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import LinkGreen from "../home/LinkGreen";
 import ContainerSection from "../layout/container";
-import { BannerContactSection as BannerContactSectionProps } from "@/types/responseTypes/dashboard/bannerContact";
+import { BannerContactSection as BannerContactSectionProps } from "@/types/responseTypes/bannerContact";
 
 const BannerContactSection = ({
   data,
