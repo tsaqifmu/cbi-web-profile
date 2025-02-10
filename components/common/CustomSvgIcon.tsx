@@ -26,6 +26,7 @@ const CustomSvgIcon = ({
   const [svgContent, setSvgContent] = useState("");
   const [error, setError] = useState<string | null>(null);
 
+  console.log("ini url svg", url)
   useEffect(() => {
     const fetchSvg = async () => {
       if (!url?.endsWith(".svg")) {
