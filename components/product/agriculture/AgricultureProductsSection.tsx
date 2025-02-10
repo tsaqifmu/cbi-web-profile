@@ -75,10 +75,10 @@ const AgricultureProductsSection = ({
           <div className="h-[20rem] flex-1 rounded-3xl bg-[#99AC33] lg:h-[25rem]">
             <Image
               className="h-[20rem] w-full scale-75 object-contain lg:h-[25rem]"
-              src={getImageUrl(activeProduct.image?.url)} // Use the utility function here
+              src={getImageUrl(activeProduct?.image?.url)} // Use the utility function here
               width={280}
               height={315}
-              alt={activeProduct.image?.name || "Product Image"}
+              alt={activeProduct?.image?.name || "Product Image"}
             />
           </div>
 

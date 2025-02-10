@@ -159,3 +159,13 @@ export interface ProductAgricultureResponse {
   data: AgricultureData;
   meta: Record<string, never>;
 }
+
+export interface ProductLivestockResponse {
+  data: AgricultureData;
+  meta: Record<string, never>;
+}
+
+export interface ProductFisheryResponse {
+  data: AgricultureData;
+  meta: Record<string, never>;
+}
