@@ -1,11 +1,11 @@
-import CustomSvgIcon from "@/components/common/CustomSvgIcon";
-import HeroSectionGeneral from "@/components/common/HeroSectionGeneral";
-import ContainerSection from "@/components/layout/container";
-import BannerContactSection from "@/components/product/livestock/BannerContactSection";
-import LivestockProductsSection from "@/components/product/livestock/LivestockProductsSection";
-import { ApiPath, apiRequest } from "@/utils/apiClient";
-import { getImageUrl } from "@/utils/image";
-import { ProductLivestockResponse } from "@/utils/types";
+import CustomSvgIcon from '@/components/common/CustomSvgIcon';
+import HeroSectionGeneral from '@/components/common/HeroSectionGeneral';
+import ContainerSection from '@/components/layout/container';
+import BannerContactSection from '@/components/product/livestock/BannerContactSection';
+import LivestockProductsSection from '@/components/product/livestock/LivestockProductsSection';
+import { ApiPath, apiRequest } from '@/utils/apiClient';
+import { getImageUrl } from '@/utils/getImageUrl';
+import { ProductLivestockResponse } from '@/utils/types';
 
 const Livestock = async () => {
   try {

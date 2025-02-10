@@ -1,19 +1,19 @@
 "use client";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/effect-fade";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
 
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import ContainerSection from "@/components/layout/container";
-import { cn } from "@/lib/utils";
-import { getImageUrl } from "@/utils/getImageUrl"; // Import the utility function
-import { ProductCategory } from "@/utils/types";
+import ContainerSection from '@/components/layout/container';
+import { cn } from '@/lib/utils';
+import { getImageUrl } from '@/utils/getImageUrl'; // Import the utility function
+import { ProductCategory, ProductItem } from '@/utils/types';
 
 import type { Swiper as SwiperType } from "swiper";
 
@@ -26,7 +26,7 @@ const AgricultureProductsSection = ({
     productCategories[0]?.id,
   );
   const [swiper, setSwiper] = useState<SwiperType>();
-  const [activeProduct, setActiveProduct] = useState(
+  const [activeProduct, setActiveProduct] = useState<ProductItem | undefined>(
     productCategories[0].product_items[0],
   );
   const [activeSlide, setActiveSlide] = useState(1);
@@ -102,7 +102,7 @@ const AgricultureProductsSection = ({
               className="h-[12rem] w-full"
               onSlideChange={(swiper) => {
                 const currentIndex = swiper.realIndex;
-                setActiveProduct(activeCategory!.product_items[currentIndex]);
+                setActiveProduct(activeCategory?.product_items[currentIndex]);
                 setActiveSlide(currentIndex + 1);
               }}
             >

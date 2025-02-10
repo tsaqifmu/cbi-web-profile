@@ -1,9 +1,11 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import LinkGreen from "@/components/home/LinkGreen";
-import ContainerSection from "@/components/layout/container";
-import { BannerContactSection as BannerContactSectionType } from "@/types/responseTypes/dashboard/bannerContact";
-import { getImageUrl } from "@/utils/image";
+import LinkGreen from '@/components/home/LinkGreen';
+import ContainerSection from '@/components/layout/container';
+import {
+    BannerContactSection as BannerContactSectionType
+} from '@/types/responseTypes/bannerContact';
+import { getImageUrl } from '@/utils/getImageUrl';
 
 const BannerContactSection = ({ data }: { data: BannerContactSectionType }) => {
   return (
