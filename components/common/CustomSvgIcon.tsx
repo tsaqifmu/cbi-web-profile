@@ -1,18 +1,5 @@
 "use client";
-
-import { useEffect, useState } from 'react';
-
-export const getSecureUrl = (url: string) => {
-  if (!url) return url;
-
-  if (url.startsWith("https://")) return url;
-
-  if (url.startsWith("http://")) {
-    return url.replace("http://", "//");
-  }
-
-  return url;
-};
+import { useEffect, useState } from "react";
 
 interface CustomSvgIconProps {
   url: string;
@@ -26,7 +13,7 @@ const CustomSvgIcon = ({
   const [svgContent, setSvgContent] = useState("");
   const [error, setError] = useState<string | null>(null);
 
-  console.log("ini url svg", url)
+  console.log("ini url svg", url);
   useEffect(() => {
     const fetchSvg = async () => {
       if (!url?.endsWith(".svg")) {
@@ -35,8 +22,9 @@ const CustomSvgIcon = ({
       }
 
       try {
-        const secureUrl = getSecureUrl(url);
-        const response = await fetch(secureUrl);
+        // Use the Next.js API route to proxy the request
+        const proxyUrl = `/api/svg?url=${encodeURIComponent(url)}`;
+        const response = await fetch(proxyUrl);
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -44,12 +32,14 @@ const CustomSvgIcon = ({
 
         let svgText = await response.text();
 
+        // Remove any existing fill and stroke colors
         svgText = svgText
           .replace(/fill="[^"]*"/g, "")
           .replace(/stroke="[^"]*"/g, "")
           .replace(/style="[^"]*fill:[^;]*;/g, "")
           .replace(/style="[^"]*stroke:[^;]*;/g, "");
 
+        // Add the SVG element with proper classes
         svgText = svgText.replace(
           /<svg/,
           `<svg class="${className}" fill="none"`,
