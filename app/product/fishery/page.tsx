@@ -1,11 +1,13 @@
-import CustomSvgIcon from '@/components/common/CustomSvgIcon';
-import HeroSectionGeneral from '@/components/common/HeroSectionGeneral';
-import ContainerSection from '@/components/layout/container';
-import BannerContactSection from '@/components/product/fishery/BannerContactSection';
-import FisheryProductsSection from '@/components/product/fishery/FisheryProductsSection';
-import { ApiPath, apiRequest } from '@/utils/apiClient';
-import { getImageUrl } from '@/utils/getImageUrl';
-import { ProductFisheryResponse } from '@/utils/types';
+import { getImageUrl } from "@/utils/getImageUrl";
+import { ProductFisheryResponse } from "@/utils/types";
+import { ApiPath, apiRequest } from "@/utils/apiClient";
+
+import Breadcrumb from "@/components/common/BreadScrumb";
+import ContainerSection from "@/components/layout/container";
+import CustomSvgIcon from "@/components/common/CustomSvgIcon";
+import HeroSectionGeneral from "@/components/common/HeroSectionGeneral";
+import BannerContactSection from "@/components/product/fishery/BannerContactSection";
+import FisheryProductsSection from "@/components/product/fishery/FisheryProductsSection";
 
 const Livestock = async () => {
   try {
@@ -24,6 +26,8 @@ const Livestock = async () => {
             </h1>
           }
         />
+
+        <Breadcrumb className="bg-[#F4F4F4]" />
 
         <section className="bg-[#F4F4F4]">
           <ContainerSection>

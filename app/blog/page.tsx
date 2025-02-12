@@ -7,6 +7,7 @@ import CTASection from "@/components/media/CTA";
 import HeroSection from "@/components/media/HeroSection";
 import MainArticle from "@/components/media/MainArticle";
 import ListArticle from "@/components/media/ListArticle";
+import Breadcrumb from "@/components/common/BreadScrumb";
 
 const Blog = async () => {
   try {
@@ -22,6 +23,7 @@ const Blog = async () => {
           title={data.headline.description}
           category={data.headline.title}
         />
+        <Breadcrumb />
         <MainArticle data={data.headlineBlog} />
         <ListArticle news1={data.blog1} news2={data.blog2} />
         <CTASection data={data.bannerContactSection} />
