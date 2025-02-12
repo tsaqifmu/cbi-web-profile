@@ -1,11 +1,13 @@
+import { getImageUrl } from "@/utils/getImageUrl";
+import { ApiPath, apiRequest } from "@/utils/apiClient";
+import { ProductAgricultureResponse } from "@/utils/types";
+
+import Breadcrumb from "@/components/common/BreadScrumb";
+import ContainerSection from "@/components/layout/container";
 import CustomSvgIcon from "@/components/common/CustomSvgIcon";
 import HeroSectionGeneral from "@/components/common/HeroSectionGeneral";
-import ContainerSection from "@/components/layout/container";
-import AgricultureProductsSection from "@/components/product/agriculture/AgricultureProductsSection";
 import BannerContactSection from "@/components/product/agriculture/BannerContactSection";
-import { ApiPath, apiRequest } from "@/utils/apiClient";
-import { getImageUrl } from "@/utils/getImageUrl";
-import { ProductAgricultureResponse } from "@/utils/types";
+import AgricultureProductsSection from "@/components/product/agriculture/AgricultureProductsSection";
 
 const Agriculture = async () => {
   try {
@@ -24,6 +26,8 @@ const Agriculture = async () => {
             </h1>
           }
         />
+
+        <Breadcrumb className="bg-[#F4F4F4]" />
 
         <section className="bg-[#F4F4F4]">
           <ContainerSection>
