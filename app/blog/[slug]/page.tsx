@@ -4,6 +4,7 @@ import { ArticleDetailResponse } from "@/types/responseTypes";
 import HeroSection from "@/components/media/article-detail/HeroSection";
 import ArticleDetail from "@/components/media/article-detail/ArticleDetail";
 import { getArticleDetailQuery } from "@/utils/queries/articlesDetailQuery";
+import Breadcrumb from "@/components/common/BreadScrumb";
 
 // Menandai komponen sebagai async component
 const BlogDetail = async ({
@@ -27,6 +28,7 @@ const BlogDetail = async ({
     return (
       <section>
         <HeroSection data={blogDetailData} />
+        <Breadcrumb />
         <ArticleDetail
           content={blogDetailData.content}
           type={blogDetailData.type}

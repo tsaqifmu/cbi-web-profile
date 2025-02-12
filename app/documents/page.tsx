@@ -4,6 +4,7 @@ import DocumentBrochure from "@/components/document/DocumentBrochure";
 import { getDocumentsQuery } from "@/utils/queries/documentsQuery";
 import { ApiPath, apiRequest } from "@/utils/apiClient";
 import { MediaInformationResponse } from "@/types/responseTypes";
+import Breadcrumb from "@/components/common/BreadScrumb";
 
 const MediaInformation = async () => {
   try {
@@ -16,6 +17,7 @@ const MediaInformation = async () => {
     return (
       <section>
         <HeroSection data={data.headline} />
+        <Breadcrumb />
         <DocumentBrochure
           certificates={data.certificates}
           brochures={data.brochures}
