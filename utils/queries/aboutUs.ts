@@ -1,5 +1,9 @@
 import { generateQuery } from "../generateQuery";
-import { IMAGE_QUERY, WITH_HEADLINE_QUERY } from "./common";
+import {
+  IMAGE_QUERY,
+  WITH_BANNER_CTA_QUERY,
+  WITH_HEADLINE_QUERY,
+} from "./common";
 
 export const getAboutUsQuery = () => {
   const params = {
@@ -22,9 +26,7 @@ export const getAboutUsQuery = () => {
           ...IMAGE_QUERY,
         },
       },
-      careerBanner: {
-        populate: "*",
-      },
+      ...WITH_BANNER_CTA_QUERY,
     },
   };
 

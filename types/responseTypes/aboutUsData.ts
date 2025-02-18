@@ -1,7 +1,6 @@
+import { BannerCTA } from "./bannerCTA";
 import { Headline } from "./headline";
 import { Image } from "./image";
-
-
 
 export interface AboutUs {
   id: number;
@@ -32,13 +31,6 @@ interface CorporateValue {
   Title: string;
 }
 
-interface CareerBanner {
-  id: number;
-  title: string;
-  description: string;
-  ctaText: string;
-}
-
 export interface CompanyData {
   id: number;
   documentId: string;
@@ -50,5 +42,5 @@ export interface CompanyData {
   visionMission: VisionMission;
   corporateValue: CorporateValue;
   managements: Management[];
-  careerBanner: CareerBanner;
+  bannerCTA: BannerCTA;
 }

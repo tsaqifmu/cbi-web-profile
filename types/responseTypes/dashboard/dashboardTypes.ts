@@ -3,7 +3,7 @@ import { OurImpact } from "./ourImpact";
 import { LatestNews } from "./latestNews";
 import { WhySection } from "./whySection";
 import { ProductService } from "./productService";
-import { BannerContactSection } from "../bannerContact";
+import { BannerCTA } from "../bannerCTA";
 
 export interface Data {
   // Strapi default data
@@ -19,5 +19,5 @@ export interface Data {
   productService: ProductService;
   ourImpact: OurImpact;
   latestNews: LatestNews;
-  bannerContact: BannerContactSection;
+  bannerCTA: BannerCTA;
 }

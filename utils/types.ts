@@ -1,4 +1,4 @@
-import { BannerContactSection } from "@/types/responseTypes/bannerContact";
+import { BannerCTA } from "@/types/responseTypes/bannerCTA";
 import { Headline } from "@/types/responseTypes/headline";
 import { WhySection } from "@/types/responseTypes/dashboard/whySection";
 
@@ -91,7 +91,7 @@ export interface ProductAndServiceData {
   whySection: WhySection;
   productsSection: ProductsSection;
   servicesSection: ServicesSection;
-  bannerContactSection: BannerContactSection;
+  bannerContactSection: BannerCTA;
 }
 
 export interface ProductAndServiceResponse {
@@ -152,7 +152,7 @@ export interface AgricultureData {
   aboutSection: AboutSection;
   whySection: AgricultureWhySection;
   productCategoriesSection: ProductCategory[];
-  bannerContactSection: BannerContactSection;
+  bannerContactSection: BannerCTA;
 }
 
 export interface ProductAgricultureResponse {

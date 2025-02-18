@@ -12,3 +12,12 @@ export const WITH_HEADLINE_QUERY = {
     },
   },
 };
+
+export const WITH_BANNER_CTA_QUERY = {
+  bannerCTA: {
+    fields: ["title", "ctaText", "description"],
+    populate: {
+      ...IMAGE_QUERY,
+    },
+  },
+};

@@ -46,8 +46,8 @@ export const getBlogSectionQuery = () => {
           ...IMAGE_QUERY,
         },
       },
-      bannerContactSection: {
-        fields: ["title", "ctaText"],
+      bannerCTASection: {
+        fields: ["title", "ctaText", "description"],
         populate: {
           ...IMAGE_QUERY,
         },

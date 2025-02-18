@@ -24,7 +24,7 @@ const AboutUs = async () => {
         <AboutUsSection aboutUs={data.aboutUs} />
         <VisionMissionSection visionMission={data.visionMission} />
         <ManagementSection managements={data.managements} />
-        <BannerCareerSection />
+        <BannerCareerSection bannerCTA={data.bannerCTA} />
       </section>
     );
   } catch (e) {
