@@ -16,13 +16,13 @@ export enum ApiPath {
   // Contact path
   CONTACT = "/contact",
 
-  PRODUCTS_AND_SERVICES = "/product-and-service?populate[headline][populate]=*&populate[whySection][populate]=*&populate[productsSection][populate][products][populate]=*&populate[servicesSection][populate][services][populate]=*&populate[bannerContactSection][populate]=*",
+  PRODUCTS_AND_SERVICES = "/product-and-service",
 
-  PRODUCT_AGRICULTURE = "/product-agriculture?populate[headline]=*&populate[aboutSection]=*&populate[whySection][populate][why1][populate]=*&populate[whySection][populate][why2][populate]=*&populate[whySection][populate][why3][populate]=*&populate[productCategoriesSection][populate][product_items][populate]=*&populate[bannerContactSection][populate]=*",
+  PRODUCT_AGRICULTURE = "/product-agriculture",
 
-  PRODUCT_LIVESTOCK = "/product-livestock?populate[headline]=*&populate[aboutSection]=*&populate[whySection][populate][why1][populate]=*&populate[whySection][populate][why2][populate]=*&populate[whySection][populate][why3][populate]=*&populate[productCategoriesSection][populate][product_items][populate]=*&populate[bannerContactSection][populate]=*",
+  PRODUCT_LIVESTOCK = "/product-livestock",
 
-  PRODUCT_FISHERY = "/product-fishery?populate[headline]=*&populate[aboutSection]=*&populate[whySection][populate][why1][populate]=*&populate[whySection][populate][why2][populate]=*&populate[whySection][populate][why3][populate]=*&populate[productCategoriesSection][populate][product_items][populate]=*&populate[bannerContactSection][populate]=*",
+  PRODUCT_FISHERY = "/product-fishery",
 }
 
 export enum ApiMethod {

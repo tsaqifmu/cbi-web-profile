@@ -1,11 +1,13 @@
-import HeroSectionGeneral from "@/components/common/HeroSectionGeneral";
-import { HeadlineAboutUs } from "@/types/responseTypes/aboutUsData";
+import { getImageUrl } from "@/utils/getImageUrl";
+import { Headline } from "@/types/responseTypes/headline";
 
-const HeroSectionAboutUs = ({ headline }: { headline: HeadlineAboutUs }) => {
+import HeroSectionGeneral from "@/components/common/HeroSectionGeneral";
+
+const HeroSectionAboutUs = ({ headline }: { headline: Headline }) => {
   return (
     <HeroSectionGeneral
-      imgUrl="/hero-tentang-kami.jpg"
-      title={<h1 className="text-center text-white">{headline.Title}</h1>}
+      imgUrl={getImageUrl(headline?.image?.url)}
+      title={<h1 className="text-center text-white">{headline?.title}</h1>}
     />
   );
 };

@@ -8,11 +8,14 @@ import WhySection from "@/components/product/WhySection";
 import { ApiPath, apiRequest } from "@/utils/apiClient";
 import { ProductAndServiceResponse } from "@/utils/types";
 import Breadcrumb from "@/components/common/BreadScrumb";
+import { getProductServiceQuery } from "@/utils/queries/product/productService";
 
 const ProductsAndServices = async () => {
   try {
+    const query = getProductServiceQuery();
     const { data } = await apiRequest<ProductAndServiceResponse>({
       path: ApiPath.PRODUCTS_AND_SERVICES,
+      queryParams: query,
     });
 
     return (

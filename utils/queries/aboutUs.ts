@@ -4,7 +4,12 @@ export const getAboutUsQuery = () => {
   const params = {
     populate: {
       headline: {
-        populate: "*",
+        fields: "*",
+        populate: {
+          image: {
+            fields: ["url", "alternativeText", "width", "height"],
+          },
+        },
       },
       aboutUs: {
         populate: {

@@ -1,9 +1,7 @@
+import { Headline } from "./headline";
 import { Image } from "./image";
 
-export interface HeadlineAboutUs {
-  id: number;
-  Title: string;
-}
+
 
 export interface AboutUs {
   id: number;
@@ -47,7 +45,7 @@ export interface CompanyData {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-  headline: HeadlineAboutUs;
+  headline: Headline;
   aboutUs: AboutUs;
   visionMission: VisionMission;
   corporateValue: CorporateValue;

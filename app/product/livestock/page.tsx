@@ -8,21 +8,25 @@ import CustomSvgIcon from "@/components/common/CustomSvgIcon";
 import HeroSectionGeneral from "@/components/common/HeroSectionGeneral";
 import BannerContactSection from "@/components/product/livestock/BannerContactSection";
 import LivestockProductsSection from "@/components/product/livestock/LivestockProductsSection";
+import { getServicesQuery } from "@/utils/queries/product/servicesQuery";
 
 const Livestock = async () => {
   try {
+    const query = getServicesQuery();
+
     const { data } = await apiRequest<ProductLivestockResponse>({
       path: ApiPath.PRODUCT_LIVESTOCK,
+      queryParams: query,
     });
 
     return (
       <>
         <HeroSectionGeneral
-          imgUrl="/img-livestock-hero.jpeg"
-          category={data.headline.title}
+          imgUrl={getImageUrl(data.headline?.image?.url)}
+          category={data.headline?.description}
           title={
             <h1 className="p-4 text-center text-3xl font-bold !leading-tight text-white lg:text-5xl xl:text-[56px]">
-              {data.headline.description}
+              {data.headline?.title}
             </h1>
           }
         />
