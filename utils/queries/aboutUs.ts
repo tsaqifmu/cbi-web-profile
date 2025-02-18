@@ -1,21 +1,13 @@
 import { generateQuery } from "../generateQuery";
+import { IMAGE_QUERY, WITH_HEADLINE_QUERY } from "./common";
 
 export const getAboutUsQuery = () => {
   const params = {
     populate: {
-      headline: {
-        fields: "*",
-        populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
-        },
-      },
+      ...WITH_HEADLINE_QUERY,
       aboutUs: {
         populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
+          ...IMAGE_QUERY,
         },
       },
       visionMission: {
@@ -27,9 +19,7 @@ export const getAboutUsQuery = () => {
       managements: {
         fields: ["name", "position", "description", "createdAt", "publishedAt"],
         populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
+          ...IMAGE_QUERY,
         },
       },
       careerBanner: {

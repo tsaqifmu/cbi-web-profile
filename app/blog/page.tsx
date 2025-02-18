@@ -19,10 +19,7 @@ const Blog = async () => {
 
     return (
       <section>
-        <HeroSection
-          title={data.headline.description}
-          category={data.headline.title}
-        />
+        <HeroSection headline={data.headline} />
         <Breadcrumb />
         <MainArticle data={data.headlineBlog} />
         <ListArticle news1={data.blog1} news2={data.blog2} />

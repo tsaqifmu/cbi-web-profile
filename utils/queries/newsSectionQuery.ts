@@ -1,11 +1,11 @@
 import { generateQuery } from "../generateQuery";
+import { IMAGE_QUERY, WITH_HEADLINE_QUERY } from "./common";
 
 export const getNewsSectionQuery = () => {
   const params = {
     populate: {
-      headline: {
-        populate: "*",
-      },
+      ...WITH_HEADLINE_QUERY,
+
       headlineNews: {
         fields: [
           "title",
@@ -16,9 +16,7 @@ export const getNewsSectionQuery = () => {
           "type",
         ],
         populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
+          ...IMAGE_QUERY,
         },
       },
       news1: {
@@ -31,9 +29,7 @@ export const getNewsSectionQuery = () => {
           "type",
         ],
         populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
+          ...IMAGE_QUERY,
         },
       },
       news2: {
@@ -46,17 +42,13 @@ export const getNewsSectionQuery = () => {
           "type",
         ],
         populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
+          ...IMAGE_QUERY,
         },
       },
       bannerContactSection: {
         fields: ["title", "ctaText"],
         populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
+          ...IMAGE_QUERY,
         },
       },
     },

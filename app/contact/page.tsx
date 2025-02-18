@@ -6,6 +6,7 @@ import { getContactQuery } from "@/utils/queries/contactQuery";
 import { ApiPath, apiRequest } from "@/utils/apiClient";
 import { ContactResponse } from "@/types/responseTypes";
 import Breadcrumb from "@/components/common/BreadScrumb";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 const Contact = async () => {
   try {
@@ -17,8 +18,8 @@ const Contact = async () => {
     return (
       <>
         <HeroSectionGeneral
-          imgUrl="/img-contact-hero.jpeg"
-          title={<h1 className="text-white">{data.headline.description}</h1>}
+          imgUrl={getImageUrl(data.headline.image?.url)}
+          title={<h1 className="text-white">{data.headline.title}</h1>}
         />
         <Breadcrumb />
         <ContainerSection className="flex flex-col gap-12 lg:flex-row">

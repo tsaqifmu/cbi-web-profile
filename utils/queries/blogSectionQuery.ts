@@ -1,4 +1,5 @@
 import { generateQuery } from "../generateQuery";
+import { IMAGE_QUERY } from "./common";
 
 export const getBlogSectionQuery = () => {
   const params = {
@@ -16,9 +17,7 @@ export const getBlogSectionQuery = () => {
           "type",
         ],
         populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
+          ...IMAGE_QUERY,
         },
       },
       blog1: {
@@ -31,9 +30,7 @@ export const getBlogSectionQuery = () => {
           "type",
         ],
         populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
+          ...IMAGE_QUERY,
         },
       },
       blog2: {
@@ -46,17 +43,13 @@ export const getBlogSectionQuery = () => {
           "type",
         ],
         populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
+          ...IMAGE_QUERY,
         },
       },
       bannerContactSection: {
         fields: ["title", "ctaText"],
         populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
+          ...IMAGE_QUERY,
         },
       },
     },

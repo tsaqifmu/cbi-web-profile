@@ -1,36 +1,31 @@
 import { generateQuery } from "@/utils/generateQuery";
+import { WITH_HEADLINE_QUERY } from "../common";
 
 export const getProductServiceQuery = () => {
   const params = {
     populate: {
-      headline: {
-        fields: "*",
-        populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
-        },
-      },
+      ...WITH_HEADLINE_QUERY,
+
       whySection: {
-        populate: '*'
+        populate: "*",
       },
       productsSection: {
         populate: {
           products: {
-            populate: '*'
-          }
-        }
+            populate: "*",
+          },
+        },
       },
       servicesSection: {
         populate: {
           services: {
-            populate: '*'
-          }
-        }
+            populate: "*",
+          },
+        },
       },
       bannerContactSection: {
-        populate: '*'
-      }
+        populate: "*",
+      },
     },
   };
 

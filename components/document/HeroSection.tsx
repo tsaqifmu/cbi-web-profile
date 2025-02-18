@@ -2,15 +2,16 @@ import React from "react";
 
 import { Headline } from "@/types/responseTypes/headline";
 import HeroSectionGeneral from "@/components/common/HeroSectionGeneral";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 const HeroSection = ({ data }: { data: Headline }) => {
   return (
     <HeroSectionGeneral
-      imgUrl="/document.jpeg"
-      category={data.title}
+      imgUrl={getImageUrl(data.image?.url)}
+      category={data.description}
       title={
         <h1 className="text-center text-3xl font-bold text-white lg:text-5xl xl:text-[56px]">
-          {data.description}
+          {data.title}
         </h1>
       }
     />
