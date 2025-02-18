@@ -32,18 +32,19 @@ const visionContents = [
   },
 ];
 
-const VisionMission = () => {
+const VisionMission = ({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) => {
   return (
     <ContainerSection>
       <div className="flex flex-col gap-8 md:flex-row">
         <div className="space-y-6 md:w-[40%]">
-          <h2>
-            Visi & Misi <br /> Kami
-          </h2>
-          <p className="max-w-96">
-            Mensejahterakan Petani dan Peternak dengan Produk yang Ramah
-            Lingkungan dan Berkelanjutan
-          </p>
+          <h2>{title}</h2>
+          <p className="max-w-96">{description}</p>
         </div>
         <div className="grid grid-cols-1 gap-4 md:w-[60%] xl:grid-cols-2">
           {visionContents.map((content, index) => (

@@ -5,6 +5,7 @@ import { ArticleDetail } from "./article/articleDetailTypes";
 import { MediaInformationData } from "./MediaInformationData";
 import { ArticleItem } from "./article/articleItem";
 import { ContactPageData } from "./contactPageData";
+import { CompanyData } from "./aboutUsData";
 
 export interface DashboardResponse {
   data: Data;
@@ -32,5 +33,9 @@ export interface MediaInformationResponse {
 }
 export interface ContactResponse {
   data: ContactPageData;
+  meta: Record<string, never>;
+}
+export interface AboutUsResponse {
+  data: CompanyData;
   meta: Record<string, never>;
 }

@@ -3,7 +3,8 @@ export enum ApiPath {
   // Dashboard paths
   DASHBOARD = "/dashboard",
 
-  DASHBOARD_OLD = "/dashboard?populate[headline][populate]=*&populate[whySection][populate]=*&populate[productService][populate][products][populate]=*&populate[ourImpact][populate]=*&populate[bannerContact][populate]=*&populate[latestNews][populate]=*",
+  // About Us path
+  ABOUT_US = "/about-us",
 
   // Article paths
   BLOGS = "/blogs",
