@@ -1,55 +1,56 @@
-import { Image } from "../image";
+import { WhySection } from "../dashboard/whySection";
 import { Headline } from "../headline";
+import { Image } from "../image";
 import { BannerCTA } from "../bannerCTA";
 
-export interface ProductWhyItem {
+interface Service {
   id: number;
+  documentId: string;
   title: string;
-  description: string;
   image: Image;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
 }
 
-export interface ProductItem {
+export interface Product {
   id: number;
   documentId: string;
   title: string;
   description: string;
+  url: string;
+  color1: string;
+  color2: string;
+  image: Image;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-  image: Image;
 }
 
-export interface ProductCategory {
+export interface ProductsSection {
   id: number;
-  documentId: string;
   title: string;
-  description: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  product_items: ProductItem[];
+  description: string | null;
+  ctaText: string | null;
+  products: Product[];
 }
-export interface ProductWhySection {
-  id: number;
-  why1: ProductWhyItem;
-  why2: ProductWhyItem;
-  why3: ProductWhyItem;
-}
-export interface AboutSection {
+
+export interface ServicesSection {
   id: number;
   title: string;
   description: string;
+  services: Service[];
 }
-export interface ProductsData {
+
+export interface ProductAndServiceData {
   id: number;
   documentId: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
   headline: Headline;
-  aboutSection: AboutSection;
-  whySection: ProductWhySection;
-  productCategoriesSection: ProductCategory[];
+  whySection: WhySection;
+  productsSection: ProductsSection;
+  servicesSection: ServicesSection;
   bannerCTA: BannerCTA;
 }

@@ -1,7 +1,11 @@
+import {
+  Product,
+  ProductsSection,
+} from "@/types/responseTypes/productService/productAndServiceData";
+import { getImageUrl } from "@/utils/getImageUrl";
+
 import ProductCard from "../home/ProductCard";
 import ContainerSection from "../layout/container";
-import { getImageUrl } from "@/utils/getImageUrl";
-import { Product, ProductsSection } from "@/utils/types";
 
 const OurProductSection = ({ data }: { data: ProductsSection }) => {
   return (

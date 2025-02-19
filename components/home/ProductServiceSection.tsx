@@ -1,13 +1,11 @@
 import { getImageUrl } from "@/utils/getImageUrl";
 
-import {
-  Product,
-  ProductService,
-} from "@/types/responseTypes/dashboard/productService";
-
 import LinkGreen from "./LinkGreen";
 import ProductCard from "./ProductCard";
 import ContainerSection from "../layout/container";
+
+import { ProductService } from "@/types/responseTypes/dashboard/productService";
+import { Product } from "@/types/responseTypes/productService/productAndServiceData";
 
 const ProductServiceSection = ({ data }: { data: ProductService }) => {
   return (

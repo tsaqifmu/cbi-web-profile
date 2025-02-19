@@ -1,18 +1,4 @@
-import { Image } from "../image";
-
-export interface Product {
-  id: number;
-  documentId: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  title: string;
-  description: string;
-  url: string;
-  color1: string;
-  color2: string;
-  image: Image;
-}
+import { Product } from "../productService/productAndServiceData";
 
 export interface ProductService {
   id: number;

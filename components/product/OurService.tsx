@@ -10,12 +10,11 @@ import { useState } from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { ServicesSection } from "@/utils/types";
-
 import LinkGreen from "../home/LinkGreen";
 import ContainerSection from "../layout/container";
 
 import type { Swiper as SwiperType } from "swiper";
+import { ServicesSection } from "@/types/responseTypes/productService/productAndServiceData";
 
 const OurServiceSection = ({ data }: { data: ServicesSection }) => {
   const [swiper, setSwiper] = useState<SwiperType>();

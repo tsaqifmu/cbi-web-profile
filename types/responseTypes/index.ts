@@ -6,10 +6,10 @@ import { MediaInformationData } from "./MediaInformationData";
 import { ArticleItem } from "./article/articleItem";
 import { ContactPageData } from "./contactPageData";
 import { CompanyData } from "./aboutUsData";
-import { ProductAndServiceData } from "@/utils/types";
-import { AgricultureData } from "./productService/productAgriculture";
+import { ProductsData } from "./productService/productAgriculture";
+import { ProductAndServiceData } from "./productService/productAndServiceData";
 
-// ====>PAGE SECTION <====
+//* ====>PAGE SECTION <====
 export interface DashboardResponse {
   data: Data;
   meta: Record<string, never>;
@@ -26,21 +26,21 @@ export interface ProductAndServiceResponse {
 }
 
 export interface ProductAgricultureResponse {
-  data: AgricultureData;
+  data: ProductsData;
   meta: Record<string, never>;
 }
 
 export interface ProductLivestockResponse {
-  data: AgricultureData;
+  data: ProductsData;
   meta: Record<string, never>;
 }
 
 export interface ProductFisheryResponse {
-  data: AgricultureData;
+  data: ProductsData;
   meta: Record<string, never>;
 }
 
-// ====>PAGE SECTION END <====
+//* ====>PAGE SECTION END <====
 
 export interface ArticleDetailResponse {
   data: ArticleDetail[];
