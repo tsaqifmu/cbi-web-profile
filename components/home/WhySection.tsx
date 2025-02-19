@@ -21,11 +21,11 @@ const WhySection = async ({ data }: { data: WhySectionProps }) => {
             <Image
               src={getImageUrl(data?.image?.url)}
               alt={
-                data?.image.alternativeText ??
+                data?.image?.alternativeText ??
                 "image of farmers and rice fields"
               }
-              width={data.image.width}
-              height={data.image.height}
+              width={data?.image?.width ?? 400}
+              height={data?.image?.height ?? 400}
               className="h-44 flex-1 rounded-3xl object-cover md:h-[22.25rem] lg:h-[28.5rem] xl:h-96"
             />
           </div>

@@ -13,10 +13,10 @@ const AboutUsSection = ({ aboutUs }: { aboutUs: AboutUs }) => {
           <p>{aboutUs.description}</p>
         </div>
         <Image
-          src={getImageUrl(aboutUs.image.url)}
+          src={getImageUrl(aboutUs?.image?.url)}
           alt={aboutUs.image.alternativeText ?? "about us"}
-          width={aboutUs.image.width}
-          height={aboutUs.image.height}
+          width={aboutUs?.image?.width ?? 400}
+          height={aboutUs?.image?.height ?? 400}
           className="h-60 rounded-2xl object-cover object-center lg:h-[25rem]"
         />
       </ContainerSection>

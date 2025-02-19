@@ -11,7 +11,7 @@ const SocialLinks = () => (
           src={icon}
           height={24}
           width={24}
-          alt={alt}
+          alt={alt ?? "social media icon"}
           className="h-6 w-6"
         />
       </Link>

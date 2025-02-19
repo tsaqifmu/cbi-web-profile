@@ -145,35 +145,35 @@ const OurImpactSection = ({ data }: { data: OurImpact }) => {
           </p>
           <div className="mt-6 flex flex-wrap items-center space-x-12 space-y-6 md:mt-0 md:space-y-0">
             <Image
-              src="/img-product-cert-1.png"
+              src="/certificate/img-product-cert-1.png"
               alt="Sertifikat KAN"
               width={100}
               height={40}
               className="h-12 w-24"
             />
             <Image
-              src="/img-product-cert-2.png"
+              src="/certificate/img-product-cert-2.png"
               alt="Sertifikat TKDN"
               width={100}
               height={40}
               className="h-12 w-auto"
             />
             <Image
-              src="/img-product-cert-3.png"
+              src="/certificate/img-product-cert-3.png"
               alt="Sertifikat Kementrian Pertanian"
               width={100}
               height={40}
               className="h-12 w-auto"
             />
             <Image
-              src="/img-product-cert-4.png"
+              src="/certificate/img-product-cert-4.png"
               alt="Sertifikat Organik Indonesia"
               width={100}
               height={40}
               className="h-12 w-auto"
             />
             <Image
-              src="/img-product-cert-5.png"
+              src="/certificate/img-product-cert-5.png"
               alt="Sertifikat IAF"
               width={100}
               height={40}
