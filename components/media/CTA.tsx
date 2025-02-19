@@ -3,7 +3,7 @@ import { getImageUrl } from "@/utils/getImageUrl";
 import CTASection from "@/components/common/CTA";
 import ContainerSection from "@/components/layout/container";
 
-import { BannerContactSection } from "@/types/responseTypes/bannerContact";
+import { BannerCTA } from "@/types/responseTypes/bannerCTA";
 
 const CTAContent = ({ title }: { title: string }) => (
   <div className="max-w-[820px] space-y-6">
@@ -13,12 +13,12 @@ const CTAContent = ({ title }: { title: string }) => (
   </div>
 );
 
-const CTAMediaSection = ({ data }: { data: BannerContactSection }) => {
+const CTAMediaSection = ({ data }: { data: BannerCTA }) => {
   return (
     <section className="h-full w-full bg-[#EEE]">
       <ContainerSection className="h-full">
         <CTASection
-          backgroundImage={getImageUrl(data.image.url)}
+          backgroundImage={getImageUrl(data.image?.url)}
           content={<CTAContent title={data.title} />}
           buttonText={data.ctaText}
           buttonHref="/contact"

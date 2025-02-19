@@ -2,21 +2,18 @@ import Image from "next/image";
 
 import LinkGreen from "../home/LinkGreen";
 import ContainerSection from "../layout/container";
-import { BannerContactSection as BannerContactSectionProps } from "@/types/responseTypes/bannerContact";
+import { BannerCTA } from "@/types/responseTypes/bannerCTA";
+import { getImageUrl } from "@/utils/getImageUrl";
 
-const BannerContactSection = ({
-  data,
-}: {
-  data: BannerContactSectionProps;
-}) => {
+const BannerContactSection = ({ data }: { data: BannerCTA }) => {
   return (
     <section className="bg-[#EEE]">
       <ContainerSection>
         <div className="relative min-h-[20rem] w-full overflow-hidden rounded-3xl lg:min-h-[22rem] xl:min-h-[25rem]">
           {/* Background image */}
           <Image
-            src={process.env.NEXT_PUBLIC_URL_API + data.image.url}
-            alt={data.title}
+            src={getImageUrl(data.image?.url)}
+            alt={data.image.alternativeText ?? "Contact Image"}
             fill
             className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"

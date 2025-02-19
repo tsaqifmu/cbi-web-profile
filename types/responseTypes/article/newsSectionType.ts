@@ -1,5 +1,5 @@
 import { Headline } from "../headline";
-import { BannerContactSection } from "../bannerContact";
+import { BannerCTA } from "../bannerCTA";
 import { ArticleItem } from "./articleItem";
 
 export interface NewsData {
@@ -15,5 +15,5 @@ export interface NewsData {
   headlineNews: ArticleItem;
   news1: ArticleItem[];
   news2: ArticleItem[];
-  bannerContactSection: BannerContactSection;
+  bannerCTA: BannerCTA;
 }

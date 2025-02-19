@@ -1,4 +1,5 @@
 import { generateQuery } from "../generateQuery";
+import { IMAGE_QUERY } from "./common";
 
 export const getDocumentsQuery = () => {
   const params = {
@@ -9,9 +10,7 @@ export const getDocumentsQuery = () => {
       certificates: {
         fields: ["title", "description", "publishedAt"],
         populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
+          ...IMAGE_QUERY,
           file: {
             fields: ["url", "alternativeText", "width", "height"],
           },
@@ -20,9 +19,7 @@ export const getDocumentsQuery = () => {
       brochures: {
         fields: ["title", "description", "publishedAt"],
         populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
+          ...IMAGE_QUERY,
           file: {
             fields: ["url", "alternativeText", "width", "height"],
           },

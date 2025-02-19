@@ -1,4 +1,4 @@
-import { BannerContactSection } from "../bannerContact";
+import { BannerCTA } from "../bannerCTA";
 import { Headline } from "../headline";
 import { ArticleItem } from "./articleItem";
 
@@ -15,5 +15,5 @@ export interface BlogData {
   headlineBlog: ArticleItem;
   blog1: ArticleItem[];
   blog2: ArticleItem[];
-  bannerContactSection: BannerContactSection;
+  bannerCTA: BannerCTA;
 }

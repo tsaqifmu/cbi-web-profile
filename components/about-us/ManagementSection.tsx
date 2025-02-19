@@ -12,51 +12,10 @@ import ContainerSection from "@/components/layout/container";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Management } from "@/types/responseTypes/aboutUsData";
+import { getImageUrl } from "@/utils/getImageUrl";
 
-const managementData = [
-  {
-    id: 1,
-    image: "/management-photo-profile/pak-luhur.png",
-    name: "drh. Luhur Sediyoadi",
-    title: "Owner",
-    description:
-      "Drh. H. Luhur Sediyoadi, S.KH., merupakan alumni Fakultas Kesehatan Hewan Universitas Airlangga (1986). Berbekal pengalaman kerja sebelumnya di dua perusahaan, pada 2010 beliau mendirikan PT Centra Biotech Indonesia, di mana kini ia menjabat sebagai Owner.",
-  },
-  {
-    id: 2,
-    image: "/management-photo-profile/pak-luhur.png",
-    name: "drh. Luhur Sediyoadi",
-    title: "Owner",
-    description:
-      "Drh. H. Luhur Sediyoadi, S.KH., merupakan alumni Fakultas Kesehatan Hewan Universitas Airlangga (1986). Berbekal pengalaman kerja sebelumnya di dua perusahaan, pada 2010 beliau mendirikan PT Centra Biotech Indonesia, di mana kini ia menjabat sebagai Owner.",
-  },
-  {
-    id: 3,
-    image: "/management-photo-profile/pak-luhur.png",
-    name: "drh. Luhur Sediyoadi",
-    title: "Owner",
-    description:
-      "Drh. H. Luhur Sediyoadi, S.KH., merupakan alumni Fakultas Kesehatan Hewan Universitas Airlangga (1986). Berbekal pengalaman kerja sebelumnya di dua perusahaan, pada 2010 beliau mendirikan PT Centra Biotech Indonesia, di mana kini ia menjabat sebagai Owner.",
-  },
-  {
-    id: 4,
-    image: "/management-photo-profile/pak-luhur.png",
-    name: "drh. Luhur Sediyoadi",
-    title: "Owner",
-    description:
-      "Drh. H. Luhur Sediyoadi, S.KH., merupakan alumni Fakultas Kesehatan Hewan Universitas Airlangga (1986). Berbekal pengalaman kerja sebelumnya di dua perusahaan, pada 2010 beliau mendirikan PT Centra Biotech Indonesia, di mana kini ia menjabat sebagai Owner.",
-  },
-  {
-    id: 5,
-    image: "/management-photo-profile/pak-luhur.png",
-    name: "drh. Luhur Sediyoadi",
-    title: "Owner",
-    description:
-      "Drh. H. Luhur Sediyoadi, S.KH., merupakan alumni Fakultas Kesehatan Hewan Universitas Airlangga (1986). Berbekal pengalaman kerja sebelumnya di dua perusahaan, pada 2010 beliau mendirikan PT Centra Biotech Indonesia, di mana kini ia menjabat sebagai Owner.",
-  },
-];
-
-const ManagementSection = () => {
+const ManagementSection = ({ managements }: { managements: Management[] }) => {
   const [swiper, setSwiper] = useState<SwiperType>();
 
   return (
@@ -92,22 +51,22 @@ const ManagementSection = () => {
           }}
           className="mt-16 pb-16"
         >
-          {managementData.map((item) => (
+          {managements.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="flex w-[18.75rem] flex-col gap-y-5 lg:w-[25rem]">
                 <div className="relative">
                   <Image
-                    src={item.image}
-                    alt={`${item.name} photo`}
-                    width={400}
-                    height={400}
+                    src={getImageUrl(item.image.url)}
+                    alt={item.image.alternativeText ?? "management"}
+                    width={item.image.width}
+                    height={item.image.height}
                     className="h-[18.75rem] w-[18.75rem] rounded-[1.125rem] object-cover object-center lg:h-[25rem] lg:w-[25rem]"
                   />
                   <div className="absolute bottom-2 left-4 z-10">
                     <h4 className="text-base font-bold text-[#FDFDFD] lg:text-xl">
                       {item.name}
                     </h4>
-                    <p className="text-[#FDFDFD]">{item.title}</p>
+                    <p className="text-[#FDFDFD]">{item.position}</p>
                   </div>
                 </div>
                 <div>

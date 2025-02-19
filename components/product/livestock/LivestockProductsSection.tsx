@@ -1,21 +1,24 @@
 "use client";
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css/effect-fade';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import ContainerSection from '@/components/layout/container';
-import { cn } from '@/lib/utils';
-import { getImageUrl } from '@/utils/getImageUrl';
-import { ProductCategory, ProductItem } from '@/utils/types';
+import ContainerSection from "@/components/layout/container";
+import { cn } from "@/lib/utils";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 import type { Swiper as SwiperType } from "swiper";
+import {
+  ProductCategory,
+  ProductItem,
+} from "@/types/responseTypes/productService/productAgriculture";
 const LivestockProductsSection = ({
   productCategories,
 }: {
@@ -77,7 +80,7 @@ const LivestockProductsSection = ({
               src={getImageUrl(activeProduct?.image?.url)} // Use the utility function here
               width={280}
               height={315}
-              alt={activeProduct?.image?.name || "Product Image"}
+              alt={activeProduct?.image?.alternativeText || "Product Image"}
             />
           </div>
 

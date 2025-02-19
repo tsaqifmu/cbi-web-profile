@@ -7,17 +7,34 @@ import { usePathname } from "next/navigation";
 const Breadcrumb = ({ className }: { className?: string }) => {
   const pathname = usePathname();
 
+  // Mapping URL ke judul Bahasa Indonesia
+  const getIndonesianTitle = (path: string): string => {
+    const pathMap: { [key: string]: string } = {
+      "/": "Beranda",
+      "/about-us": "Tentang Kami",
+      "/product": "Produk & Layanan",
+      "/product/agriculture": "Pertanian",
+      "/product/livestock": "Peternakan",
+      "/product/fishery": "Perikanan",
+      "/news": "Berita",
+      "/blog": "Blog",
+      "/contact": "Kontak",
+      "/documents": "Brosur & Dokumen",
+      "/career": "Karir",
+      // Tambahkan mapping URL lainnya di sini
+    };
+
+    return pathMap[path] || path.split("/").pop()?.replace(/-/g, " ") || "";
+  };
+
   // Mengubah path menjadi array breadcrumb
   const generateBreadcrumbs = () => {
-    // Split pathname menjadi segments
     const segments = pathname.split("/").filter((segment) => segment !== "");
-
-    // Membuat array breadcrumb dengan accumulating paths
+    
     const breadcrumbs = segments.map((segment, index) => {
       const path = `/${segments.slice(0, index + 1).join("/")}`;
       return {
-        label:
-          segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, " "),
+        label: getIndonesianTitle(path),
         path,
       };
     });
@@ -40,7 +57,7 @@ const Breadcrumb = ({ className }: { className?: string }) => {
               className="flex items-center text-gray-500 hover:text-gray-700"
             >
               <Home className="h-4 w-4" />
-              <span className="ml-2">Home</span>
+              <span className="ml-2">Beranda</span>
             </Link>
           </li>
 

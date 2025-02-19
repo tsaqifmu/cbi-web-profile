@@ -1,4 +1,5 @@
 import { generateQuery } from "../generateQuery";
+import { IMAGE_QUERY } from "./common";
 
 export const getArticleDetailQuery = (slug: string) => {
   const params = {
@@ -9,9 +10,7 @@ export const getArticleDetailQuery = (slug: string) => {
     },
     fields: ["title", "content", "type", "publishedAt"],
     populate: {
-      image: {
-        fields: ["url", "alternativeText", "width", "height"],
-      },
+      ...IMAGE_QUERY,
     },
   };
 

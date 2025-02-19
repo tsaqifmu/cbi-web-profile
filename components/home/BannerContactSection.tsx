@@ -1,16 +1,12 @@
 import Image from "next/image";
 
 import { getImageUrl } from "@/utils/getImageUrl";
-import { BannerContactSection as BannerContactSectionProps } from "@/types/responseTypes/bannerContact";
+import { BannerCTA } from "@/types/responseTypes/bannerCTA";
 
 import LinkGreen from "./LinkGreen";
 import ContainerSection from "../layout/container";
 
-const BannerContactSection = ({
-  data,
-}: {
-  data: BannerContactSectionProps;
-}) => {
+const BannerContactSection = ({ data }: { data: BannerCTA }) => {
   return (
     <section className="bg-[#EEE]">
       <ContainerSection>
@@ -18,7 +14,7 @@ const BannerContactSection = ({
           {/* Background image */}
           <Image
             src={getImageUrl(data.image?.url)}
-            alt={data.image.alternativeText ?? "Contact Image"}
+            alt={data?.image?.alternativeText ?? "Contact Image"}
             fill
             className="object-cover object-bottom"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"

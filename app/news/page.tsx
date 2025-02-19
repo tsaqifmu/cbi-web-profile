@@ -12,6 +12,7 @@ import Breadcrumb from "@/components/common/BreadScrumb";
 const Media = async () => {
   try {
     const query = getNewsSectionQuery();
+
     const { data } = await apiRequest<NewsSectionResponse>({
       path: ApiPath.NEWS_SECTION,
       queryParams: query,
@@ -19,14 +20,11 @@ const Media = async () => {
 
     return (
       <section>
-        <HeroSection
-          title={data.headline.description}
-          category={data.headline.title}
-        />
+        <HeroSection headline={data.headline} />
         <Breadcrumb />
         <MainArticle data={data.headlineNews} />
         <ListArticle news1={data.news1} news2={data.news2} />
-        <CTASection data={data.bannerContactSection} />
+        <CTASection data={data.bannerCTA} />
       </section>
     );
   } catch (e) {

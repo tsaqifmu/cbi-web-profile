@@ -25,7 +25,7 @@ const Home = async () => {
         <ProductServiceSection data={data.productService} />
         <OurImpactSection data={data.ourImpact} />
         <LatestNewsSection data={data.latestNews} />
-        <BannerContactSection data={data.bannerContact} />
+        <BannerContactSection data={data.bannerCTA} />
       </>
     );
   } catch (e) {

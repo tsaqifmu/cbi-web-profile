@@ -1,4 +1,5 @@
 import { generateQuery } from "../generateQuery";
+import { IMAGE_QUERY, WITH_BANNER_CTA_QUERY } from "./common";
 
 export const getDashboardQuery = () => {
   const params = {
@@ -8,18 +9,14 @@ export const getDashboardQuery = () => {
       },
       whySection: {
         populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
+          ...IMAGE_QUERY,
         },
       },
       productService: {
         populate: {
           products: {
             populate: {
-              image: {
-                fields: ["url", "alternativeText", "width", "height"],
-              },
+              ...IMAGE_QUERY,
             },
           },
         },
@@ -52,9 +49,7 @@ export const getDashboardQuery = () => {
               "type",
             ],
             populate: {
-              image: {
-                fields: ["url", "alternativeText", "width", "height"],
-              },
+              ...IMAGE_QUERY,
             },
           },
           news: {
@@ -67,20 +62,12 @@ export const getDashboardQuery = () => {
               "type",
             ],
             populate: {
-              image: {
-                fields: ["url", "alternativeText", "width", "height"],
-              },
+              ...IMAGE_QUERY,
             },
           },
         },
       },
-      bannerContact: {
-        populate: {
-          image: {
-            fields: ["url", "alternativeText", "width", "height"],
-          },
-        },
-      },
+      ...WITH_BANNER_CTA_QUERY,
     },
   };
 

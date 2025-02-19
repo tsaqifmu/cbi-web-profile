@@ -1,13 +1,11 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import LinkGreen from '@/components/home/LinkGreen';
-import ContainerSection from '@/components/layout/container';
-import {
-    BannerContactSection as BannerContactSectionType
-} from '@/types/responseTypes/bannerContact';
-import { getImageUrl } from '@/utils/getImageUrl';
+import LinkGreen from "@/components/home/LinkGreen";
+import ContainerSection from "@/components/layout/container";
+import { BannerCTA } from "@/types/responseTypes/bannerCTA";
+import { getImageUrl } from "@/utils/getImageUrl";
 
-const BannerContactSection = ({ data }: { data: BannerContactSectionType }) => {
+const BannerContactSection = ({ data }: { data: BannerCTA }) => {
   return (
     <section className="bg-[#EEE]">
       <ContainerSection>
@@ -36,7 +34,7 @@ const BannerContactSection = ({ data }: { data: BannerContactSectionType }) => {
             </div>
             <div className="mt-4 flex items-center justify-end md:mt-0">
               <LinkGreen href="/contact" withArrow={false}>
-                Hubungi Kami
+                {data.ctaText}
               </LinkGreen>
             </div>
           </div>

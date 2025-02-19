@@ -1,27 +1,37 @@
+import { getImageUrl } from "@/utils/getImageUrl";
+import { BannerCTA } from "@/types/responseTypes/bannerCTA";
+
 import CTASection from "@/components/common/CTA";
 import ContainerSection from "@/components/layout/container";
 
-const CTAContent = () => (
+const CTAContent = ({
+  title,
+  description,
+}: {
+  title: string;
+  description: string | undefined;
+}) => (
   <div className="space-y-6 md:w-2/3">
     <h1 className="text-[2rem] font-bold text-[#FDFDFD] lg:text-[2.5rem] xl:text-[3rem]">
-      Meniti Karir Bersama Kami
+      {title}
     </h1>
-    <p className="text-[#FDFDFD] lg:text-[1.125rem]">
-      PT Centra Biotech Indonesia berkomitmen membangun Indonesia melalui
-      inovasi bioteknologi. Bergabung dengan tim profesional dan andal, bersama
-      memberi dampak positif untuk masa depan.
-    </p>
+    <p className="text-[#FDFDFD] lg:text-[1.125rem]">{description}</p>
   </div>
 );
 
-const BannerCareerSection = () => {
+const BannerCareerSection = ({ bannerCTA }: { bannerCTA: BannerCTA }) => {
   return (
     <section className="h-full w-full bg-[#EEE]">
       <ContainerSection className="h-full">
         <CTASection
-          backgroundImage="/CTA-tentang-kami.png"
-          content={<CTAContent />}
-          buttonText="Hubungi Kami"
+          backgroundImage={getImageUrl(bannerCTA.image?.url)}
+          content={
+            <CTAContent
+              title={bannerCTA.title}
+              description={bannerCTA.description}
+            />
+          }
+          buttonText={bannerCTA.ctaText}
           buttonHref="/career"
         />
       </ContainerSection>
