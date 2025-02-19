@@ -1,5 +1,9 @@
 import { generateQuery } from "../generateQuery";
-import { IMAGE_QUERY, WITH_HEADLINE_QUERY } from "./common";
+import {
+  IMAGE_QUERY,
+  WITH_BANNER_CTA_QUERY,
+  WITH_HEADLINE_QUERY,
+} from "./common";
 
 export const getNewsSectionQuery = () => {
   const params = {
@@ -45,12 +49,7 @@ export const getNewsSectionQuery = () => {
           ...IMAGE_QUERY,
         },
       },
-      bannerContactSection: {
-        fields: ["title", "ctaText"],
-        populate: {
-          ...IMAGE_QUERY,
-        },
-      },
+      ...WITH_BANNER_CTA_QUERY,
     },
   };
 

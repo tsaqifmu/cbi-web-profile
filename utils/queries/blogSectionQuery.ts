@@ -1,5 +1,5 @@
 import { generateQuery } from "../generateQuery";
-import { IMAGE_QUERY } from "./common";
+import { IMAGE_QUERY, WITH_BANNER_CTA_QUERY } from "./common";
 
 export const getBlogSectionQuery = () => {
   const params = {
@@ -46,12 +46,7 @@ export const getBlogSectionQuery = () => {
           ...IMAGE_QUERY,
         },
       },
-      bannerCTASection: {
-        fields: ["title", "ctaText", "description"],
-        populate: {
-          ...IMAGE_QUERY,
-        },
-      },
+      ...WITH_BANNER_CTA_QUERY,
     },
   };
 

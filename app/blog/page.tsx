@@ -23,7 +23,7 @@ const Blog = async () => {
         <Breadcrumb />
         <MainArticle data={data.headlineBlog} />
         <ListArticle news1={data.blog1} news2={data.blog2} />
-        <CTASection data={data.bannerContactSection} />
+        <CTASection data={data.bannerCTA} />
       </section>
     );
   } catch (e) {

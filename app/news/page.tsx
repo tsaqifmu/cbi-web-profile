@@ -24,7 +24,7 @@ const Media = async () => {
         <Breadcrumb />
         <MainArticle data={data.headlineNews} />
         <ListArticle news1={data.news1} news2={data.news2} />
-        <CTASection data={data.bannerContactSection} />
+        <CTASection data={data.bannerCTA} />
       </section>
     );
   } catch (e) {

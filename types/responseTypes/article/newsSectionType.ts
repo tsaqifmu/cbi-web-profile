@@ -15,5 +15,5 @@ export interface NewsData {
   headlineNews: ArticleItem;
   news1: ArticleItem[];
   news2: ArticleItem[];
-  bannerContactSection: BannerCTA;
+  bannerCTA: BannerCTA;
 }

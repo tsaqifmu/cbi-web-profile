@@ -15,5 +15,5 @@ export interface BlogData {
   headlineBlog: ArticleItem;
   blog1: ArticleItem[];
   blog2: ArticleItem[];
-  bannerContactSection: BannerCTA;
+  bannerCTA: BannerCTA;
 }
