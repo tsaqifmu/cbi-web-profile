@@ -28,10 +28,10 @@ const ArticleImage: React.FC<ArticleImageProps> = ({ image, type }) => {
   return (
     <div className="relative h-[19.375rem] w-[19.375rem] overflow-hidden rounded-lg border border-gray-200 lg:rounded-3xl">
       <Image
-        src={getImageUrl(image.url)}
+        src={getImageUrl(image?.url)}
         alt={image.alternativeText ?? "Image article"}
-        width={image.width}
-        height={image.height}
+        width={image?.width ?? 300}
+        height={image?.height ?? 300}
         className="h-full w-full object-cover"
       />
 

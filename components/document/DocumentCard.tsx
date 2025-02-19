@@ -37,10 +37,10 @@ export const DocumentCard: FC<DocumentCardProps> = ({ document }) => {
   return (
     <div className="flex flex-col gap-6 rounded-lg bg-white p-4 drop-shadow-[0_0_4px_rgba(0,0,0,0.1)] lg:flex-row lg:items-center lg:p-8">
       <Image
-        src={getImageUrl(document.image.url)}
-        alt={`${document.image.alternativeText} thumbnail`}
-        width={document.image.width}
-        height={document.image.height}
+        src={getImageUrl(document?.image?.url)}
+        alt={`${document?.image?.alternativeText} thumbnail`}
+        width={document?.image?.width ?? 400}
+        height={document?.image?.height ?? 400}
         className="flex h-36 w-full flex-none rounded-lg object-cover object-center lg:w-36"
       />
 

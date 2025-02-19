@@ -45,9 +45,9 @@ const MainArticle = ({ data }: { data: ArticleItem }) => {
         {/* Article Image */}
         <Image
           src={getImageUrl(data?.image?.url)}
-          alt={data.image.alternativeText ?? "Headline image"}
-          width={data.image.width}
-          height={data.image.height}
+          alt={data?.image?.alternativeText ?? "Headline image"}
+          width={data?.image?.width ?? 400}
+          height={data?.image?.height ?? 400}
           className="rounded-lg object-cover md:w-1/2 lg:rounded-3xl"
         />
 

@@ -56,10 +56,10 @@ const ManagementSection = ({ managements }: { managements: Management[] }) => {
               <div className="flex w-[18.75rem] flex-col gap-y-5 lg:w-[25rem]">
                 <div className="relative">
                   <Image
-                    src={getImageUrl(item.image.url)}
-                    alt={item.image.alternativeText ?? "management"}
-                    width={item.image.width}
-                    height={item.image.height}
+                    src={getImageUrl(item?.image?.url)}
+                    alt={item?.image?.alternativeText ?? "management"}
+                    width={item?.image?.width ?? 400}
+                    height={item?.image?.height ?? 400}
                     className="h-[18.75rem] w-[18.75rem] rounded-[1.125rem] object-cover object-center lg:h-[25rem] lg:w-[25rem]"
                   />
                   <div className="absolute bottom-2 left-4 z-10">
