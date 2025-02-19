@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import ContainerSection from "@/components/layout/container";
 import { WhySection as WhySectionType } from "@/types/responseTypes/dashboard/whySection";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 const WhySection = ({ data }: { data: WhySectionType }) => {
   return (
@@ -16,10 +17,10 @@ const WhySection = ({ data }: { data: WhySectionType }) => {
         {/* Image */}
         <div className="flex-1">
           <Image
-            src={process.env.NEXT_PUBLIC_URL_API + data.image.url}
-            alt="Petani dan sawah"
-            width={626}
-            height={406}
+            src={getImageUrl(data?.image?.url)}
+            alt={data?.image?.alternativeText ?? "Why Section Image"}
+            width={data?.image?.width ?? 406}
+            height={data?.image?.height ?? 406}
             className="h-44 rounded-3xl object-cover md:h-[356px] lg:h-[456px] xl:h-96"
           />
         </div>
