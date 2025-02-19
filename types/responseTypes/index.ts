@@ -6,11 +6,42 @@ import { MediaInformationData } from "./MediaInformationData";
 import { ArticleItem } from "./article/articleItem";
 import { ContactPageData } from "./contactPageData";
 import { CompanyData } from "./aboutUsData";
+import { ProductAndServiceData } from "@/utils/types";
+import { AgricultureData } from "./productService/productAgriculture";
 
+// ====>PAGE SECTION <====
 export interface DashboardResponse {
   data: Data;
   meta: Record<string, never>;
 }
+export interface AboutUsResponse {
+  data: CompanyData;
+  meta: Record<string, never>;
+}
+
+// Product and Service Section
+export interface ProductAndServiceResponse {
+  data: ProductAndServiceData;
+  meta: Record<string, never>;
+}
+
+export interface ProductAgricultureResponse {
+  data: AgricultureData;
+  meta: Record<string, never>;
+}
+
+export interface ProductLivestockResponse {
+  data: AgricultureData;
+  meta: Record<string, never>;
+}
+
+export interface ProductFisheryResponse {
+  data: AgricultureData;
+  meta: Record<string, never>;
+}
+
+// ====>PAGE SECTION END <====
+
 export interface ArticleDetailResponse {
   data: ArticleDetail[];
   meta: Record<string, never>;
@@ -33,9 +64,5 @@ export interface MediaInformationResponse {
 }
 export interface ContactResponse {
   data: ContactPageData;
-  meta: Record<string, never>;
-}
-export interface AboutUsResponse {
-  data: CompanyData;
   meta: Record<string, never>;
 }

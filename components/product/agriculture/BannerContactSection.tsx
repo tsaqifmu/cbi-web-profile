@@ -34,7 +34,7 @@ const BannerContactSection = ({ data }: { data: BannerCTA }) => {
             </div>
             <div className="mt-4 flex items-center justify-end md:mt-0">
               <LinkGreen href="/contact" withArrow={false}>
-                Hubungi Kami
+                {data.ctaText}
               </LinkGreen>
             </div>
           </div>

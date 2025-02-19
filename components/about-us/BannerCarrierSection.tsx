@@ -1,7 +1,8 @@
+import { getImageUrl } from "@/utils/getImageUrl";
+import { BannerCTA } from "@/types/responseTypes/bannerCTA";
+
 import CTASection from "@/components/common/CTA";
 import ContainerSection from "@/components/layout/container";
-import { BannerCTA } from "@/types/responseTypes/bannerCTA";
-import { getImageUrl } from "@/utils/getImageUrl";
 
 const CTAContent = ({
   title,

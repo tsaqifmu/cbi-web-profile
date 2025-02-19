@@ -1,5 +1,5 @@
 import { generateQuery } from "@/utils/generateQuery";
-import { WITH_HEADLINE_QUERY } from "../common";
+import { WITH_BANNER_CTA_QUERY, WITH_HEADLINE_QUERY } from "../common";
 
 export const getProductServiceQuery = () => {
   const params = {
@@ -23,9 +23,7 @@ export const getProductServiceQuery = () => {
           },
         },
       },
-      bannerContactSection: {
-        populate: "*",
-      },
+      ...WITH_BANNER_CTA_QUERY,
     },
   };
 

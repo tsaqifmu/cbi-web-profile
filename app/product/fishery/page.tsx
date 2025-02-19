@@ -1,6 +1,8 @@
+import { ProductFisheryResponse } from "@/types/responseTypes";
+
 import { getImageUrl } from "@/utils/getImageUrl";
-import { ProductFisheryResponse } from "@/utils/types";
 import { ApiPath, apiRequest } from "@/utils/apiClient";
+import { getServicesQuery } from "@/utils/queries/product/servicesQuery";
 
 import Breadcrumb from "@/components/common/BreadScrumb";
 import ContainerSection from "@/components/layout/container";
@@ -8,7 +10,6 @@ import CustomSvgIcon from "@/components/common/CustomSvgIcon";
 import HeroSectionGeneral from "@/components/common/HeroSectionGeneral";
 import BannerContactSection from "@/components/product/fishery/BannerContactSection";
 import FisheryProductsSection from "@/components/product/fishery/FisheryProductsSection";
-import { getServicesQuery } from "@/utils/queries/product/servicesQuery";
 
 const Livestock = async () => {
   try {
@@ -89,7 +90,7 @@ const Livestock = async () => {
           productCategories={data.productCategoriesSection}
         />
 
-        <BannerContactSection data={data.bannerContactSection} />
+        <BannerContactSection data={data.bannerCTA} />
       </>
     );
   } catch (e) {
