@@ -6,22 +6,22 @@ export const LEGAL_LINKS = [
 
 export const SOCIAL_LINKS = [
   {
-    icon: "/Facebook.svg",
+    icon: "/social-media-icon/Facebook.svg",
     href: "https://www.facebook.com/profile.php?id=61552413907665",
     alt: "facebook",
   },
   {
-    icon: "/Instagram.svg",
+    icon: "/social-media-icon/Instagram.svg",
     href: "https://www.instagram.com/centrabiotechindonesia/?utm_source=ig_web_button_share_sheet",
     alt: "instagram",
   },
   {
-    icon: "/LinkedIn.svg",
+    icon: "/social-media-icon/LinkedIn.svg",
     href: "https://www.linkedin.com/company/pt-centra-biotech-indonesia/",
     alt: "linkedin",
   },
   {
-    icon: "/Youtube.svg",
+    icon: "/social-media-icon/Youtube.svg",
     href: "https://www.youtube.com/@centrabiotechindonesia",
     alt: "youtube",
   },

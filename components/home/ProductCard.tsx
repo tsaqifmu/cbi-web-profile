@@ -35,7 +35,7 @@ const ProductCard = ({
       {/* Background Image */}
       <Image
         src={imgUrl}
-        alt={imgAlt}
+        alt={imgAlt ?? "Product Image"}
         fill
         className="object-cover transition-all duration-300"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

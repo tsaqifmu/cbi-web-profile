@@ -81,7 +81,7 @@ const FisheryProductsSection = ({
               src={getImageUrl(activeProduct?.image?.url)} // Use the utility function here
               width={280}
               height={315}
-              alt={activeProduct?.image?.alternativeText || "Product Image"}
+              alt={activeProduct?.image?.alternativeText ?? "Product Image"}
             />
           </div>
 
