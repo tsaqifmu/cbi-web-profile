@@ -4,15 +4,22 @@ import { Image } from "./image";
 
 export interface AboutUs {
   id: number;
-  Title: string;
+  title: string;
+  description: string;
+  image: Image;
+}
+
+interface VisionItem {
+  id: number;
   description: string;
   image: Image;
 }
 
 export interface VisionMission {
   id: number;
-  Title: string;
+  title: string;
   description: string;
+  visionItem: VisionItem[];
 }
 
 export interface Management {
@@ -26,9 +33,16 @@ export interface Management {
   image: Image;
 }
 
-interface CorporateValue {
+interface CorporateValueItem {
   id: number;
-  Title: string;
+  title: string;
+  description: string;
+}
+
+export interface CorporateValue {
+  id: number;
+  title: string;
+  corporateValueItem: CorporateValueItem[];
 }
 
 export interface CompanyData {

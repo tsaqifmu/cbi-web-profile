@@ -15,7 +15,14 @@ export const getAboutUsQuery = () => {
         },
       },
       visionMission: {
-        populate: "*",
+        fields: ["title", "description"],
+        populate: {
+          visionItem: {
+            populate: {
+              ...IMAGE_QUERY,
+            },
+          },
+        },
       },
       corporateValue: {
         populate: "*",
