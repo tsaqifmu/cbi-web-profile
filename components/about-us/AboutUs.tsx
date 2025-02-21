@@ -1,15 +1,16 @@
 import Image from "next/image";
 
-import ContainerSection from "@/components/layout/container";
-import { AboutUs } from "@/types/responseTypes/aboutUsData";
 import { getImageUrl } from "@/utils/getImageUrl";
+
+import { AboutUs } from "@/types/responseTypes/aboutUsData";
+import ContainerSection from "@/components/layout/container";
 
 const AboutUsSection = ({ aboutUs }: { aboutUs: AboutUs }) => {
   return (
     <section>
       <ContainerSection className="flex flex-col gap-y-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:gap-x-52">
-          <h2 className="text-nowrap">{aboutUs.Title}</h2>
+          <h2 className="text-nowrap">{aboutUs.title}</h2>
           <p>{aboutUs.description}</p>
         </div>
         <Image

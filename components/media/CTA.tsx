@@ -18,7 +18,7 @@ const CTAMediaSection = ({ data }: { data: BannerCTA }) => {
     <section className="h-full w-full bg-[#EEE]">
       <ContainerSection className="h-full">
         <CTASection
-          backgroundImage={getImageUrl(data.image?.url)}
+          backgroundImage={getImageUrl(data?.image?.url)}
           content={<CTAContent title={data.title} />}
           buttonText={data.ctaText}
           buttonHref="/contact"

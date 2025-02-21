@@ -24,7 +24,7 @@ const BannerCareerSection = ({ bannerCTA }: { bannerCTA: BannerCTA }) => {
     <section className="h-full w-full bg-[#EEE]">
       <ContainerSection className="h-full">
         <CTASection
-          backgroundImage={getImageUrl(bannerCTA.image?.url)}
+          backgroundImage={getImageUrl(bannerCTA?.image?.url)}
           content={
             <CTAContent
               title={bannerCTA.title}
