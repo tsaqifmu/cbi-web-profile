@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Image from "next/image";
 import LinkGreen from "@/components/home/LinkGreen";
 
 interface CTASectionProps {
@@ -15,13 +16,14 @@ const CTASection: FC<CTASectionProps> = ({
   buttonHref = "/career",
 }) => {
   return (
-    <div className="relative flex h-[25rem] w-full items-center justify-center overflow-hidden rounded-3xl bg-cover bg-bottom bg-no-repeat md:h-[22.5rem] xl:h-[25rem]">
+    <div className="relative flex h-[25rem] w-full items-center justify-center overflow-hidden rounded-3xl md:h-[22.5rem] xl:h-[25rem]">
       {/* Background image */}
-      <div
-        className="absolute inset-0 h-full w-full bg-cover bg-right-top bg-no-repeat"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-        }}
+      <Image
+        src={backgroundImage}
+        alt="CTA Background"
+        fill
+        className="object-cover object-right-top"
+        priority
       />
 
       {/* Dark overlay */}
