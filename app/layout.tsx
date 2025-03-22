@@ -17,8 +17,17 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Centra Biotech Indonesia  ",
+  title: "Centra Biotech Indonesia",
   description: "Centra Biotech Indonesia",
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-icon.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/apple-touch-icon-precomposed.png',
+    },
+  },
 };
 
 export default function RootLayout({
