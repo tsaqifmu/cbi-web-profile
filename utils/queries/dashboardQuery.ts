@@ -1,3 +1,5 @@
+
+
 import { generateQuery } from "../generateQuery";
 import { IMAGE_QUERY, WITH_BANNER_CTA_QUERY } from "./common";
 
@@ -5,7 +7,9 @@ export const getDashboardQuery = () => {
   const params = {
     populate: {
       headline: {
-        populate: "*",
+        populate: {
+          ...IMAGE_QUERY,
+        },
       },
       whySection: {
         populate: {

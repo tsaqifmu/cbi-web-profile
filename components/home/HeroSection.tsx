@@ -3,8 +3,11 @@ import { notFound } from "next/navigation";
 
 import LinkGreen from "./LinkGreen";
 import { Headline } from "@/types/responseTypes/headline";
+import { Image } from "@/types/responseTypes/image";
 
-const BackgroundVideo = () => {
+
+
+const BackgroundVideo = ({ videoData }:{videoData?:Image}) => {
   return (
     <video
       autoPlay
@@ -13,7 +16,7 @@ const BackgroundVideo = () => {
       playsInline
       className="absolute left-0 top-0 h-full w-full object-cover transition-opacity duration-500"
     >
-      <source src="/cbi-video-profile.mp4" type="video/mp4" />
+      <source src={`${process.env.NEXT_PUBLIC_URL_API}${videoData?.url}`} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   );
@@ -53,7 +56,7 @@ const HeroSection = async ({ data }: { data: Headline }) => {
     return (
       <section className="relative h-screen w-full overflow-hidden">
         {/* Video Background */}
-        <BackgroundVideo />
+        <BackgroundVideo videoData={data.image} />
 
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-50" />
