@@ -5,7 +5,10 @@ import LinkGreen from "./LinkGreen";
 import { Headline } from "@/types/responseTypes/headline";
 import { Image } from "@/types/responseTypes/image";
 
-const BackgroundVideo = ({ videoData }:{videoData?:Image}) => {
+const BackgroundVideo = ({ videoData }: { videoData?: Image }) => {
+  const originalVideoUrl = `${process.env.NEXT_PUBLIC_URL_API}${videoData?.url}`;
+  const proxyUrl = `/api/media-proxy?url=${encodeURIComponent(originalVideoUrl)}`;
+
   return (
     <video
       autoPlay
@@ -14,7 +17,7 @@ const BackgroundVideo = ({ videoData }:{videoData?:Image}) => {
       playsInline
       className="absolute left-0 top-0 h-full w-full object-cover transition-opacity duration-500"
     >
-      <source src={`${process.env.NEXT_PUBLIC_URL_API}${videoData?.url}`} type="video/mp4" />
+      <source src={proxyUrl} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   );
