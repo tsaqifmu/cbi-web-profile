@@ -5,8 +5,6 @@ import LinkGreen from "./LinkGreen";
 import { Headline } from "@/types/responseTypes/headline";
 import { Image } from "@/types/responseTypes/image";
 
-
-
 const BackgroundVideo = ({ videoData }:{videoData?:Image}) => {
   return (
     <video

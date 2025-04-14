@@ -28,6 +28,29 @@ export const metadata: Metadata = {
       url: '/apple-touch-icon-precomposed.png',
     },
   },
+  openGraph: {
+    title: "Centra Biotech Indonesia",
+    description: "Solusi Bioteknologi Terintegrasi untuk Masa Depan",
+    url: "https://www.centrabiotechindonesia.com",
+    siteName: "Centra Biotech Indonesia",
+    images: [
+      {
+        url: "https://www.centrabiotechindonesia.com/og-image.jpg", // Ganti dengan URL gambar OG kamu
+        width: 1200,
+        height: 630,
+        alt: "Centra Biotech Indonesia",
+      },
+    ],
+    locale: "id_ID",
+    type: "website",
+  },
+  // Tambahkan properti twitter
+  twitter: {
+    card: "summary_large_image",
+    title: "Centra Biotech Indonesia",
+    description: "Solusi Bioteknologi Terintegrasi untuk Masa Depan",
+    images: ["https://www.centrabiotechindonesia.com/og-image.jpg"], // Ganti dengan URL gambar OG kamu
+  },
 };
 
 export default function RootLayout({
