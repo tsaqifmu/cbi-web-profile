@@ -23,7 +23,7 @@ const OurImpactSection = ({ data }: { data: OurImpact }) => {
         {/* Title */}
         <div className="flex flex-col justify-between gap-6 md:flex-row">
           <div className="flex-1">
-            <h1>{data.title}</h1>
+            <h2>{data.title}</h2>
           </div>
           <p className="flex-1 text-[#666]">{data.description}</p>
         </div>
@@ -63,9 +63,9 @@ const OurImpactSection = ({ data }: { data: OurImpact }) => {
                   <span className="block text-sm lg:text-base">
                     Pelopor Insektisida Hayati Cair di Indonesia
                   </span>
-                  <h1 className="text-2xl font-bold text-[rgba(253,253,253,1)] md:text-4xl">
+                  <h3 className="text-2xl font-bold text-[rgba(253,253,253,1)] md:text-4xl">
                     BIOKILLER
-                  </h1>
+                  </h3>
                 </div>
                 <div className="flex max-w-lg flex-col gap-6">
                   <p className="text-sm text-[rgba(253,253,253,1)] lg:text-base">
@@ -106,9 +106,9 @@ const OurImpactSection = ({ data }: { data: OurImpact }) => {
                   <span className="block text-sm lg:text-base">
                     Pupuk Hayati Cair No.1 di Indonesia
                   </span>
-                  <h1 className="text-2xl font-bold text-[rgba(253,253,253,1)] md:text-4xl">
+                  <h3 className="text-2xl font-bold text-[rgba(253,253,253,1)] md:text-4xl">
                     FLORAONE
-                  </h1>
+                  </h3>
                 </div>
                 <div className="flex max-w-lg flex-col gap-6 text-sm lg:text-base">
                   <p className="text-sm text-[rgba(253,253,253,1)] lg:text-base">

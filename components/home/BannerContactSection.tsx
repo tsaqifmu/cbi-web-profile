@@ -27,9 +27,9 @@ const BannerContactSection = ({ data }: { data: BannerCTA }) => {
           {/* Content */}
           <div className="absolute z-20 flex h-full w-full flex-col items-start justify-between px-10 py-10 lg:flex-row lg:items-center lg:px-24">
             <div className="flex flex-1 items-center">
-              <h1 className="text-3xl leading-snug text-white lg:max-w-xl lg:text-4xl">
+              <h2 className="text-3xl leading-snug text-white lg:max-w-xl lg:text-4xl">
                 {data.title}
-              </h1>
+              </h2>
             </div>
             <div className="mt-4 flex items-center justify-end md:me-24 md:mt-0">
               <LinkGreen href="/contact" withArrow={false}>

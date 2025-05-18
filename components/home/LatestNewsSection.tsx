@@ -98,7 +98,7 @@ const LatestNewsSection: React.FC<LatestNewsSectionProps> = ({ data }) => {
       <ContainerSection>
         <div className="flex flex-col justify-between gap-6 px-6 md:flex-row md:items-center lg:px-8 xl:px-0">
           <div className="flex-1">
-            <h1>Kabar Terbaru</h1>
+            <h2>Kabar Terbaru</h2>
           </div>
           <NewsFilter activeType={activeType} onTypeChange={setActiveType} />
         </div>

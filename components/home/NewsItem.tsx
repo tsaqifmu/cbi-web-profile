@@ -67,9 +67,9 @@ const ArticleContent: React.FC<ArticleContentProps> = ({
 
   return (
     <>
-      <h2 className="mt-6 line-clamp-2 text-ellipsis text-xl font-bold lg:text-2xl">
+      <h3 className="mt-6 line-clamp-2 text-ellipsis text-xl font-bold lg:text-2xl">
         {title}
-      </h2>
+      </h3>
 
       <p className="mt-2 line-clamp-2 text-ellipsis text-sm lg:text-base">
         {shortDescription}

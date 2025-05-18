@@ -13,7 +13,7 @@ const ProductServiceSection = ({ data }: { data: ProductService }) => {
       <ContainerSection>
         <div className="flex flex-col justify-between gap-4 md:flex-row">
           <div className="flex-1">
-            <h1>{data.title}</h1>
+            <h2>{data.title}</h2>
           </div>
           <div className="flex max-w-[30rem] flex-col gap-5">
             <p className="text-[#666]">{data.description}</p>

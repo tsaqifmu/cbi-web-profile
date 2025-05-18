@@ -37,9 +37,9 @@ const Livestock = async () => {
         <section className="bg-[#F4F4F4]">
           <ContainerSection>
             <div className="flex flex-col gap-6 rounded-3xl bg-[#00802B] p-8 md:flex-row md:items-center lg:gap-12 lg:p-16">
-              <h1 className="max-w-[10rem] text-3xl text-white lg:max-w-none lg:text-[40px]/[48px] xl:w-[46rem] xl:text-5xl/[60px]">
+              <h2 className="max-w-[10rem] text-3xl text-white lg:max-w-none lg:text-[40px]/[48px] xl:w-[46rem] xl:text-5xl/[60px]">
                 {data.aboutSection.title}
-              </h1>
+              </h2>
               <p className="w-fit text-white">
                 {data.aboutSection.description}
               </p>
@@ -50,10 +50,10 @@ const Livestock = async () => {
         <section>
           <ContainerSection>
             <div>
-              <h1 className="leading-[50px] lg:leading-[80px]">
+              <h2 className="leading-[50px] lg:leading-[80px]">
                 Mengapa memilih <br />
                 Produk Perikanan kami?
-              </h1>
+              </h2>
               <div className="mt-8 flex flex-col gap-8 md:flex-row lg:mt-24">
                 <div className="group flex flex-1 flex-col rounded-lg bg-[#FDFDFD] px-8 py-6 drop-shadow-[0_0_10px_rgba(0,0,0,0.1)] transition duration-300 hover:bg-[#C46617] lg:py-12">
                   <CustomSvgIcon
