@@ -1,7 +1,5 @@
-
-
 import { generateQuery } from "../generateQuery";
-import { IMAGE_QUERY, WITH_BANNER_CTA_QUERY } from "./common";
+import { IMAGE_QUERY, WITH_BANNER_CTA_QUERY, WITH_METADATA } from "./common";
 
 export const getDashboardQuery = () => {
   const params = {
@@ -72,6 +70,7 @@ export const getDashboardQuery = () => {
         },
       },
       ...WITH_BANNER_CTA_QUERY,
+      ...WITH_METADATA,
     },
   };
 

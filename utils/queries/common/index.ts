@@ -21,3 +21,9 @@ export const WITH_BANNER_CTA_QUERY = {
     },
   },
 };
+
+export const WITH_METADATA = {
+  metadata: {
+    populate: "*",
+  },
+};

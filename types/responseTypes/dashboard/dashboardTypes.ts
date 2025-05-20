@@ -4,6 +4,7 @@ import { LatestNews } from "./latestNews";
 import { WhySection } from "./whySection";
 import { ProductService } from "./productService";
 import { BannerCTA } from "../bannerCTA";
+import { Metadata } from "../metadata";
 
 export interface Data {
   // Strapi default data
@@ -20,4 +21,5 @@ export interface Data {
   ourImpact: OurImpact;
   latestNews: LatestNews;
   bannerCTA: BannerCTA;
+  metadata: Metadata;
 }
