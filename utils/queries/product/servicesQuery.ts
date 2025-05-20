@@ -1,5 +1,9 @@
 import { generateQuery } from "@/utils/generateQuery";
-import { WITH_BANNER_CTA_QUERY, WITH_HEADLINE_QUERY } from "../common";
+import {
+  WITH_BANNER_CTA_QUERY,
+  WITH_HEADLINE_QUERY,
+  WITH_METADATA,
+} from "../common";
 
 export const getServicesQuery = () => {
   const params = {
@@ -28,6 +32,7 @@ export const getServicesQuery = () => {
         },
       },
       ...WITH_BANNER_CTA_QUERY,
+      ...WITH_METADATA,
     },
   };
 

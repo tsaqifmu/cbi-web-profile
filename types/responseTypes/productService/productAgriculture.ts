@@ -1,6 +1,7 @@
 import { Image } from "../image";
 import { Headline } from "../headline";
 import { BannerCTA } from "../bannerCTA";
+import { Metadata } from "../metadata";
 
 export interface ProductWhyItem {
   id: number;
@@ -52,4 +53,5 @@ export interface ProductsData {
   whySection: ProductWhySection;
   productCategoriesSection: ProductCategory[];
   bannerCTA: BannerCTA;
+  metadata: Metadata;
 }
