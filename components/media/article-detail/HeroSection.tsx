@@ -15,7 +15,7 @@ const HeroSection = ({ data }: { data: ArticleDetail }) => {
           </h1>
           <div className="flex items-center justify-center gap-x-2 pt-6">
             <p className="text-xs font-bold text-white">
-              Oleh <span className="font-normal">nama</span>
+              Oleh <span className="font-normal">{data.author.username}</span>
             </p>
             <span>•</span>
             <p className="text-xs font-normal text-white">

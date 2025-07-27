@@ -1,5 +1,17 @@
 import { Image } from "../image";
 
+export interface Author {
+  createdAt: string;
+  documentId: string;
+  firstname: string;
+  id: number;
+  lastname: string;
+  preferedLanguage: string | null;
+  publishedAt: string;
+  updatedAt: string;
+  username: string | null;
+}
+
 export interface ArticleDetail {
   // Strapi default data
   id: number;
@@ -11,4 +23,5 @@ export interface ArticleDetail {
   publishedAt: string;
   content: any;
   image: Image;
+  author: Author;
 }

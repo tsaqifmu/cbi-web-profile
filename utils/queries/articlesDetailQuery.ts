@@ -11,6 +11,7 @@ export const getArticleDetailQuery = (slug: string) => {
     fields: ["title", "content", "type", "publishedAt"],
     populate: {
       ...IMAGE_QUERY,
+      author: true,
     },
   };
 
